@@ -1,0 +1,39 @@
+/// Flexible Layout Mixin
+/// Generates a flexible box layout container with quick configuration options.
+///
+/// @param {String} $direction [row] - Direction of main flex axis (row, row-reverse, column, column-reverse)
+/// @param {String} $justify [flex-start] - Alignment along main axis (flex-start, center, space-between, etc.)
+/// @param {String} $align [stretch] - Alignment along cross axis (stretch, center, flex-start, flex-end)
+/// @param {String} $wrap [nowrap] - Wrap behavior of flex items (nowrap, wrap, wrap-reverse)
+/// @param {Length} $gap [0] - Spacing size between flex items (px, rem, em, %, etc.)
+@mixin flex(
+    $direction: row,
+    $justify: flex-start,
+    $align: stretch,
+    $wrap: nowrap,
+    $gap: 0
+) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    gap: $gap;
+}
+
+/// Responsive Grid Layout Mixin
+/// Generates a CSS Grid container that automatically collapses to a single column on smaller viewports.
+///
+/// @param {Number} $cols [3] - Total number of equal-width columns on desktop screens
+/// @param {Length} $gap [24px] - Spacing size between grid rows and columns (px, rem, em, etc.)
+/// @param {Length} $breakpoint [768px] - Maximum screen width threshold where layout falls back to 1 column
+@mixin grid($cols: 3, $gap: 24px, $breakpoint: 430px) {
+    display: grid;
+    grid-template-columns: repeat($cols, minmax(0, 1fr));
+    gap: $gap;
+
+    // Automatically switch to a single column on smaller screens
+    @media (max-width: #{$breakpoint}) {
+        grid-template-columns: 1fr;
+    }
+}

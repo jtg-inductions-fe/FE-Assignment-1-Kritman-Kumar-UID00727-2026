@@ -13,7 +13,8 @@
         "prettier": "npx prettier --write ./",
         "lint:fix": "yarn eslint . --fix",
         "prepare": "husky",
-        "pre-commit": "lint-staged"
+        "pre-commit": "lint-staged",
+        "sass:watch": "sass --watch src/styles/main.scss src/style/main.css"
     },
     "engines": {
         "node": ">=18.18.0"

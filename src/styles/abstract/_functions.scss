@@ -1,0 +1,14 @@
+/// REM Calculator Function
+/// Converts a pixel value into rems based on a standard base font size.
+///
+/// @param {Number} $pixel-value - The target pixel size (e.g., 16 or 24px)
+/// @return {Number} The calculated value in rem units
+@function rem($pixel-value) {
+    // If the user included 'px' units, strip them away for calculation
+    @if unit($pixel-value) == 'px' {
+        $pixel-value: calc($pixel-value / 1px);
+    }
+
+    // Divide the pixel target by the root base to get rem units
+    @return calc($pixel-value / 16) * 1rem;
+}
