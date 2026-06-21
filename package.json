@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "FE-Assignment-1-Kritman-Rao-UID00727-2026",
     "description": "A responsive travel landing page built for Josh Technology Group Frontend Induction Assignment 1 using HTML, SCSS, JavaScript, and Vite",
     "keywords": [
@@ -12,6 +13,18 @@
         "responsive",
         "jtg",
         "assignment"
+=======
+    "name": "Travel Point",
+    "description": "Discover amazing destinations, travel guides, and tips with Travel Point. Plan your perfect trip today.",
+    "keywords": [
+        "travel",
+        "tourism",
+        "destinations",
+        "trips",
+        "vacation",
+        "travel",
+        "guide"
+>>>>>>> 74f62b0 ([KR_A1_02]: add header secrtion)
     ],
     "version": "0.0.0",
     "private": true,

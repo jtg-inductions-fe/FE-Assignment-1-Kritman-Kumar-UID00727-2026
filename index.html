@@ -42,6 +42,118 @@
         <link rel="stylesheet" href="src/styles/main.css" />
     </head>
     <body>
+        <header class="header">
+            <nav class="nav" aria-label="Primary navigation">
+                <!-- Hamburger Menu Button  -->
+                <button
+                    class="nav__menu btn--none"
+                    aria-label="open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="hamburger-menu"
+                >
+                    <img
+                        src="src/assets/icons/hamburger.png"
+                        alt="hamburger menu icon"
+                    />
+                </button>
+
+                <!-- website Logo -->
+                <a
+                    href="/"
+                    aria-label="Travel Point Home"
+                    class="nav__logo a--none"
+                >
+                    <img
+                        src="src/assets/icons/logo-main.png"
+                        alt="Travel Point Logo"
+                    />
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <ul class="nav__links-lg nav__links--lg" id="nav-links">
+                    <li class="li--none nav--active">
+                        <a class="a--none nav--links" href="/">home</a>
+                    </li>
+                    <li class="li--none">
+                        <a
+                            class="a--none nav--links"
+                            href="http://127.0.0.1:5500/static-html-boilerplate/index.html#discover"
+                            >Discover</a
+                        >
+                    </li>
+                    <li class="li--none">
+                        <a
+                            class="a--none nav--links"
+                            href="http://127.0.0.1:5500/static-html-boilerplate/index.html#deals"
+                            >Special Deals</a
+                        >
+                    </li>
+                    <li class="li--none">
+                        <a
+                            class="a--none nav--links"
+                            href="http://127.0.0.1:5500/static-html-boilerplate/index.html#contact"
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+
+                <!-- Authentication Buttons -->
+                <div class="nav__auth" id="nav-auth">
+                    <button class="btn btn--none">Log In</button>
+                    <button class="btn btn--primary btn--none">Sign Up</button>
+                </div>
+            </nav>
+            <!-- 
+            ------------------------------------------------------------------------------------
+                        Mobile Sidebar Navigation 
+            ------------------------------------------------------------------------------------
+             -->
+            <aside
+                id="hamburger-menu"
+                class="aside aside--disabled aside--gradient"
+            >
+                <!-- Sidebar Links -->
+                <ul class="aside__links">
+                    <li class="li--none">
+                        <a class="a--none nav--links" href="/">home</a>
+                    </li>
+                    <li class="li--none">
+                        <a
+                            class="a--none nav--links"
+                            href="http://127.0.0.1:5500/static-html-boilerplate/index.html#discover"
+                            >Discover</a
+                        >
+                    </li>
+                    <li class="li--none">
+                        <a
+                            class="a--none nav--links"
+                            href="http://127.0.0.1:5500/static-html-boilerplate/index.html#deals"
+                            >Special Deals</a
+                        >
+                    </li>
+                    <li class="li--none">
+                        <a
+                            class="a--none nav--links"
+                            href="http://127.0.0.1:5500/static-html-boilerplate/index.html#contact"
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+                <!-- Sidebar Close Button -->
+                <button
+                    aria-label="Close navigation menu"
+                    class="aside__close btn--none"
+                >
+                    X
+                </button>
+            </aside>
+        </header>
+
+        <!-- 
+        ---------------------------------------------------------------------------------
+                                    Main JavaScript Entry Point
+        ---------------------------------------------------------------------------------
+         -->
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

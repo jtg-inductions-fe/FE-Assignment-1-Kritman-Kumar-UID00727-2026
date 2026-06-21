@@ -25,9 +25,9 @@
 /// Generates a CSS Grid container that automatically collapses to a single column on smaller viewports.
 ///
 /// @param {Number} $cols [3] - Total number of equal-width columns on desktop screens
-/// @param {Length} $gap [24px] - Spacing size between grid rows and columns (px, rem, em, etc.)
-/// @param {Length} $breakpoint [768px] - Maximum screen width threshold where layout falls back to 1 column
-@mixin grid($cols: 3, $gap: 24px, $breakpoint: 430px) {
+/// @param {Length} $gap [0] - Spacing size between grid rows and columns (px, rem, em, etc.)
+/// @param {Length} $breakpoint [430] - Maximum screen width threshold where layout falls back to 1 column
+@mixin grid($cols: 3, $gap: 0px, $breakpoint: 430px) {
     display: grid;
     grid-template-columns: repeat($cols, minmax(0, 1fr));
     gap: $gap;

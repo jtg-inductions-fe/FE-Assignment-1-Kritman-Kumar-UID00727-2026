@@ -1,0 +1,13 @@
+@use '../abstract/variables' as v;
+
+.btn {
+    border-radius: 100px;
+    padding: v.$btn-padding;
+    font-size: 14px;
+    font-weight: v.$link-weight;
+    color: v.$color-primary;
+    &--primary {
+        background-color: v.$bg-primary;
+        color: v.$btn-color;
+    }
+}

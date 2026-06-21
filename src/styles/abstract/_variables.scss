@@ -2,7 +2,16 @@
 @use './functions' as fn;
 
 //  --------------- global Var ---------------
+<<<<<<< HEAD
 $bg-primary: #ffffff;
+=======
+$bg-color: #ffffff;
+
+$btn-padding: 1rem 2rem;
+
+// circular-std font style
+$font-circular-std: 'Circular Std', sans-serif;
+>>>>>>> 74f62b0 ([KR_A1_02]: add header secrtion)
 
 // Used in the header for the active nav-link, login, and live demo.
 $color-primary: #222831;
@@ -18,6 +27,7 @@ $breakpoint-mobile: 430px;
 $breakpoint-tablet: 1024px;
 $breakpoint-desktop: 1440px;
 
+<<<<<<< HEAD
 // --------------- Header Section --------------- 
 $color-brand-pop: #5d50c6;
 
@@ -35,3 +45,39 @@ $color-warning: #ff5722;
 
 // Used only in the Testimonials title.
 $text-primary: #191825;
+=======
+// padding on each side of the section
+$section-padding: 4rem 0;
+
+//----------------------------------------------
+//             Header Section
+//----------------------------------------------
+
+$font-size: 14px;
+$logo-Width: 40px;
+$link-weight: 700;
+$nav-gap: 4rem;
+$nav-links-max-width: 428px;
+$bg-primary: #5d50c6;
+$nav-padding: 2rem 0;
+
+//----------------------------------------------
+//             Hero Section
+//----------------------------------------------
+$hero-content-gap: fn.rem(43px);
+$font-size: fn.rem(18px);
+$title-font: fn.rem(69px);
+$btn-color: #eeeeee;
+
+//----------------------------------------------
+//             Brand Section
+//----------------------------------------------
+$brand-height-md: 2rem;
+$brand-height-sm: fn.rem(20px);
+
+//----------------------------------------------
+//             Travel Section
+//----------------------------------------------
+
+$travel-point-gap: 2rem;
+>>>>>>> 74f62b0 ([KR_A1_02]: add header secrtion)

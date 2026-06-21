@@ -24,3 +24,25 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+// links which don't need underline
+.a {
+    &--none {
+        text-decoration: none;
+    }
+}
+
+// li item which don't have default bullet point symbol.
+.li {
+    &--none {
+        list-style: none;
+    }
+}
+
+// remove default border and color.
+.btn {
+    &--none {
+        border: none;
+        color: inherit;
+    }
+}

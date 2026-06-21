@@ -1,0 +1,7 @@
+@use '../abstract/variables' as v;
+
+.nav__logo {
+    display: block;
+    width: v.$logo-Width;
+    aspect-ratio: 1/1;
+}

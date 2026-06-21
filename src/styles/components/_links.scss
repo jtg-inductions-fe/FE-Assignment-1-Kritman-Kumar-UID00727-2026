@@ -1,0 +1,11 @@
+@use '../abstract/variables' as v;
+
+.nav {
+    &--links {
+        text-transform: capitalize;
+        color: v.$color-secondary;
+        font-weight: v.$link-weight;
+        font-weight: v.$font-size;
+        line-height: 120%;
+    }
+}
