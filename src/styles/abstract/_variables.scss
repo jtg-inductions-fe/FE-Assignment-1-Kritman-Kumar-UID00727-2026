@@ -2,56 +2,36 @@
 @use './functions' as fn;
 
 //  --------------- global Var ---------------
-$bg-color: #ffffff;
-
-$btn-padding: fn.rem(16px) fn.rem(32px);
+$bg-primary: #ffffff;
 
 // Used in the header for the active nav-link, login, and live demo.
 $color-primary: #222831;
 
-// Used in the Hero section's large text.
-$color-dark: #000000;
-
 // used to describe the title.
-$color-secondary: #19182580;
-
-// Used only in the Testimonials title.
-$color-secondary-dark: #191825;
-
-// Used in the Testimonials card description.
-$testimonials-text-color: #191825bf;
+$text-muted: #19182580;
 
 // Used in Hero, Highlights, and Testimonials.
-$color-pink: #f85e9f;
-
-// used in the Testimonial Data color.
-$color-orange: #ff5722;
+$color-accent: #f85e9f;
 
 // Breakpoints for different screen sizes.
-$desktop-width: 1440px;
-$mobile-width: 430px;
-$tablet-width: 1024px;
+$breakpoint-mobile: 430px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1440px;
 
-// padding on each side of the section
-$section-padding: fn.rem(64px) 0;
-
-// --------------- Header Section ---------------
-$font-size: 14px;
-$logo-Width: 40px;
-$link-weight: 700;
-$nav-gap: 64px;
-$nav-links-max-width: 428px;
-$nav-signup-bg: #5d50c6;
+// --------------- Header Section --------------- 
+$color-brand-pop: #5d50c6;
 
 // --------------- Hero Section ---------------
-$hero-content-gap: fn.rem(43px);
-$font-size: fn.rem(18px);
-$title-font: fn.rem(69px);
-$btn-color: #eeeeee;
+// Used in the Hero section's large text.
+$text-dark-display: #000000;
+$color-bg-muted: #eeeeee;
 
-// --------------- Brand Section ---------------
-$logo-height-md: fn.rem(32px);
-$logo-height-sm: fn.rem(20px);
+// --------------- Testimonial  ---------------
+// Used in the Testimonials card description.
+$text-secondary: #191825bf;
 
-// --------------- Travel Point ---------------
-$travel-point-gap: fn.rem(32px);
+// used in the Testimonial Data color.
+$color-warning: #ff5722;
+
+// Used only in the Testimonials title.
+$text-primary: #191825;

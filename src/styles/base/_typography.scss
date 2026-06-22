@@ -1,0 +1,22 @@
+@use './functions' as fn;
+
+// -----------------------------------------------------
+//                   Font-family
+// -----------------------------------------------------
+
+// Primary heading font
+$font-title: 'Circular Std', sans-serif;
+
+// body text font Used for descriptions
+$font-body: '"Inter", sans-serif';
+
+// -----------------------------------------------------
+//                   Font-size
+// -----------------------------------------------------
+$font-size-xs: fn.rem(14px);
+$font-size-sm: fn.rem(18px);
+$font-size-md: fn.rem(23px);
+$font-size-lg: fn.rem(28px);
+$font-size-xl: fn.rem(35px);
+$font-size-2xl: fn.rem(44px);
+$font-size-3xl: fn.rem(69px);

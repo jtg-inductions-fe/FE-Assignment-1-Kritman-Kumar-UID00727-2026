@@ -1,7 +1,18 @@
 {
-    "name": "static-html-base-template",
-    "description": "",
-    "keywords": [],
+    "name": "FE-Assignment-1-Kritman-Rao-UID00727-2026",
+    "description": "A responsive travel landing page built for Josh Technology Group Frontend Induction Assignment 1 using HTML, SCSS, JavaScript, and Vite",
+    "keywords": [
+        "travel",
+        "landing-page",
+        "frontend",
+        "html",
+        "scss",
+        "javascript",
+        "vite",
+        "responsive",
+        "jtg",
+        "assignment"
+    ],
     "version": "0.0.0",
     "private": true,
     "type": "module",
@@ -14,7 +25,7 @@
         "lint:fix": "yarn eslint . --fix",
         "prepare": "husky",
         "pre-commit": "lint-staged",
-        "sass:watch": "sass --watch src/styles/main.scss src/style/main.css"
+        "sass:watch": "sass --watch src/styles/main.scss src/styles/main.css"
     },
     "engines": {
         "node": ">=18.18.0"

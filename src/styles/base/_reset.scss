@@ -1,6 +1,48 @@
-/* Universal reset for all elements on the page */
-* {
+// 1. Global Box Sizing Reset
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+// 2. HTML & Body Setup
+html,
+body {
+    height: 100%;
+    text-size-adjust: none;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+// 3. Typography & Media Reset
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+// 4. Element Specific Resets
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
