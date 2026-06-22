@@ -1,22 +1,22 @@
 @use '../abstract/functions' as fn;
 
-// -----------------------------------------------------
-//                   Font-family
-// -----------------------------------------------------
+@mixin heading-xl($size: 23px) {
+    font-size: fn.rem($size);
+    font-weight: 700;
+    line-height: 120%;
+    font-family: 'Circular Std', sans-serif;
+}
 
-// Primary heading font
-$font-title: 'Circular Std', sans-serif;
+@mixin text-sm($size: 23px) {
+    font-size: $size;
+    font-weight: 400;
+    line-height: 160%;
+    font-family: 'Inter', sans-serif;
+}
 
-// body text font Used for descriptions
-$font-body: 'Inter', sans-serif;
-
-// -----------------------------------------------------
-//                   Font-size
-// -----------------------------------------------------
-$font-size-xs: fn.rem(14px);
-$font-size-sm: fn.rem(18px);
-$font-size-md: fn.rem(23px);
-$font-size-lg: fn.rem(28px);
-$font-size-xl: fn.rem(35px);
-$font-size-2xl: fn.rem(44px);
-$font-size-3xl: fn.rem(69px);
+@mixin heading-md {
+    font-weight: 450;
+    font-size: fn.rem(23px);
+    line-height: 160%;
+    font-family: 'Circular Std', sans-serif;
+}
