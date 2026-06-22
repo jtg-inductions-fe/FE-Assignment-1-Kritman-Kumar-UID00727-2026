@@ -1,4 +1,4 @@
-@use './functions' as fn;
+@use '../abstract/functions' as fn;
 
 // -----------------------------------------------------
 //                   Font-family
@@ -8,7 +8,7 @@
 $font-title: 'Circular Std', sans-serif;
 
 // body text font Used for descriptions
-$font-body: '"Inter", sans-serif';
+$font-body: 'Inter', sans-serif;
 
 // -----------------------------------------------------
 //                   Font-size

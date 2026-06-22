@@ -7,33 +7,11 @@
     padding: 0;
 }
 
-// 2. HTML & Body Setup
-html,
-body {
-    height: 100%;
-    text-size-adjust: none;
-}
-
-body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-}
-
 // 3. Typography & Media Reset
 img,
-picture,
-video,
-canvas,
 svg {
     display: block;
     max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-    font: inherit;
 }
 
 // 4. Element Specific Resets
