@@ -1,37 +1,20 @@
 // imports,uses
 @use './functions' as fn;
 
-//  --------------- global Var ---------------
 $bg-primary: #ffffff;
-
-// Used in the header for the active nav-link, login, and live demo.
-$color-primary: #222831;
-
-// used to describe the title.
-$text-muted: #19182580;
-
-// Used in Hero, Highlights, and Testimonials.
+$color-bg-muted: #eeeeee;
 $color-accent: #f85e9f;
+$color-brand-pop: #5d50c6;
+$color-primary: #222831;
+$color-warning: #ff5722;
+
+// -----------------------------------
+$text-dark-display: #000000;
+$text-muted: #19182580;
+$text-primary: #191825;
+$text-secondary: #191825bf;
 
 // Breakpoints for different screen sizes.
 $breakpoint-mobile: 430px;
 $breakpoint-tablet: 1024px;
 $breakpoint-desktop: 1440px;
-
-// --------------- Header Section --------------- 
-$color-brand-pop: #5d50c6;
-
-// --------------- Hero Section ---------------
-// Used in the Hero section's large text.
-$text-dark-display: #000000;
-$color-bg-muted: #eeeeee;
-
-// --------------- Testimonial  ---------------
-// Used in the Testimonials card description.
-$text-secondary: #191825bf;
-
-// used in the Testimonial Data color.
-$color-warning: #ff5722;
-
-// Used only in the Testimonials title.
-$text-primary: #191825;

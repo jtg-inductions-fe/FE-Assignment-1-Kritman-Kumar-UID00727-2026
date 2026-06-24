@@ -1,4 +1,4 @@
-// 1. Global Box Sizing Reset
+// 1. Global Box Sizing & Spacing Reset
 *,
 *::before,
 *::after {
@@ -7,11 +7,31 @@
     padding: 0;
 }
 
+body {
+    // Ensures background colors span the whole screen
+    min-height: 100vh;
+    // Smooths out font rendering on macOS
+    -webkit-font-smoothing: antialiased;
+}
+
 // 3. Typography & Media Reset
 img,
-svg {
+svg,
+video,
+canvas {
     display: block;
     max-width: 100%;
+}
+
+// Prevents long text, long words, or URLs from breaking mobile layouts
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
 }
 
 // 4. Element Specific Resets
@@ -23,4 +43,15 @@ ol {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+// 5. Form Element Resets (NEW)
+// Forces inputs and buttons to use your main website font instead of browser defaults
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    border: none;
+    background: none;
 }
