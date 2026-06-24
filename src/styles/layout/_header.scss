@@ -1,17 +1,17 @@
 // ----------------------------------------------------------------------
 //       import global utilities (functions, mixins, variables )
 // ----------------------------------------------------------------------
-
 @use '../abstract/functions' as fn;
 @use '../abstract/mixins' as mx;
 @use '../abstract/variables' as v;
+@use '../base/typography' as t;
 
 // ----------------------------------------------------------------------
 //       Forward reusable UI
 // ----------------------------------------------------------------------
 @forward '../components/logo';
-@forward '../components/buttons';
-@forward '../components/links';
+@forward '../components/button';
+@forward '../components/link';
 
 // ----------------------------------------------------------------------
 //       Header layout
@@ -19,11 +19,15 @@
 
 // defines the overall header spacing and center navigation
 .header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     margin-top: 2rem;
     @include mx.flex($justify: center, $align: center);
     padding: 0 9%;
-    font-family: v.$font-circular-std;
-    transition: all 1s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    background-color: v.$bg-primary;
 }
 
 // ----------------------------------------------------------------------
@@ -32,7 +36,7 @@
 // Default navigation style for large screen
 .nav {
     @include mx.flex($justify: space-between, $align: center);
-    padding: v.$nav-padding;
+    padding: 2rem 0;
     width: 100%;
     &__links-lg {
         @include mx.flex($justify: space-between);
@@ -52,7 +56,7 @@
 }
 
 // hide hamburger menu on desktop
-@media (min-width: v.$tablet-width) {
+@media (min-width: v.$breakpoint-tablet) {
     .nav__menu {
         display: none;
     }
@@ -65,7 +69,7 @@
 //       Tablet Layout
 // ----------------------------------------------------------------------
 // Switches from horizontal navigation to compact layout
-@media (width<=v.$tablet-width) {
+@media (width <= v.$breakpoint-tablet) {
     .header {
         margin-top: 0;
         padding: 0 6.25%;
@@ -101,10 +105,15 @@
 //       Mobile Layout
 // ----------------------------------------------------------------------
 // Optimize navigation spacing and positioning for phones.
-@media (max-width: 600px) {
+@media (max-width: v.$breakpoint-mobile) {
+    .header {
+        padding: 0 4.5%;
+    }
+
     .aside {
         display: block;
     }
+
     .nav {
         @include mx.flex($direction: row-reverse, $justify: space-between);
         position: static;
@@ -130,86 +139,28 @@
 // ----------------------------------------------------------------------
 // style the slide-out navigation shown on smaller screen
 .aside {
-    max-width: 400px;
-    border-radius: 20px;
+    position: absolute;
+    z-index: 2000;
+    top: 0;
+    max-width: v.$breakpoint-mobile;
+    width: 100%;
     height: 100dvh;
-    max-height: 600px;
-    padding: 1rem;
-    position: relative;
-    top: -80px;
-    z-index: 2;
-
-    // Glassmorphism background effect.
-    &--gradient {
-        background: linear-gradient(
-            135deg,
-            rgba(248, 94, 158, 0.189),
-            rgba(86, 34, 255, 0.143),
-            rgba(238, 238, 238, 0.288),
-            rgba(255, 86, 34, 0.247)
-        );
-
-        backdrop-filter: blur(1px);
-        -webkit-backdrop-filter: blur(16px);
-
-        border: 1px solid rgba(255, 255, 255, 0.2);
-
-        box-shadow: 0 0px 32px rgba(31, 38, 135, 0.37);
-    }
+    background-color: v.$bg-primary;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0px 32px rgba(31, 38, 135, 0.37);
 
     // navigation links container
     &__links {
-        @include mx.grid($cols: 1, $gap: 20px);
+        @include mx.grid($cols: 1);
         position: relative;
         top: 1rem;
-    }
-
-    // close button for sidebar
-    &__close {
-        @include mx.flex($justify: center, $align: center);
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 50px;
-        aspect-ratio: 1/1;
-        font-size: 18px;
-        font-weight: 600;
-        border-radius: 50%;
-        color: v.$color-dark;
-        cursor: pointer;
-        background-color: v.$color-pink;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    // close button hover animation
-    &__close:hover {
-        background: rgba(255, 255, 255, 0.25);
-        color: v.$color-pink;
-
-        box-shadow:
-            inset 0 1px 1px rgba(255, 255, 255, 0.4),
-            0 4px 12px rgba(248, 94, 158, 0.3);
-
-        transform: rotate(90deg);
-    }
-
-    // close button click feedback
-    &__close:active {
-        transform: rotate(90deg) scale(0.92);
-    }
-
-    // individual navigation item
-    & li {
-        padding: 1rem;
-        border-bottom: 1px #3d3b3b6d solid;
-        max-width: 300px;
-        border-radius: 20px;
-        overflow: hidden;
     }
 
     // navigation links
     & a {
         display: block;
-        color: v.$color-dark;
+        padding: 1rem;
+        color: v.$color-primary;
     }
 
     // Hover effect for sidebar items.
@@ -218,6 +169,12 @@
         box-shadow:
             inset 0 1px 1px rgba(255, 255, 255, 0.4),
             0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    & button {
+        @include t.heading-md();
+        width: 100%;
+        background-color: v.$color-accent;
     }
 }
 

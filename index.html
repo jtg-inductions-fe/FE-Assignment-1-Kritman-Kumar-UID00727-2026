@@ -46,6 +46,7 @@
             <nav class="nav" aria-label="Primary navigation">
                 <!-- Hamburger Menu Button  -->
                 <button
+                    type="button"
                     class="nav__menu btn--none"
                     aria-label="open navigation menu"
                     aria-expanded="false"
@@ -75,23 +76,17 @@
                         <a class="a--none nav--links" href="/">home</a>
                     </li>
                     <li class="li--none">
-                        <a
-                            class="a--none nav--links"
-                            href="http://127.0.0.1:5500/static-html-boilerplate/index.html#discover"
+                        <a class="a--none nav--links" href="#discover"
                             >Discover</a
                         >
                     </li>
                     <li class="li--none">
-                        <a
-                            class="a--none nav--links"
-                            href="http://127.0.0.1:5500/static-html-boilerplate/index.html#deals"
+                        <a class="a--none nav--links" href="#deals"
                             >Special Deals</a
                         >
                     </li>
                     <li class="li--none">
-                        <a
-                            class="a--none nav--links"
-                            href="http://127.0.0.1:5500/static-html-boilerplate/index.html#contact"
+                        <a class="a--none nav--links" href="#contact"
                             >Contact</a
                         >
                     </li>
@@ -99,8 +94,10 @@
 
                 <!-- Authentication Buttons -->
                 <div class="nav__auth" id="nav-auth">
-                    <button class="btn btn--none">Log In</button>
-                    <button class="btn btn--primary btn--none">Sign Up</button>
+                    <button type="button" class="btn btn--none">Log In</button>
+                    <button type="button" class="btn btn--primary btn--none">
+                        Sign Up
+                    </button>
                 </div>
             </nav>
             <!-- 
@@ -108,44 +105,31 @@
                         Mobile Sidebar Navigation 
             ------------------------------------------------------------------------------------
              -->
-            <aside
-                id="hamburger-menu"
-                class="aside aside--disabled aside--gradient"
-            >
+            <aside id="hamburger-menu" class="aside aside--disabled">
                 <!-- Sidebar Links -->
                 <ul class="aside__links">
+                    <li class="li--none">
+                        <button type="button" class="btn">X</button>
+                    </li>
                     <li class="li--none">
                         <a class="a--none nav--links" href="/">home</a>
                     </li>
                     <li class="li--none">
-                        <a
-                            class="a--none nav--links"
-                            href="http://127.0.0.1:5500/static-html-boilerplate/index.html#discover"
+                        <a class="a--none nav--links" href="#discover"
                             >Discover</a
                         >
                     </li>
                     <li class="li--none">
-                        <a
-                            class="a--none nav--links"
-                            href="http://127.0.0.1:5500/static-html-boilerplate/index.html#deals"
+                        <a class="a--none nav--links" href="#deals"
                             >Special Deals</a
                         >
                     </li>
                     <li class="li--none">
-                        <a
-                            class="a--none nav--links"
-                            href="http://127.0.0.1:5500/static-html-boilerplate/index.html#contact"
+                        <a class="a--none nav--links" href="#contact"
                             >Contact</a
                         >
                     </li>
                 </ul>
-                <!-- Sidebar Close Button -->
-                <button
-                    aria-label="Close navigation menu"
-                    class="aside__close btn--none"
-                >
-                    X
-                </button>
             </aside>
         </header>
 

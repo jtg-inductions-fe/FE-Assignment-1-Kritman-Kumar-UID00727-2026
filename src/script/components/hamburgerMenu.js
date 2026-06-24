@@ -28,3 +28,25 @@ export function handleKeyPress(e, hamburgerEle, targetEle, toggleClass) {
 
     toggleMenu(hamburgerEle, targetEle, toggleClass);
 }
+
+/**
+ * Closes the mobile navigation menu when clicking outside it.
+ *
+ * @param {MouseEvent} e - Mouse click event.
+ * @param {HTMLElement} hamburgerEle - Hamburger menu button.
+ * @param {HTMLElement} targetEle - Mobile navigation container.
+ * @param {string} toggleClass - CSS class used to show or hide the menu.
+ */
+export function handleOutsideClick(e, hamburgerEle, targetEle, toggleClass) {
+    // Menu is already closed.
+    const isMenuClosed = targetEle.classList.contains(toggleClass);
+
+    if (isMenuClosed) return;
+
+    const clickedInsideMenu = targetEle.contains(e.target);
+    const clickedHamburger = hamburgerEle.contains(e.target);
+
+    if (clickedInsideMenu || clickedHamburger) return;
+
+    toggleMenu(hamburgerEle, targetEle, toggleClass);
+}

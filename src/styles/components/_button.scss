@@ -1,0 +1,18 @@
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+.btn {
+    @include t.text-link();
+    border-radius: 100px;
+    padding: 1rem 2rem;
+    color: v.$color-primary;
+    cursor: pointer;
+    &--primary {
+        background-color: v.$color-brand-pop;
+        color: v.$color-bg-muted;
+    }
+
+    @media (max-width: v.$breakpoint-mobile) {
+        padding: 24px 32px;
+    }
+}
