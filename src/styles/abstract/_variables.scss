@@ -1,0 +1,20 @@
+// imports,uses
+@use './functions' as fn;
+
+$bg-primary: #ffffff;
+$color-bg-muted: #eeeeee;
+$color-accent: #f85e9f;
+$color-brand-pop: #5d50c6;
+$color-primary: #222831;
+$color-warning: #ff5722;
+
+// -----------------------------------
+$text-dark-display: #000000;
+$text-muted: #19182580;
+$text-primary: #191825;
+$text-secondary: #191825bf;
+
+// Breakpoints for different screen sizes.
+$breakpoint-mobile: 430px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1440px;
