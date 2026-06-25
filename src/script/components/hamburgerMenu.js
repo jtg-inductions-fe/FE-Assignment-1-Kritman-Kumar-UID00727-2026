@@ -2,7 +2,7 @@
 export const toggleClass = 'sidebar--disabled';
 
 /**
- * Toggles the Mobile navigation menu and update the hamburger icon state.
+ * Toggles the Mobile navigation menu.
  * @param {HTMLElement} hamburgerEle - Hamburger menu button
  * @param {HTMLElement} targetEle - Mobile navigation container.
  */
@@ -15,7 +15,7 @@ export function toggleMenu(hamburgerEle, targetEle) {
  * @param {HTMLElement} hamburgerEle - Hamburger menu button
  * @param {HTMLElement} targetEle  - Mobile navigation container
  */
-export function handleKeyPress(e, hamburgerEle, targetEle) {
+export function handleEscape(e, hamburgerEle, targetEle) {
     // return if the pressed key is not Escape or the menu is already closed.
     const isAsideOpen = targetEle.classList.contains(toggleClass);
 

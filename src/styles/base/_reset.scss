@@ -14,7 +14,7 @@ body {
 }
 
 /* Locks the body whenever the aside does NOT have the disabled class */
-body:has(#hamburger-menu:not(.aside--disabled)) {
+body:has(#hamburger-menu:not(.sidebar--disabled)) {
     overflow: hidden;
 }
 

@@ -3,7 +3,7 @@
 // ----------------------------------------------------------
 import {
     toggleMenu,
-    handleKeyPress,
+    handleEscape,
     handleOutsideClick,
 } from './components/hamburgerMenu.js';
 
@@ -30,7 +30,7 @@ asideEle.addEventListener('click', (e) => {
 
 // close the mobile navigation menu when Escape Key is pressed.
 window.addEventListener('keyup', (e) =>
-    handleKeyPress(e, hamburgerEle, asideEle),
+    handleEscape(e, hamburgerEle, asideEle),
 );
 
 window.addEventListener('click', (e) =>
