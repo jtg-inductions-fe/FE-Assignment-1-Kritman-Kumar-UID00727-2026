@@ -16,22 +16,25 @@
 // ----------------------------------------------------------------------
 //       Header layout
 // ----------------------------------------------------------------------
-
-// defines the overall header spacing and center navigation
-.header {
-    position: sticky;
-    top: 0;
+.nav {
+    @include mx.flex($justify: space-between, $align: center);
+    padding: 2rem 0;
     width: 100%;
-    z-index: 1000;
-    margin-top: 2rem;
-    @include mx.flex($justify: center, $align: center);
-    padding: 0 9%;
-    background-color: v.$bg-primary;
+    &__links--desktop {
+        @include mx.flex($justify: space-between);
+        width: 36%;
+        min-width: 400px;
+    }
+
+    // highlight the active navigation link
+    &--active a {
+        color: v.$color-primary;
+    }
 }
 
 // hide hamburger menu on desktop
 @media (min-width: v.$breakpoint-tablet) {
-    .sidebar {
+    .nav__menu {
         display: none;
     }
 }
@@ -45,10 +48,6 @@
         margin-top: 0;
         padding: 0 6.25%;
         @include mx.grid($cols: 1);
-    }
-
-    .sidebar {
-        display: block;
     }
 
     .nav {
@@ -77,14 +76,6 @@
 // ----------------------------------------------------------------------
 // Optimize navigation spacing and positioning for phones.
 @media (max-width: v.$breakpoint-mobile) {
-    .header {
-        padding: 0 4.5%;
-    }
-
-    .sidebar {
-        display: block;
-    }
-
     .nav {
         @include mx.flex($direction: row-reverse, $justify: space-between);
         position: static;
@@ -103,56 +94,4 @@
             transform: translateX(0%);
         }
     }
-}
-
-// ----------------------------------------------------------------------
-//       Mobile Sidebar (Hamburger Menu)
-// ----------------------------------------------------------------------
-// style the slide-out navigation shown on smaller screen
-.sidebar {
-    position: absolute;
-    z-index: 2000;
-    top: 0;
-    max-width: v.$breakpoint-mobile;
-    width: 100%;
-    height: 100dvh;
-    background-color: v.$bg-primary;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0px 32px rgba(31, 38, 135, 0.37);
-
-    // navigation links container
-    &__links {
-        @include mx.grid($cols: 1);
-        position: relative;
-        top: 1rem;
-    }
-
-    // navigation links
-    & a {
-        display: block;
-        padding: 1rem;
-        color: v.$color-primary;
-    }
-
-    // Hover effect for sidebar items.
-    & li:hover {
-        transform: translateY(-2px);
-        box-shadow:
-            inset 0 1px 1px rgba(255, 255, 255, 0.4),
-            0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    & button {
-        @include t.heading-md();
-        width: 100%;
-        background-color: v.$color-accent;
-    }
-}
-
-// ----------------------------------------------------------------------
-//       Sidebar Visibility Utility
-// ----------------------------------------------------------------------
-// Hides the sidebar until it toggled open
-.sidebar--disabled {
-    display: none;
 }

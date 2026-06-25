@@ -1,13 +1,17 @@
 @use '../abstract/variables' as v;
 @use '../base/typography' as t;
 
-.nav {
-    &--links {
+.nav,
+.sidebar {
+    &--link {
         @include t.text-link();
         position: relative;
         text-transform: capitalize;
         color: v.$text-muted;
         padding-bottom: 5px;
+        transition:
+            width 0.4s ease,
+            background-color 0.4s ease-in-out;
 
         &::before {
             content: '';
