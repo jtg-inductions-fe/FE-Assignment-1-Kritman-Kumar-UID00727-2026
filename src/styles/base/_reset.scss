@@ -8,10 +8,14 @@
 }
 
 body {
-    // Ensures background colors span the whole screen
     min-height: 100vh;
     // Smooths out font rendering on macOS
     -webkit-font-smoothing: antialiased;
+}
+
+/* Locks the body whenever the aside does NOT have the disabled class */
+body:has(#hamburger-menu:not(.aside--disabled)) {
+    overflow: hidden;
 }
 
 // 3. Typography & Media Reset

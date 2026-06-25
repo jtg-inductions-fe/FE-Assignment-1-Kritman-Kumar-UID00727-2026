@@ -11,6 +11,11 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Locks the body whenever the aside does NOT have the disabled class */
+body:has(#hamburger-menu:not(.aside--disabled)) {
+    overflow: hidden;
+}
+
 img,
 svg,
 video,
@@ -266,3 +271,12 @@ select {
 .aside--disabled {
     display: none;
 }
+
+.test {
+    height: 1200px;
+    margin-top: 500px;
+    width: 100%;
+    background-color: #ff5722;
+}
+
+/*# sourceMappingURL=main.css.map */
