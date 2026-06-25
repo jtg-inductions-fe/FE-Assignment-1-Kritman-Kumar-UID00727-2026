@@ -277,16 +277,39 @@ select {
 }
 
 .hero {
-  background-color: #3f3f3f;
-  height: 80dvh;
   position: relative;
+  padding: 0 9%;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 0;
 }
-.hero__ellipse--gradient {
-  width: 503px;
-  height: 494px;
-  background: radial-gradient(circle, rgba(255, 87, 34, 0.5) 0%, rgba(255, 87, 34, 0) 70%);
-  filter: blur(500px);
-  transform: translate3d(0, 0, 0);
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+.hero__ellipse {
+  top: 12rem;
+  left: 12rem;
+  position: absolute;
+  opacity: 0.5;
+  filter: blur(50px);
+  transform: rotate(0deg);
+  box-shadow: 0 0 300px 250px rgba(255, 87, 34, 0.8);
+}
+.hero__badge {
+  width: 224px;
+  height: 56px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 32px;
+  border-radius: 100px;
+  opacity: 1;
+  transform: rotate(0deg);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.07), 0px 34px 75px 0px rgba(0, 0, 0, 0.07), 0px 137px 137px 0px rgba(0, 0, 0, 0.06), 0px 308px 185px 0px rgba(0, 0, 0, 0.04), 0px 548px 219px 0px rgba(0, 0, 0, 0.01), 0px 856px 240px 0px rgba(0, 0, 0, 0);
 }
 
 /*# sourceMappingURL=main.css.map */

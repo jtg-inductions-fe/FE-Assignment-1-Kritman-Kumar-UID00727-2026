@@ -37,3 +37,13 @@
         grid-template-columns: 1fr;
     }
 }
+
+@mixin grid-aria($cols: 1fr, $gap: 0, $breakpoint: 430px) {
+    display: grid;
+    grid-template-columns: $cols;
+    gap: $gap;
+
+    @media (max-width: #{$breakpoint}) {
+        grid-template-columns: 1fr;
+    }
+}
