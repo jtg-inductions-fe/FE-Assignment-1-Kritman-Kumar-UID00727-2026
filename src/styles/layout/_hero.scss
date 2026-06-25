@@ -1,0 +1,40 @@
+// ----------------------------------------------------------------------
+//       import global utilities (functions, mixins, variables )
+// ----------------------------------------------------------------------
+@use '../abstract/functions' as fn;
+@use '../abstract/mixins' as mx;
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+// ----------------------------------------------------------------------
+//       Forward reusable UI
+// ----------------------------------------------------------------------
+@forward '../components/button';
+
+// ----------------------------------------------------------------------
+//       Hero layout
+// ----------------------------------------------------------------------
+
+.hero {
+    background-color: #3f3f3f;
+    height: 80dvh;
+    position: relative;
+    &__content {
+    }
+    &__ellipse {
+    }
+    &__ellipse--gradient {
+        width: 503px;
+        height: 494px;
+
+        background: radial-gradient(
+            circle,
+            rgba(255, 87, 34, 0.5) 0%,
+            rgba(255, 87, 34, 0) 70%
+        );
+
+        filter: blur(500px);
+
+        transform: translate3d(0, 0, 0);
+    }
+}
