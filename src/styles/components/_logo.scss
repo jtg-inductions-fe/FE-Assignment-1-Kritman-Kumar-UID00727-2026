@@ -4,4 +4,15 @@
     display: block;
     width: 40px;
     aspect-ratio: 1/1;
+
+    @media (width <= v.$breakpoint-tablet) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @media (max-width: v.$breakpoint-mobile) {
+        left: 3.7%;
+        transform: translateX(0%);
+    }
 }

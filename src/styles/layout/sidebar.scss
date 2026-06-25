@@ -11,22 +11,6 @@
 @forward '../components/button';
 @forward '../components/link';
 
-// hide hamburger menu on desktop
-@media (min-width: v.$breakpoint-tablet) {
-    .sidebar {
-        display: none;
-    }
-}
-
-// ----------------------------------------------------------------------
-//       Tablet Layout
-// ----------------------------------------------------------------------
-@media (width <= v.$breakpoint-tablet) {
-    .sidebar {
-        display: block;
-    }
-}
-
 // ----------------------------------------------------------------------
 //       Mobile Sidebar (Hamburger Menu)
 // ----------------------------------------------------------------------
@@ -41,21 +25,17 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0px 32px rgba(31, 38, 135, 0.37);
 
-    // navigation links container
     &__links {
         @include mx.grid($cols: 1);
         position: relative;
-        top: 1rem;
     }
 
-    // navigation links
     & a {
         display: block;
         padding: 1rem;
         color: v.$color-primary;
     }
 
-    // Hover effect for sidebar items.
     & li:hover {
         transform: translateY(-2px);
         box-shadow:
@@ -68,11 +48,11 @@
         width: 100%;
         background-color: v.$color-accent;
     }
-}
+    &--disabled {
+        display: none;
+    }
 
-// ----------------------------------------------------------------------
-//       Sidebar Visibility Utility
-// ----------------------------------------------------------------------
-.sidebar--disabled {
-    display: none;
+    @media (min-width: v.$breakpoint-tablet) {
+        display: none;
+    }
 }

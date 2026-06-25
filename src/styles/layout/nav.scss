@@ -7,13 +7,6 @@
 @use '../base/typography' as t;
 
 // ----------------------------------------------------------------------
-//       Forward reusable UI
-// ----------------------------------------------------------------------
-@forward '../components/logo';
-@forward '../components/button';
-@forward '../components/link';
-
-// ----------------------------------------------------------------------
 //       Header layout
 // ----------------------------------------------------------------------
 .nav {
@@ -30,27 +23,15 @@
     &--active a {
         color: v.$color-primary;
     }
-}
 
-// hide hamburger menu on desktop
-@media (min-width: v.$breakpoint-tablet) {
-    .nav__menu {
-        display: none;
-    }
-}
-
-// ----------------------------------------------------------------------
-//       Tablet Layout
-// ----------------------------------------------------------------------
-// Switches from horizontal navigation to compact layout
-@media (width <= v.$breakpoint-tablet) {
-    .header {
-        margin-top: 0;
-        padding: 0 6.25%;
-        @include mx.grid($cols: 1);
+    // hide hamburger menu on desktop
+    @media (min-width: v.$breakpoint-tablet) {
+        &__menu {
+            display: none;
+        }
     }
 
-    .nav {
+    @media (width <= v.$breakpoint-tablet) {
         position: relative;
 
         // display hamburger menu.
@@ -62,21 +43,9 @@
         &__links--desktop {
             display: none;
         }
-        // keep logo center
-        & .logo {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
     }
-}
 
-// ----------------------------------------------------------------------
-//       Mobile Layout
-// ----------------------------------------------------------------------
-// Optimize navigation spacing and positioning for phones.
-@media (max-width: v.$breakpoint-mobile) {
-    .nav {
+    @media (max-width: v.$breakpoint-mobile) {
         @include mx.flex($direction: row-reverse, $justify: space-between);
         position: static;
         padding: 2.3rem 0;
@@ -86,12 +55,6 @@
             background: #000;
             display: none;
             left: 0;
-        }
-
-        // position logo near the left edge.
-        & .logo {
-            left: 3.7%;
-            transform: translateX(0%);
         }
     }
 }

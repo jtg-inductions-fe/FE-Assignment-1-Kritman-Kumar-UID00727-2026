@@ -1,36 +1,33 @@
 @use '../abstract/variables' as v;
 @use '../base/typography' as t;
 
-.nav,
-.sidebar {
-    &--link {
-        @include t.text-link();
-        position: relative;
-        text-transform: capitalize;
-        color: v.$text-muted;
-        padding-bottom: 5px;
-        transition:
-            width 0.4s ease,
-            background-color 0.4s ease-in-out;
+.link {
+    @include t.text-link();
+    position: relative;
+    text-transform: capitalize;
+    color: v.$text-muted;
+    padding-bottom: 5px;
+    transition:
+        width 0.4s ease,
+        background-color 0.4s ease-in-out;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 2px;
+        background-color: v.$color-warning;
+        transition: width 0.4s ease-in-out;
+    }
+
+    &:hover {
+        color: v.$color-warning;
 
         &::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0%;
-            height: 2px;
-            background-color: v.$color-warning;
-            transition: width 0.4s ease-in-out;
-        }
-
-        &:hover {
-            color: v.$color-warning;
-
-            &::before {
-                width: 100%;
-            }
+            width: 100%;
         }
     }
 }

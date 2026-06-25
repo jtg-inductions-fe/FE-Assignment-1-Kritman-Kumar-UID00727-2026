@@ -1,4 +1,13 @@
+// ------------------ Components ------------------
+@forward './components//header';
+@forward './components/logo';
+@forward './components/button';
+@forward './components/link';
+
+// ------------------ Base ------------------
 @forward './base/reset';
 @forward './base/typography';
-@forward './layout/header';
+
+// ------------------ layout ------------------
 @forward './layout/nav.scss';
+@forward './layout/sidebar.scss';
