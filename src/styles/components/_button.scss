@@ -1,4 +1,5 @@
 @use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
 @use '../base/typography' as t;
 
 .btn {
@@ -10,6 +11,12 @@
     &--primary {
         background-color: v.$color-brand-pop;
         color: v.$color-bg-muted;
+    }
+
+    &--secondary {
+        @include mx.flex($justify: center, $align: center, $gap: 8px);
+        color: v.$color-primary;
+        background-color: v.$color-bg-muted;
     }
 
     @media (max-width: v.$breakpoint-mobile) {

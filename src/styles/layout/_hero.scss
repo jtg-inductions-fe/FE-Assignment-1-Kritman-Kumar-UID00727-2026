@@ -13,13 +13,25 @@
 
 .hero {
     position: relative;
-    padding: 0 9%;
-    @include mx.grid-aria($cols: 35% 65%, $breakpoint: v.$breakpoint-tablet);
+    padding: 4rem 0;
+
+    @include mx.grid-aria(
+        $cols: minmax(0, 420px) minmax(0, 772px),
+        $breakpoint: v.$breakpoint-tablet
+    );
+    justify-content: space-between;
+
+    &__content {
+        @include mx.grid($cols: 1, $gap: 43px);
+        max-height: 577px;
+        justify-content: left;
+    }
 
     &__ellipse {
         top: 12rem;
         left: 12rem;
         position: absolute;
+        z-index: -1;
         opacity: 0.5;
 
         filter: blur(50px);
@@ -49,5 +61,142 @@
             0px 308px 185px 0px rgba(0, 0, 0, 0.04),
             0px 548px 219px 0px rgba(0, 0, 0, 0.01),
             0px 856px 240px 0px rgba(0, 0, 0, 0);
+    }
+
+    &__title {
+        @include t.heading-xl();
+    }
+    &__title--accent {
+        color: v.$color-accent;
+    }
+
+    &__description {
+        @include t.text();
+    }
+
+    &__actions {
+        @include mx.flex($justify: left, $align: center, $gap: 1rem);
+    }
+
+    &__gallery {
+        @include mx.flex($justify: center, $align: end);
+        position: relative;
+        width: 772px;
+        height: 713px;
+    }
+    &__bg-layer {
+        max-height: 287px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    &__cards-container {
+        position: relative;
+        width: 575px;
+        height: 640px;
+    }
+
+    &__card-img--top {
+        width: 272px;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 32px;
+    }
+    &__card-img--bottom {
+        width: 272px;
+        height: 300px;
+        border-radius: 32px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    &__card-img--right {
+        width: 272px;
+        border-radius: 32px;
+        height: 400px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__floating-icon {
+        position: absolute;
+        border-radius: 100px;
+    }
+
+    &__floating-icon--send {
+        background-color: v.$color-accent;
+        height: 64px;
+        padding: 18px;
+        width: 64px;
+        top: 42%;
+        left: 0;
+        transform: translateX(-70%);
+    }
+
+    &__floating-icon--contact {
+        bottom: 0;
+        right: 135px;
+        background-color: v.$color-accent;
+        height: 64px;
+        padding: 18px;
+        width: 64px;
+    }
+
+    &__floating-badge {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 32px;
+        height: 56px;
+        width: 166px;
+        background-color: v.$bg-primary;
+        right: 0;
+        transform: translateX(50%);
+        top: 413px;
+    }
+
+    &__floating-icon--triangle {
+        position: absolute;
+        top: 721px;
+        left: 0;
+        transform: translateX(-95px);
+    }
+
+    @media (width <= v.$breakpoint-tablet) {
+        &__content {
+            @include mx.flex(
+                $direction: column,
+                $justify: center,
+                $align: center,
+                $gap: 43px
+            );
+            text-align: center;
+        }
+
+        &__title {
+            width: 600px;
+        }
+
+        &__description {
+            width: 430px;
+        }
+
+        &__floating-icon--triangle {
+            position: absolute;
+            top: auto;
+            left: 40px;
+            bottom: 12px;
+        }
+    }
+
+    @media (max-width: v.$breakpoint-mobile) {
+        &__floating-icon--triangle {
+            display: none;
+        }
     }
 }

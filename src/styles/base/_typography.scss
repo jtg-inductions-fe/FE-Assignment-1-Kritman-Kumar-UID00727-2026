@@ -5,6 +5,7 @@
     font-size: fn.rem(40px);
     font-weight: 700;
     line-height: 120%;
+    color: v.$text-dark-display;
     font-family: 'Circular Std', sans-serif;
     @media (width > v.$breakpoint-mobile) {
         font-size: fn.rem(56px);
@@ -40,6 +41,7 @@
 @mixin text() {
     font-size: 1rem;
     font-weight: 400;
+    color: v.$text-muted;
     line-height: 160%;
     font-family: 'Inter', sans-serif;
     @media (width > v.$breakpoint-mobile) {

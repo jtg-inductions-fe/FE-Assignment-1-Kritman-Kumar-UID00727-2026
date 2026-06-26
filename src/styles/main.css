@@ -73,6 +73,16 @@ select {
   background-color: #5d50c6;
   color: #eeeeee;
 }
+.btn--secondary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+  color: #222831;
+  background-color: #eeeeee;
+}
 @media (max-width: 430px) {
   .btn {
     padding: 24px 32px;
@@ -278,13 +288,32 @@ select {
 
 .hero {
   position: relative;
-  padding: 0 9%;
+  padding: 4rem 0;
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: minmax(0, 420px) minmax(0, 772px);
   gap: 0;
+  justify-content: space-between;
 }
 @media (max-width: 1024px) {
   .hero {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    gap: 4rem;
+  }
+}
+.hero__content {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 43px;
+  max-height: 577px;
+  justify-content: left;
+}
+@media (max-width: 430px) {
+  .hero__content {
     grid-template-columns: 1fr;
   }
 }
@@ -292,6 +321,7 @@ select {
   top: 12rem;
   left: 12rem;
   position: absolute;
+  z-index: -1;
   opacity: 0.5;
   filter: blur(50px);
   transform: rotate(0deg);
@@ -310,6 +340,165 @@ select {
   opacity: 1;
   transform: rotate(0deg);
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.07), 0px 34px 75px 0px rgba(0, 0, 0, 0.07), 0px 137px 137px 0px rgba(0, 0, 0, 0.06), 0px 308px 185px 0px rgba(0, 0, 0, 0.04), 0px 548px 219px 0px rgba(0, 0, 0, 0.01), 0px 856px 240px 0px rgba(0, 0, 0, 0);
+}
+.hero__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 120%;
+  color: #000000;
+  font-family: "Circular Std", sans-serif;
+}
+@media (width > 430px) {
+  .hero__title {
+    font-size: 3.5rem;
+  }
+}
+@media (width > 1024px) {
+  .hero__title {
+    font-size: 4.3125rem;
+  }
+}
+.hero__title--accent {
+  color: #f85e9f;
+}
+.hero__description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(25, 24, 37, 0.5019607843);
+  line-height: 160%;
+  font-family: "Inter", sans-serif;
+}
+@media (width > 430px) {
+  .hero__description {
+    font-size: 1.125rem;
+  }
+}
+.hero__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+.hero__gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+  flex-wrap: nowrap;
+  gap: 0;
+  position: relative;
+  width: 772px;
+  height: 713px;
+}
+.hero__bg-layer {
+  max-height: 287px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.hero__cards-container {
+  position: relative;
+  width: 575px;
+  height: 640px;
+}
+.hero__card-img--top {
+  width: 272px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 32px;
+}
+.hero__card-img--bottom {
+  width: 272px;
+  height: 300px;
+  border-radius: 32px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.hero__card-img--right {
+  width: 272px;
+  border-radius: 32px;
+  height: 400px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hero__floating-icon {
+  position: absolute;
+  border-radius: 100px;
+}
+.hero__floating-icon--send {
+  background-color: #f85e9f;
+  height: 64px;
+  padding: 18px;
+  width: 64px;
+  top: 42%;
+  left: 0;
+  transform: translateX(-70%);
+}
+.hero__floating-icon--contact {
+  bottom: 0;
+  right: 135px;
+  background-color: #f85e9f;
+  height: 64px;
+  padding: 18px;
+  width: 64px;
+}
+.hero__floating-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  height: 56px;
+  width: 166px;
+  background-color: #ffffff;
+  right: 0;
+  transform: translateX(50%);
+  top: 413px;
+}
+.hero__floating-icon--triangle {
+  position: absolute;
+  top: 721px;
+  left: 0;
+  transform: translateX(-95px);
+}
+@media (width <= 1024px) {
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 43px;
+    text-align: center;
+  }
+  .hero__title {
+    width: 600px;
+  }
+  .hero__description {
+    width: 430px;
+  }
+  .hero__floating-icon--triangle {
+    position: absolute;
+    top: auto;
+    left: 40px;
+    bottom: 12px;
+  }
+}
+@media (max-width: 430px) {
+  .hero__floating-icon--triangle {
+    display: none;
+  }
+}
+
+.main {
+  padding: 0 9%;
 }
 
 /*# sourceMappingURL=main.css.map */

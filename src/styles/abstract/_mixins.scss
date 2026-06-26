@@ -44,6 +44,7 @@
     gap: $gap;
 
     @media (max-width: #{$breakpoint}) {
-        grid-template-columns: 1fr;
+        @include flex($direction: column-reverse, $align: center);
+        gap: 4rem;
     }
 }
