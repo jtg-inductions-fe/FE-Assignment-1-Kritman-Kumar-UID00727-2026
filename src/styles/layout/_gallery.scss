@@ -1,0 +1,106 @@
+// ----------------------------------------------------------------------
+//       import global utilities (functions, mixins, variables )
+// ----------------------------------------------------------------------
+@use '../abstract/functions' as fn;
+@use '../abstract/mixins' as mx;
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+// ----------------------------------------------------------------------
+//       Forward reusable UI
+// ----------------------------------------------------------------------
+@forward '../components/button';
+
+.gallery {
+    @include mx.flex($justify: center, $align: end);
+    position: relative;
+    width: 772px;
+    height: 713px;
+
+    &__bg-layer {
+        max-height: 287px;
+        position: absolute;
+        width: 100%;
+        top: 0;
+    }
+    &__cards-container {
+        position: relative;
+        width: 575px;
+        height: 640px;
+        margin-right: 15px;
+    }
+
+    &__card-img--top {
+        width: 272px;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 32px;
+    }
+    &__card-img--bottom {
+        width: 272px;
+        height: 300px;
+        border-radius: 32px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    &__card-img--right {
+        width: 272px;
+        border-radius: 32px;
+        height: 400px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__floating-icon {
+        position: absolute;
+        border-radius: 100px;
+    }
+
+    &__floating-icon--send {
+        background-color: v.$color-accent;
+        height: 64px;
+        padding: 18px;
+        width: 64px;
+        top: 42%;
+        left: 0;
+        transform: translateX(-50%);
+    }
+
+    &__floating-icon--contact {
+        bottom: 0;
+        right: 130px;
+        background-color: v.$color-accent;
+        height: 64px;
+        padding: 18px;
+        width: 64px;
+    }
+
+    &__floating-badge {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 32px;
+        height: 56px;
+        width: 166px;
+        background-color: v.$bg-primary;
+        right: 0;
+        transform: translateX(55%);
+        top: 415px;
+    }
+
+    @media (width < v.$breakpoint-desktop) {
+        &__gallery {
+            @include mx.flex($justify: center, $align: end);
+            position: relative;
+            max-width: 772px;
+            width: 100%;
+            max-height: 713px;
+        }
+    }
+}

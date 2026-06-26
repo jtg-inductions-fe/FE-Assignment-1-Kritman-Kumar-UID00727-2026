@@ -1,0 +1,82 @@
+// ----------------------------------------------------------------------
+//       import global utilities (functions, mixins, variables )
+// ----------------------------------------------------------------------
+@use '../abstract/functions' as fn;
+@use '../abstract/mixins' as mx;
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+// ----------------------------------------------------------------------
+//       Forward reusable UI
+// ----------------------------------------------------------------------
+@forward '../components/button';
+
+.content {
+    @include mx.grid($cols: 1, $gap: 43px);
+    justify-content: left;
+
+    &__description--w-full {
+        display: block;
+    }
+
+    &__badge {
+        width: 224px;
+        height: 56px;
+        box-sizing: border-box;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+
+        padding: 16px 32px;
+        border-radius: 100px;
+
+        opacity: 1;
+        transform: rotate(0deg);
+
+        box-shadow:
+            0px 0px 0px 0px rgba(0, 0, 0, 0.07),
+            0px 34px 75px 0px rgba(0, 0, 0, 0.07),
+            0px 137px 137px 0px rgba(0, 0, 0, 0.06),
+            0px 308px 185px 0px rgba(0, 0, 0, 0.04),
+            0px 548px 219px 0px rgba(0, 0, 0, 0.01),
+            0px 856px 240px 0px rgba(0, 0, 0, 0);
+    }
+
+    &__title {
+        @include t.heading-xl();
+    }
+    &__title--accent {
+        color: v.$color-accent;
+    }
+
+    &__description {
+        @include t.text();
+    }
+
+    &__actions {
+        @include mx.flex($justify: left, $align: center, $gap: 1rem);
+    }
+
+    @media (width < v.$breakpoint-desktop) {
+        @include mx.flex(
+            $direction: column,
+            $justify: center,
+            $align: center,
+            $gap: 43px
+        );
+        text-align: center;
+
+        &__title {
+            max-width: 600px;
+        }
+
+        &__description {
+            max-width: 430px;
+        }
+
+        &__description--w-full {
+            display: inline;
+        }
+    }
+}
