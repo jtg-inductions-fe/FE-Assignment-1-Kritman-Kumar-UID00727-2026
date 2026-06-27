@@ -44,7 +44,7 @@
         }
     }
 
-    @media (min-width: #{500px}) {
+    @media (min-width: #{v.$breakpoint-mobile + 1px}) {
         @include mx.flex($justify: space-between, $align: center);
 
         position: relative;
@@ -62,8 +62,8 @@
 
         &__list--desktop {
             @include mx.flex($justify: space-between);
+
             display: flex;
-            width: 36%;
             min-width: 400px;
         }
     }

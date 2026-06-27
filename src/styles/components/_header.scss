@@ -6,12 +6,11 @@
 .header {
     position: sticky;
     top: 0;
-    width: 100%;
     z-index: 1000;
 
     background-color: v.$bg-primary;
 
-    @include mx.grid($cols: 1);
+    @include mx.flex($direction: column);
 
     margin-top: 0;
     padding: 0 4.5%;

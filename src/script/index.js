@@ -24,7 +24,8 @@ hamburgerEle.addEventListener('click', () =>
 
 // close the mobile navigation menu when close is button clicked or link clicked.
 asideEle.addEventListener('click', (e) => {
-    if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') return;
+    const clickableElement = e.target.closest('.sidebar__link, .sidebar__btn');
+    if (!clickableElement) return;
     toggleMenu(hamburgerEle, asideEle);
 });
 
