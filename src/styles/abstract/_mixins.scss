@@ -29,11 +29,10 @@
 /// @param {Length} $breakpoint [430] - Maximum screen width threshold where layout falls back to 1 column
 @mixin grid($cols: 3, $gap: 0px, $breakpoint: 430px) {
     display: grid;
-    grid-template-columns: repeat($cols, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: $gap;
 
-    // Automatically switch to a single column on smaller screens
-    @media (max-width: #{$breakpoint}) {
-        grid-template-columns: 1fr;
+    @media (min-width: #{$breakpoint + 1px}) {
+        grid-template-columns: repeat($cols, minmax(0, 1fr));
     }
 }

@@ -3,16 +3,18 @@
 
 .btn {
     @include t.text-link();
+
     border-radius: 100px;
-    padding: 1rem 2rem;
+    padding: 24px 32px;
     color: v.$color-primary;
     cursor: pointer;
+
     &--primary {
         background-color: v.$color-brand-pop;
         color: v.$color-bg-muted;
     }
 
-    @media (max-width: v.$breakpoint-mobile) {
-        padding: 24px 32px;
+    @media (min-width: #{v.$breakpoint-mobile + 1px}) {
+        padding: 1rem 2rem;
     }
 }

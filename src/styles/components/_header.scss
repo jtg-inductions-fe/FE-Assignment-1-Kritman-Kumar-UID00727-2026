@@ -1,31 +1,29 @@
-// ----------------------------------------------------------------------
-//       import global utilities (functions, mixins, variables )
-// ----------------------------------------------------------------------
 @use '../abstract/functions' as fn;
 @use '../abstract/mixins' as mx;
 @use '../abstract/variables' as v;
 @use '../base/typography' as t;
 
-// ----------------------------------------------------------------------
-//       Header layout
-// ----------------------------------------------------------------------
 .header {
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
-    margin-top: 2rem;
-    @include mx.flex($justify: center, $align: center);
-    padding: 0 9%;
+
     background-color: v.$bg-primary;
 
-    @media (width <= v.$breakpoint-tablet) {
-        margin-top: 0;
+    @include mx.grid($cols: 1);
+
+    margin-top: 0;
+    padding: 0 4.5%;
+
+    @media (min-width: #{v.$breakpoint-mobile + 1px}) {
         padding: 0 6.25%;
-        @include mx.grid($cols: 1);
     }
 
-    @media (max-width: v.$breakpoint-mobile) {
-        padding: 0 4.5%;
+    @media (min-width: #{v.$breakpoint-tablet + 1px}) {
+        @include mx.flex($justify: center, $align: center);
+
+        margin-top: 2rem;
+        padding: 0 9%;
     }
 }

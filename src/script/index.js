@@ -10,7 +10,7 @@ import {
 // ----------------------------------------------------------
 //                        DOM Element
 // ----------------------------------------------------------
-const hamburgerEle = document.querySelector('.nav__menu');
+const hamburgerEle = document.querySelector('.nav__toggle');
 const asideEle = document.querySelector('#hamburger-menu');
 
 // ----------------------------------------------------------

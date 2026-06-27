@@ -44,10 +44,9 @@
     <body>
         <header class="header">
             <nav class="nav" aria-label="Primary navigation">
-                <!-- Hamburger Menu Button  -->
                 <button
                     type="button"
-                    class="nav__menu"
+                    class="nav__toggle"
                     aria-label="open navigation menu"
                     aria-expanded="false"
                     aria-controls="hamburger-menu"
@@ -57,61 +56,59 @@
                         alt="hamburger menu icon"
                     />
                 </button>
-
-                <!-- website Logo -->
-                <a href="/" aria-label="Travel Point Home" class="logo">
+                <a
+                    href="/"
+                    aria-label="Travel Point Home"
+                    class="logo nav__logo"
+                >
                     <img
                         src="src/assets/icons/logo-main.png"
                         alt="Travel Point Logo"
                     />
                 </a>
-
-                <!-- Desktop Navigation Links -->
-                <ul class="nav__links--desktop" id="nav-links">
-                    <li class="nav--active">
-                        <a class="link" href="/">home</a>
+                <ul class="nav__list nav__list--desktop" id="nav-links">
+                    <li class="nav__item">
+                        <a class="nav__link nav__link--active" href="/">home</a>
                     </li>
                     <li>
-                        <a class="link" href="#discover">Discover</a>
+                        <a class="nav__link" href="#discover">Discover</a>
                     </li>
                     <li>
-                        <a class="link" href="#deals">Special Deals</a>
+                        <a class="nav__link" href="#deals">Special Deals</a>
                     </li>
                     <li>
-                        <a class="link" href="#contact">Contact</a>
+                        <a class="nav__link" href="#contact">Contact</a>
                     </li>
                 </ul>
-
-                <!-- Authentication Buttons -->
                 <div class="nav__auth" id="nav-auth">
-                    <button type="button" class="btn">Log In</button>
-                    <button type="button" class="btn btn--primary">
+                    <button type="button" class="btn btn nav__btn">
+                        Log In
+                    </button>
+                    <button type="button" class="btn btn nav__btn btn--primary">
                         Sign Up
                     </button>
                 </div>
             </nav>
-            <!-- 
-            ------------------------------------------------------------------------------------
-                        Mobile Sidebar Navigation 
-            ------------------------------------------------------------------------------------
-             -->
+
             <aside id="hamburger-menu" class="sidebar sidebar--disabled">
                 <!-- Sidebar Links -->
                 <ul class="sidebar__links">
                     <li>
-                        <button type="button" class="btn">X</button>
+                        <button type="button" class="btn sidebar__btn">
+                            X
+                        </button>
                     </li>
                     <li>
-                        <a class="link" href="/">home</a>
+                        <a class="sidebar__link" href="/">home</a>
                     </li>
                     <li>
-                        <a class="link" href="#discover">Discover</a>
+                        <a class="sidebar__link" href="#discover">Discover</a>
                     </li>
                     <li>
-                        <a class="link" href="#deals">Special Deals</a>
+                        <a class="sidebar__link" href="#deals">Special Deals</a>
                     </li>
                     <li>
-                        <a class="link" href="#contact">Contact</a>
+                        <a class="sidebar__link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </aside>

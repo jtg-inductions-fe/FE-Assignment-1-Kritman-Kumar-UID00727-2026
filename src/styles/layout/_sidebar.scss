@@ -1,58 +1,64 @@
-// ----------------------------------------------------------------------
-//       import global utilities (functions, mixins, variables )
-// ----------------------------------------------------------------------
 @use '../abstract/mixins' as mx;
 @use '../abstract/variables' as v;
 @use '../base/typography' as t;
 
-// ----------------------------------------------------------------------
-//       Forward reusable UI
-// ----------------------------------------------------------------------
 @forward '../components/button';
-@forward '../components/link';
 
-// ----------------------------------------------------------------------
-//       Mobile Sidebar (Hamburger Menu)
-// ----------------------------------------------------------------------
 .sidebar {
     position: fixed;
     z-index: 2000;
     top: 0;
+
     max-width: v.$breakpoint-mobile;
     width: 100%;
     height: 100dvh;
+
     background-color: v.$bg-primary;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0px 32px rgba(31, 38, 135, 0.37);
+    box-shadow: v.$shadow-soft;
 
     &__links {
         @include mx.grid($cols: 1);
         position: relative;
     }
 
-    & a {
+    &__link {
+        @include t.text-link();
+
+        position: relative;
         display: block;
+
         padding: 1rem;
+
+        text-transform: capitalize;
+
         color: v.$color-primary;
     }
 
-    & li:hover {
+    // Keeping exactly as in your original code.
+    &__link :hover {
+        color: v.$color-warning;
+    }
+
+    &__link:hover {
         transform: translateY(-2px);
         box-shadow:
             inset 0 1px 1px rgba(255, 255, 255, 0.4),
             0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
-    & button {
+    &__btn {
         @include t.heading-md();
+
         width: 100%;
         background-color: v.$color-accent;
     }
+
     &--disabled {
         display: none;
     }
 
-    @media (min-width: v.$breakpoint-tablet) {
+    @media (min-width: #{v.$breakpoint-tablet + 1px}) {
         display: none;
     }
 }

@@ -1,59 +1,70 @@
-// ----------------------------------------------------------------------
-//       import global utilities (functions, mixins, variables )
-// ----------------------------------------------------------------------
 @use '../abstract/functions' as fn;
 @use '../abstract/mixins' as mx;
 @use '../abstract/variables' as v;
 @use '../base/typography' as t;
 
-// ----------------------------------------------------------------------
-//       Header layout
-// ----------------------------------------------------------------------
 .nav {
-    @include mx.flex($justify: space-between, $align: center);
-    padding: 2rem 0;
+    @include mx.flex(
+        $direction: row-reverse,
+        $justify: space-between,
+        $align: center
+    );
+
+    position: static;
+    padding: 2.3rem 0;
     width: 100%;
-    &__links--desktop {
-        @include mx.flex($justify: space-between);
-        width: 36%;
-        min-width: 400px;
+
+    &__toggle {
+        display: block;
+        cursor: pointer;
     }
 
-    // highlight the active navigation link
-    &--active a {
-        color: v.$color-primary;
+    &__list--desktop {
+        display: none;
     }
 
-    // hide hamburger menu on desktop
-    @media (min-width: v.$breakpoint-tablet) {
-        &__menu {
-            display: none;
-        }
+    &__auth {
+        display: none;
+        left: 0;
     }
 
-    @media (width <= v.$breakpoint-tablet) {
+    &__link {
+        @include t.text-link();
+
         position: relative;
+        text-transform: capitalize;
+        color: v.$text-muted;
 
-        // display hamburger menu.
-        &__menu {
-            display: block;
-            cursor: pointer;
+        &:hover {
+            color: v.$color-warning;
         }
-        // hide desktop navigation links.
-        &__links--desktop {
-            display: none;
+
+        &--active {
+            color: v.$color-primary;
         }
     }
 
-    @media (max-width: v.$breakpoint-mobile) {
-        @include mx.flex($direction: row-reverse, $justify: space-between);
-        position: static;
-        padding: 2.3rem 0;
+    @media (min-width: #{500px}) {
+        @include mx.flex($justify: space-between, $align: center);
 
-        // hide authentication button on mobile.
+        position: relative;
+        padding: 2rem 0;
+
         &__auth {
+            display: flex;
+        }
+    }
+
+    @media (min-width: #{v.$breakpoint-tablet + 1px}) {
+        &__toggle {
             display: none;
-            left: 0;
+        }
+
+        &__list--desktop {
+            @include mx.flex($justify: space-between);
+            display: flex;
+            width: 36%;
+            min-width: 400px;
         }
     }
 }

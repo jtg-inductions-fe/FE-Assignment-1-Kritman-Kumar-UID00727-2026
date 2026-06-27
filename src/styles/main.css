@@ -3,33 +3,33 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 0;
-    padding: 0 9%;
     background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+    margin-top: 0;
+    padding: 0 4.5%;
 }
-@media (width <= 1024px) {
+@media (min-width: 431px) {
     .header {
-        margin-top: 0;
-        padding: 0 6.25%;
-        display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
-        gap: 0px;
     }
 }
-@media (width <= 1024px) and (max-width: 430px) {
+@media (min-width: 431px) {
     .header {
-        grid-template-columns: 1fr;
+        padding: 0 6.25%;
     }
 }
-@media (max-width: 430px) {
+@media (min-width: 1025px) {
     .header {
-        padding: 0 4.5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        margin-top: 2rem;
+        padding: 0 9%;
     }
 }
 
@@ -37,18 +37,21 @@
     display: block;
     width: 40px;
     aspect-ratio: 1/1;
+    position: absolute;
+    left: 3.7%;
+    transform: translateX(0%);
 }
-@media (width <= 1024px) {
+@media (min-width: 500px) {
     .logo {
-        position: absolute;
         left: 50%;
         transform: translateX(-50%);
     }
 }
-@media (max-width: 430px) {
+@media (min-width: 1025px) {
     .logo {
-        left: 3.7%;
-        transform: translateX(0%);
+        position: static;
+        left: auto;
+        transform: none;
     }
 }
 
@@ -58,7 +61,7 @@
     line-height: 120%;
     font-family: 'Circular Std', sans-serif;
     border-radius: 100px;
-    padding: 1rem 2rem;
+    padding: 24px 32px;
     color: #222831;
     cursor: pointer;
 }
@@ -66,41 +69,10 @@
     background-color: #5d50c6;
     color: #eeeeee;
 }
-@media (max-width: 430px) {
+@media (min-width: 431px) {
     .btn {
-        padding: 24px 32px;
+        padding: 1rem 2rem;
     }
-}
-
-.link {
-    font-size: 0.875rem;
-    font-weight: 700;
-    line-height: 120%;
-    font-family: 'Circular Std', sans-serif;
-    position: relative;
-    text-transform: capitalize;
-    color: rgba(25, 24, 37, 0.5019607843);
-    padding-bottom: 5px;
-    transition:
-        width 0.4s ease,
-        background-color 0.4s ease-in-out;
-}
-.link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0%;
-    height: 2px;
-    background-color: #ff5722;
-    transition: width 0.4s ease-in-out;
-}
-.link:hover {
-    color: #ff5722;
-}
-.link:hover::before {
-    width: 100%;
 }
 
 *,
@@ -160,58 +132,70 @@ select {
 
 .nav {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
     gap: 0;
-    padding: 2rem 0;
+    position: static;
+    padding: 2.3rem 0;
     width: 100%;
 }
-.nav__links--desktop {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-wrap: nowrap;
-    gap: 0;
-    width: 36%;
-    min-width: 400px;
+.nav__toggle {
+    display: block;
+    cursor: pointer;
 }
-.nav--active a {
+.nav__list--desktop {
+    display: none;
+}
+.nav__auth {
+    display: none;
+    left: 0;
+}
+.nav__link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 120%;
+    font-family: 'Circular Std', sans-serif;
+    position: relative;
+    text-transform: capitalize;
+    color: rgba(25, 24, 37, 0.5019607843);
+}
+.nav__link:hover {
+    color: #ff5722;
+}
+.nav__link--active {
     color: #222831;
 }
-@media (min-width: 1024px) {
-    .nav__menu {
-        display: none;
-    }
-}
-@media (width <= 1024px) {
-    .nav {
-        position: relative;
-    }
-    .nav__menu {
-        display: block;
-        cursor: pointer;
-    }
-    .nav__links--desktop {
-        display: none;
-    }
-}
-@media (max-width: 430px) {
+@media (min-width: 500px) {
     .nav {
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        position: relative;
+        padding: 2rem 0;
+    }
+    .nav__auth {
+        display: flex;
+    }
+}
+@media (min-width: 1025px) {
+    .nav__toggle {
+        display: none;
+    }
+    .nav__list--desktop {
+        display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
         flex-wrap: nowrap;
         gap: 0;
-        position: static;
-        padding: 2.3rem 0;
-    }
-    .nav__auth {
-        display: none;
-        left: 0;
+        display: flex;
+        width: 36%;
+        min-width: 400px;
     }
 }
 
@@ -228,27 +212,36 @@ select {
 }
 .sidebar__links {
     display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 0px;
     position: relative;
 }
-@media (max-width: 430px) {
+@media (min-width: 431px) {
     .sidebar__links {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 }
-.sidebar a {
+.sidebar__link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 120%;
+    font-family: 'Circular Std', sans-serif;
+    position: relative;
     display: block;
     padding: 1rem;
+    text-transform: capitalize;
     color: #222831;
 }
-.sidebar li:hover {
+.sidebar__link :hover {
+    color: #ff5722;
+}
+.sidebar__link:hover {
     transform: translateY(-2px);
     box-shadow:
         inset 0 1px 1px rgba(255, 255, 255, 0.4),
         0 4px 15px rgba(0, 0, 0, 0.1);
 }
-.sidebar button {
+.sidebar__btn {
     font-size: 1rem;
     font-weight: 700;
     line-height: 120%;
@@ -256,15 +249,15 @@ select {
     width: 100%;
     background-color: #f85e9f;
 }
-@media (width > 430px) {
-    .sidebar button {
+@media (min-width: 431px) {
+    .sidebar__btn {
         font-size: 1.4375rem;
     }
 }
 .sidebar--disabled {
     display: none;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .sidebar {
         display: none;
     }
