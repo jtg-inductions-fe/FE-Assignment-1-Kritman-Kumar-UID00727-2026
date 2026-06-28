@@ -12,14 +12,19 @@
 @forward '../components/button';
 
 .content {
-    @include mx.grid($cols: 1, $gap: 43px);
-    justify-content: left;
+    @include mx.flex($direction: column, $gap: 43px);
+
+    &__text {
+        @include mx.flex($direction: column, $gap: 43px);
+    }
 
     &__description--w-full {
         display: block;
     }
 
     &__badge {
+        @include t.text-link();
+        color: v.$color-accent;
         width: 224px;
         height: 56px;
         box-sizing: border-box;
@@ -55,10 +60,11 @@
     }
 
     &__actions {
-        @include mx.flex($justify: left, $align: center, $gap: 1rem);
+        @include mx.flex($justify: left, $align: center, $gap: 32px);
     }
 
     @media (width < v.$breakpoint-desktop) {
+        margin-top: 35px;
         @include mx.flex(
             $direction: column,
             $justify: center,
@@ -66,6 +72,10 @@
             $gap: 43px
         );
         text-align: center;
+
+        &__text {
+            @include mx.flex($direction: column, $gap: 43px, $align: center);
+        }
 
         &__title {
             max-width: 600px;
@@ -77,6 +87,19 @@
 
         &__description--w-full {
             display: inline;
+        }
+    }
+    @media (width <= v.$breakpoint-mobile) {
+        margin-top: auto;
+
+        gap: 24px;
+        &__actions {
+            @include mx.flex($direction: column, $gap: 24px);
+            width: 100%;
+        }
+
+        &__text {
+            @include mx.flex($direction: column, $align: center, $gap: 20px);
         }
     }
 }

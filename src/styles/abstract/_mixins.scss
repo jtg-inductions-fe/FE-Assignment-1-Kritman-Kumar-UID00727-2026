@@ -45,6 +45,6 @@
 
     @media (width < #{$breakpoint}) {
         @include flex($direction: column-reverse, $align: center);
-        gap: 4rem;
+        gap: 32px;
     }
 }

@@ -13,8 +13,7 @@
 
 .hero {
     position: relative;
-    padding: 4rem 0;
-
+    padding: 64px 0;
     @include mx.grid-aria(
         $cols: minmax(0, 420px) minmax(0, 772px),
         $breakpoint: v.$breakpoint-desktop
@@ -45,14 +44,19 @@
         &__floating-icon--triangle {
             position: absolute;
             top: auto;
-            left: 40px;
+            left: 100px;
             bottom: 12px;
         }
     }
 
     @media (max-width: v.$breakpoint-mobile) {
+        padding: 0;
         &__floating-icon--triangle {
             display: none;
         }
+    }
+
+    @media (width <= v.$breakpoint-mobile) {
+        margin-top: 33px;
     }
 }
