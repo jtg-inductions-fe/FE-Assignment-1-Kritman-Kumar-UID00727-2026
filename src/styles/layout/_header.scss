@@ -19,10 +19,7 @@
 
 // defines the overall header spacing and center navigation
 .header {
-    position: sticky;
-    top: 0;
     width: 100%;
-    z-index: 1000;
     margin-top: 2rem;
     @include mx.flex($justify: center, $align: center);
     padding: 0 9%;

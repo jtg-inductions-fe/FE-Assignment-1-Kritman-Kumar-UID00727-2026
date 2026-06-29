@@ -1,21 +1,18 @@
 @use '../abstract/variables' as v;
-.brand {
+@use '../abstract/mixins' as mx;
+.brand-section {
     margin-top: 72px;
     padding: 0 16px;
 
     &__list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 24px;
+        @include mx.flex($wrap: wrap, $justify: center, $gap: 24px);
         row-gap: 32px;
     }
     &__item-img {
         max-height: 20px;
     }
 
-    @media (min-width: #{v.$breakpoint-mobile+1}) {
-        margin-top: auto;
+    @media (width > v.$breakpoint-mobile) {
         padding: 64px 0;
         max-width: 567px;
         margin: 0 auto;
@@ -30,7 +27,7 @@
         }
     }
 
-    @media (min-width:#{v.$breakpoint-tablet+1}) {
+    @media (width > v.$breakpoint-tablet) {
         max-width: 1192px;
         padding: 60px 0;
 
