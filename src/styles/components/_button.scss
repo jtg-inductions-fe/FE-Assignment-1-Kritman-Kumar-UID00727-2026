@@ -7,7 +7,7 @@
     @include t.text-link();
 
     border-radius: v.$radius-pill;
-    padding: fn.rem(24px) 4rem;
+    padding: 24px 64px;
     color: v.$color-primary;
     cursor: pointer;
 
@@ -27,6 +27,6 @@
         width: 100%;
     }
     @media (min-width: #{v.$breakpoint-mobile + 1px}) {
-        padding: 1rem 2rem;
+        padding: 16px 32px;
     }
 }

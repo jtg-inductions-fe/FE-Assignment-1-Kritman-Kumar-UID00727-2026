@@ -10,13 +10,9 @@
 //       Forward reusable UI
 // ----------------------------------------------------------------------
 @forward '../components/button';
+@forward '../components/card-image.scss';
 
 .gallery {
-    @include mx.flex($justify: center, $align: end);
-    position: relative;
-    width: 772px;
-    height: 713px;
-
     &__bg-layer {
         max-height: 287px;
         position: absolute;
@@ -30,35 +26,9 @@
         margin-right: 15px;
     }
 
-    &__card-img--top {
-        width: 272px;
-        height: 300px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 32px;
-    }
-    &__card-img--bottom {
-        width: 272px;
-        height: 300px;
-        border-radius: 32px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
-    &__card-img--right {
-        width: 272px;
-        border-radius: 32px;
-        height: 400px;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
     &__floating-icon {
         position: absolute;
-        border-radius: 100px;
+        border-radius: v.$radius-pill;
     }
 
     &__floating-icon--send {
@@ -81,10 +51,7 @@
     }
 
     &__floating-badge {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
+        @include mx.flex($justify: center, $align: center, $gap: 8px);
         padding: 16px 32px;
         height: 56px;
         width: 166px;
@@ -109,10 +76,6 @@
     }
 
     @media (v.$breakpoint-mobile < width < v.$breakpoint-tablet) {
-        width: 100%;
-        max-width: 772px;
-        height: auto;
-
         &__bg-layer {
             max-height: 40.25%;
             width: 100%;
@@ -125,25 +88,6 @@
             aspect-ratio: 575 / 640;
         }
 
-        &__card-img--top {
-            width: 47.3%;
-            aspect-ratio: 272 / 300;
-            object-fit: cover;
-            position: absolute;
-        }
-
-        &__card-img--bottom {
-            width: 47.3%;
-            aspect-ratio: 272 / 300;
-            object-fit: cover;
-        }
-
-        &__card-img--right {
-            width: 47.3%;
-            aspect-ratio: 272 / 400;
-            object-fit: cover;
-        }
-
         &__floating-icon--contact {
             right: 22.61%;
         }
@@ -154,9 +98,6 @@
     }
 
     @media (width <= v.$breakpoint-mobile) {
-        max-width: 396px;
-        max-height: 366px;
-
         &__bg-layer {
             max-height: 147px;
             width: 100%;
@@ -165,31 +106,6 @@
         &__cards-container {
             max-width: 295px;
             height: 324px;
-        }
-
-        &__card-img--top {
-            max-width: 140px;
-            height: 154px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: 16px;
-        }
-        &__card-img--bottom {
-            max-width: 140px;
-            height: 154px;
-            border-radius: 16px;
-        }
-
-        &__card-img--right {
-            max-width: 140px;
-            border-radius: 16px;
-            height: 205px;
-        }
-
-        &__floating-icon {
-            position: absolute;
-            border-radius: 100px;
         }
 
         &__floating-icon--send {

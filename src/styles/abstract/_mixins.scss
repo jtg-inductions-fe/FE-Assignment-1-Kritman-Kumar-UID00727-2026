@@ -20,13 +20,12 @@
     flex-wrap: $wrap;
     gap: $gap;
 }
-
 /// Responsive Grid Layout Mixin
-/// Generates a CSS Grid container that automatically collapses to a single column on smaller viewports.
-///
-/// @param {Number} $cols [3] - Total number of equal-width columns on desktop screens
-/// @param {Length} $gap [0] - Spacing size between grid rows and columns (px, rem, em, etc.)
-/// @param {Length} $breakpoint [430] - Maximum screen width threshold where layout falls back to 1 column
+/// Generates a CSS Grid container with custom column tracks that collapses
+/// into a flexbox single column on smaller viewports.
+/// @param {List | String | Length} $cols [1fr] - Column structure. Accepts single tracks, repeat counts, or custom ratios (e.g., 330px 700px 100px).
+/// @param {Length} $gap [0] - Spacing size between grid rows and columns (e.g., px, rem, em).
+/// @param {Length} $breakpoint [430px] - Maximum viewport width below which the grid collapses.
 @mixin grid($cols: 3, $gap: 0px, $breakpoint: 430px) {
     display: grid;
     grid-template-columns: 1fr;
@@ -34,16 +33,5 @@
 
     @media (min-width: #{$breakpoint + 1px}) {
         grid-template-columns: repeat($cols, minmax(0, 1fr));
-    }
-}
-
-@mixin grid-aria($cols: 1fr, $gap: 0, $breakpoint: 430px) {
-    display: grid;
-    grid-template-columns: $cols;
-    gap: $gap;
-
-    @media (width < #{$breakpoint}) {
-        @include flex($direction: column-reverse, $align: center);
-        gap: 32px;
     }
 }

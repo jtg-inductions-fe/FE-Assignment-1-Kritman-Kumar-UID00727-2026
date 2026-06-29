@@ -1,0 +1,15 @@
+@use '../base/typography' as t;
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+.badge {
+    @include t.text-link();
+    @include mx.flex($align: center, $justify: center, $gap: 16px);
+    color: v.$color-accent;
+    width: 224px;
+    height: 56px;
+    box-sizing: border-box;
+    padding: 16px 32px;
+    border-radius: v.$radius-pill;
+    box-shadow: v.$shadow-ambient-deep;
+}
