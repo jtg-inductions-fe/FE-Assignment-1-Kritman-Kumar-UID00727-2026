@@ -1,0 +1,70 @@
+@use '../abstract/functions' as fn;
+@use '../abstract/mixins' as mx;
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+.nav {
+    @include mx.flex(
+        $direction: row-reverse,
+        $justify: space-between,
+        $align: center
+    );
+
+    position: static;
+    padding: 2.3rem 0;
+    width: 100%;
+
+    &__toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    &__list--desktop {
+        display: none;
+    }
+
+    &__auth {
+        display: none;
+        left: 0;
+    }
+
+    &__link {
+        @include t.text-link();
+
+        position: relative;
+        text-transform: capitalize;
+        color: v.$text-muted;
+
+        &:hover {
+            color: v.$color-warning;
+        }
+
+        &--active {
+            color: v.$color-primary;
+        }
+    }
+
+    @media (min-width: #{v.$breakpoint-mobile + 1px}) {
+        @include mx.flex($justify: space-between, $align: center);
+
+        position: relative;
+        padding: 2rem 0;
+
+        &__auth {
+            display: flex;
+        }
+    }
+
+    @media (min-width: #{v.$breakpoint-tablet + 1px}) {
+        &__toggle {
+            display: none;
+        }
+
+        &__list--desktop {
+            @include mx.flex($justify: space-between);
+
+            display: flex;
+            min-width: 400px;
+        }
+    }
+}

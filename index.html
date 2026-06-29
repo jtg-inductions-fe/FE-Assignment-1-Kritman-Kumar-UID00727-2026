@@ -31,6 +31,12 @@
             href="https://cdn.jsdelivr.net/npm/@vetixy/circular-std@1.0.0/dist/index.min.css"
         />
 
+        <!-- font-awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        />
+
         <!-- Google Fonts (Inter) -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,10 +50,9 @@
     <body>
         <header class="header">
             <nav class="nav" aria-label="Primary navigation">
-                <!-- Hamburger Menu Button  -->
                 <button
                     type="button"
-                    class="nav__menu btn--none"
+                    class="nav__toggle"
                     aria-label="open navigation menu"
                     aria-expanded="false"
                     aria-controls="hamburger-menu"
@@ -57,77 +62,59 @@
                         alt="hamburger menu icon"
                     />
                 </button>
-
-                <!-- website Logo -->
                 <a
                     href="/"
                     aria-label="Travel Point Home"
-                    class="nav__logo a--none"
+                    class="logo nav__logo"
                 >
                     <img
                         src="src/assets/icons/logo-main.png"
                         alt="Travel Point Logo"
                     />
                 </a>
-
-                <!-- Desktop Navigation Links -->
-                <ul class="nav__links-lg nav__links--lg" id="nav-links">
-                    <li class="li--none nav--active">
-                        <a class="a--none nav--links" href="/">home</a>
+                <ul class="nav__list nav__list--desktop" id="nav-links">
+                    <li class="nav__item">
+                        <a class="nav__link nav__link--active" href="/">home</a>
                     </li>
-                    <li class="li--none">
-                        <a class="a--none nav--links" href="#discover"
-                            >Discover</a
-                        >
+                    <li>
+                        <a class="nav__link" href="#discover">Discover</a>
                     </li>
-                    <li class="li--none">
-                        <a class="a--none nav--links" href="#deals"
-                            >Special Deals</a
-                        >
+                    <li>
+                        <a class="nav__link" href="#deals">Special Deals</a>
                     </li>
-                    <li class="li--none">
-                        <a class="a--none nav--links" href="#contact"
-                            >Contact</a
-                        >
+                    <li>
+                        <a class="nav__link" href="#contact">Contact</a>
                     </li>
                 </ul>
-
-                <!-- Authentication Buttons -->
                 <div class="nav__auth" id="nav-auth">
-                    <button type="button" class="btn btn--none">Log In</button>
-                    <button type="button" class="btn btn--primary btn--none">
+                    <button type="button" class="btn btn nav__btn">
+                        Log In
+                    </button>
+                    <button type="button" class="btn btn nav__btn btn--primary">
                         Sign Up
                     </button>
                 </div>
             </nav>
-            <!-- 
-            ------------------------------------------------------------------------------------
-                        Mobile Sidebar Navigation 
-            ------------------------------------------------------------------------------------
-             -->
-            <aside id="hamburger-menu" class="aside aside--disabled">
+
+            <aside id="hamburger-menu" class="sidebar sidebar--disabled">
                 <!-- Sidebar Links -->
-                <ul class="aside__links">
-                    <li class="li--none">
-                        <button type="button" class="btn">X</button>
+                <ul class="sidebar__links">
+                    <li>
+                        <button type="button" class="btn sidebar__btn">
+                            <i class="fa-solid fa-x"></i>
+                        </button>
                     </li>
-                    <li class="li--none">
-                        <a class="a--none nav--links" href="/">home</a>
+                    <li>
+                        <a class="sidebar__link" href="/">home</a>
                     </li>
-                    <li class="li--none">
-                        <a class="a--none nav--links" href="#discover"
-                            >Discover</a
-                        >
+                    <li>
+                        <a class="sidebar__link" href="#discover">Discover</a>
                     </li>
-                    <li class="li--none">
-                        <a class="a--none nav--links" href="#deals"
-                            >Special Deals</a
-                        >
+                    <li>
+                        <a class="sidebar__link" href="#deals">Special Deals</a>
                     </li>
-                    <li class="li--none">
-                        <a class="a--none nav--links" href="#contact"
-                            >Contact</a
-                        >
+                    <li>
+                        <a class="sidebar__link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </aside>
