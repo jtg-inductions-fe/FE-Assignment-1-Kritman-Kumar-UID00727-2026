@@ -1,1 +1,269 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 0;
+  margin-top: 0;
+  padding: 0 4.5%;
+}
+@media (min-width: 431px) {
+  .header {
+    padding: 0 6.25%;
+  }
+}
+@media (min-width: 1025px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    margin-top: 2rem;
+    padding: 0 9%;
+  }
+}
+
+.logo {
+  display: block;
+  width: 40px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  left: 3.7%;
+  transform: translateX(0%);
+}
+@media (min-width: 500px) {
+  .logo {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (min-width: 1025px) {
+  .logo {
+    position: static;
+    left: auto;
+    transform: none;
+  }
+}
+
+.btn {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 120%;
+  font-family: "Circular Std", sans-serif;
+  border-radius: 100px;
+  padding: 1.5rem 4rem;
+  color: #222831;
+  cursor: pointer;
+}
+.btn--primary {
+  background-color: #5d50c6;
+  color: #eeeeee;
+}
+@media (min-width: 431px) {
+  .btn {
+    padding: 1rem 2rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Locks the body whenever the aside does NOT have the disabled class */
+body:has(#hamburger-menu:not(.sidebar--disabled)) {
+  overflow: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  background: none;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  position: static;
+  padding: 2.3rem 0;
+  width: 100%;
+}
+.nav__toggle {
+  display: block;
+  cursor: pointer;
+}
+.nav__list--desktop {
+  display: none;
+}
+.nav__auth {
+  display: none;
+  left: 0;
+}
+.nav__link {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 120%;
+  font-family: "Circular Std", sans-serif;
+  position: relative;
+  text-transform: capitalize;
+  color: rgba(25, 24, 37, 0.5019607843);
+}
+.nav__link:hover {
+  color: #ff5722;
+}
+.nav__link--active {
+  color: #222831;
+}
+@media (min-width: 431px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    position: relative;
+    padding: 2rem 0;
+  }
+  .nav__auth {
+    display: flex;
+  }
+}
+@media (min-width: 1025px) {
+  .nav__toggle {
+    display: none;
+  }
+  .nav__list--desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 0;
+    display: flex;
+    min-width: 400px;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  max-width: 430px;
+  width: 100%;
+  height: 100dvh;
+  background-color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0px 32px rgba(31, 38, 135, 0.37);
+}
+.sidebar__links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0px;
+  position: relative;
+}
+@media (min-width: 431px) {
+  .sidebar__links {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+.sidebar__link {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 120%;
+  font-family: "Circular Std", sans-serif;
+  display: block;
+  padding: 1.5rem;
+  text-transform: capitalize;
+  color: #222831;
+}
+.sidebar__link :hover {
+  color: #ff5722;
+}
+.sidebar__link:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.sidebar__btn {
+  background-color: #f85e9f;
+  color: #eeeeee;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3000;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.sidebar__btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+.sidebar__btn:active {
+  transform: scale(0.95);
+}
+.sidebar--disabled {
+  display: none;
+}
+@media (min-width: 1025px) {
+  .sidebar {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -1,1 +1,12 @@
-// TODO: Add styles as per the requirement
+// ------------------ Components ------------------
+@forward './components/header';
+@forward './components/logo';
+@forward './components/button';
+
+// ------------------ Base ------------------
+@forward './base/reset';
+@forward './base/typography';
+
+// ------------------ layout ------------------
+@forward './layout/nav.scss';
+@forward './layout/sidebar.scss';

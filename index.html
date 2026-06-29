@@ -31,6 +31,12 @@
             href="https://cdn.jsdelivr.net/npm/@vetixy/circular-std@1.0.0/dist/index.min.css"
         />
 
+        <!-- font-awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        />
+
         <!-- Google Fonts (Inter) -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,6 +48,83 @@
         <link rel="stylesheet" href="src/styles/main.css" />
     </head>
     <body>
+        <header class="header">
+            <nav class="nav" aria-label="Primary navigation">
+                <button
+                    type="button"
+                    class="nav__toggle"
+                    aria-label="open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="hamburger-menu"
+                >
+                    <img
+                        src="src/assets/icons/hamburger.png"
+                        alt="hamburger menu icon"
+                    />
+                </button>
+                <a
+                    href="/"
+                    aria-label="Travel Point Home"
+                    class="logo nav__logo"
+                >
+                    <img
+                        src="src/assets/icons/logo-main.png"
+                        alt="Travel Point Logo"
+                    />
+                </a>
+                <ul class="nav__list nav__list--desktop" id="nav-links">
+                    <li class="nav__item">
+                        <a class="nav__link nav__link--active" href="/">home</a>
+                    </li>
+                    <li>
+                        <a class="nav__link" href="#discover">Discover</a>
+                    </li>
+                    <li>
+                        <a class="nav__link" href="#deals">Special Deals</a>
+                    </li>
+                    <li>
+                        <a class="nav__link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav__auth" id="nav-auth">
+                    <button type="button" class="btn btn nav__btn">
+                        Log In
+                    </button>
+                    <button type="button" class="btn btn nav__btn btn--primary">
+                        Sign Up
+                    </button>
+                </div>
+            </nav>
+
+            <aside id="hamburger-menu" class="sidebar sidebar--disabled">
+                <!-- Sidebar Links -->
+                <ul class="sidebar__links">
+                    <li>
+                        <button type="button" class="btn sidebar__btn">
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <a class="sidebar__link" href="/">home</a>
+                    </li>
+                    <li>
+                        <a class="sidebar__link" href="#discover">Discover</a>
+                    </li>
+                    <li>
+                        <a class="sidebar__link" href="#deals">Special Deals</a>
+                    </li>
+                    <li>
+                        <a class="sidebar__link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </aside>
+        </header>
+
+        <!-- 
+        ---------------------------------------------------------------------------------
+                                    Main JavaScript Entry Point
+        ---------------------------------------------------------------------------------
+         -->
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
