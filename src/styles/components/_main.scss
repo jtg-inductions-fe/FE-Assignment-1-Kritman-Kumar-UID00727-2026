@@ -5,4 +5,9 @@
     @media (max-width: v.$breakpoint-tablet) {
         padding: 0 3%;
     }
+    @media (max-width: v.$breakpoint-mobile) {
+        padding: 0 3%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
 }
