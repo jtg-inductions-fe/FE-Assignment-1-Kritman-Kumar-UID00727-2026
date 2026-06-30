@@ -1,0 +1,17 @@
+export const travelPointData = {
+    state: [
+        { number: '500+', label: 'Holiday Package' },
+        {
+            number: '100+',
+            label: 'Luxury Hotel',
+        },
+        {
+            number: '7',
+            label: 'Premium Airlines',
+        },
+        {
+            number: '2k+',
+            label: 'Happy Customer',
+        },
+    ],
+};

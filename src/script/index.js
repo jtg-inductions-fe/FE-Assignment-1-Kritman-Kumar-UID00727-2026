@@ -6,6 +6,7 @@ import {
     handleKeyPress,
     handleOutsideClick,
 } from './components/hamburgerMenu.js';
+import { showTravelPointData } from './components/travelPoint.js';
 import { toggleClass } from './data/navItem.js';
 
 // ----------------------------------------------------------
@@ -37,3 +38,7 @@ window.addEventListener('keyup', (e) =>
 window.addEventListener('click', (e) =>
     handleOutsideClick(e, hamburgerEle, asideEle, toggleClass),
 );
+
+(function init() {
+    showTravelPointData();
+})();
