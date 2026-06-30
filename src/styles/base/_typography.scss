@@ -27,6 +27,18 @@
         font-size: fn.rem(44px);
     }
 }
+@mixin heading-custom($default: 28px, $md: 28px, $lg: 28px) {
+    font-size: fn.rem($default);
+    font-weight: 700;
+    line-height: 120%;
+    font-family: 'Circular Std', sans-serif;
+    @media (width > v.$breakpoint-mobile) {
+        font-size: fn.rem($md);
+    }
+    @media (width > v.$breakpoint-tablet) {
+        font-size: fn.rem($lg);
+    }
+}
 
 @mixin heading-md() {
     font-size: fn.rem(16px);
@@ -69,7 +81,7 @@
     font-family: 'Circular Std', sans-serif;
 }
 @mixin text-bold() {
-    font-size: 1rem;
+    font-size: fn.rem(18px);
     font-weight: 450;
     line-height: 160%;
     font-family: 'Circular Std', sans-serif;

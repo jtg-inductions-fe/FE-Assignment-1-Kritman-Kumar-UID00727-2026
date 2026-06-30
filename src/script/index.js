@@ -1,6 +1,8 @@
 // ----------------------------------------------------------
 //                        imports
 // ----------------------------------------------------------
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs';
+
 import {
     toggleMenu,
     handleKeyPress,
@@ -8,7 +10,6 @@ import {
 } from './components/hamburgerMenu.js';
 import { showTravelPointData } from './components/travelPoint.js';
 import { toggleClass } from './data/navItem.js';
-
 // ----------------------------------------------------------
 //                        DOM Element
 // ----------------------------------------------------------
@@ -38,6 +39,10 @@ window.addEventListener('keyup', (e) =>
 window.addEventListener('click', (e) =>
     handleOutsideClick(e, hamburgerEle, asideEle, toggleClass),
 );
+
+new Swiper('.swiper', {
+    loop: true,
+});
 
 (function init() {
     showTravelPointData();

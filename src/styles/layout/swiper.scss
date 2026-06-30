@@ -1,0 +1,14 @@
+@use '../abstract/variables' as v;
+.swiper {
+    max-width: 1192px;
+    position: relative;
+    width: 100%;
+    &-pagination-bullet {
+        width: 24px;
+        height: 24px;
+        background-color: v.$text-muted;
+    }
+    &-pagination-bullet-active {
+        background-color: v.$color-warning;
+    }
+}

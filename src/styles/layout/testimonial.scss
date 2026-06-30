@@ -1,0 +1,40 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+@use '../base/typography' as t;
+
+@forward '../components/user.scss';
+@forward '../components/rating.scss';
+@forward './swiper.scss';
+
+.testimonials-section {
+    position: relative;
+    padding: 64px 32px;
+    margin-top: 55px;
+    @include mx.flex($direction: column, $gap: 64px);
+
+    &__heading {
+        @include mx.flex($direction: column, $align: center, $gap: 16px);
+    }
+    &__label {
+        @include t.heading-md();
+        color: v.$color-accent;
+        letter-spacing: 20%;
+        text-transform: uppercase;
+    }
+    &__title {
+        @include t.heading-lg();
+    }
+
+    @media (min-width: v.$breakpoint-tablet) {
+        margin-top: 0;
+        position: relative;
+        top: -20px;
+        padding: 0;
+        gap: 56px;
+    }
+    @media (min-width: v.$breakpoint-desktop) {
+        top: 30px;
+        padding: 64px 0;
+        gap: 56px;
+    }
+}
