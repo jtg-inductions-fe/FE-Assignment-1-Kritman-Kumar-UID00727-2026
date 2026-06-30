@@ -75,10 +75,11 @@
 
     @media (min-width: v.$breakpoint-desktop) {
         flex-direction: row;
+        justify-content: space-between;
         &__body {
             max-width: 455px;
             position: relative;
-            right: 70px;
+            right: 120px;
             top: 15px;
         }
         &__header {
