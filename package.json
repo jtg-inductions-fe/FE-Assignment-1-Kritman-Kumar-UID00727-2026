@@ -53,6 +53,7 @@
         "*.{html,scss,json}": "prettier --check"
     },
     "dependencies": {
+        "@glidejs/glide": "^3.7.1",
         "@splidejs/splide": "^4.1.4"
     }
 }

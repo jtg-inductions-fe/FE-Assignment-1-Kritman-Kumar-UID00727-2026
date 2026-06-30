@@ -36,14 +36,26 @@ window.addEventListener('keyup', (e) =>
     handleKeyPress(e, hamburgerEle, asideEle, toggleClass),
 );
 
+// Close the mobile navigation menu when the user clicks outside the screen.
 window.addEventListener('click', (e) =>
     handleOutsideClick(e, hamburgerEle, asideEle, toggleClass),
 );
 
+// Library setup for the testimonials section
 new Swiper('.swiper', {
     loop: true,
+
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 });
 
+// Show the Travel Point data immediately.
 (function init() {
     showTravelPointData();
 })();

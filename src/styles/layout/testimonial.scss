@@ -9,8 +9,13 @@
 .testimonials-section {
     position: relative;
     padding: 64px 32px;
+    padding-bottom: 100px;
     margin-top: 55px;
     @include mx.flex($direction: column, $gap: 64px);
+
+    &--layer {
+        display: none;
+    }
 
     &__heading {
         @include mx.flex($direction: column, $align: center, $gap: 16px);
@@ -27,14 +32,16 @@
 
     @media (min-width: v.$breakpoint-tablet) {
         margin-top: 0;
-        position: relative;
         top: -20px;
         padding: 0;
+        padding-bottom: 100px;
+
         gap: 56px;
     }
     @media (min-width: v.$breakpoint-desktop) {
         top: 30px;
         padding: 64px 0;
+        padding-bottom: 100px;
         gap: 56px;
     }
 }

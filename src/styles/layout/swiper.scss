@@ -2,13 +2,48 @@
 .swiper {
     max-width: 1192px;
     position: relative;
+    gap: 56px;
     width: 100%;
+
     &-pagination-bullet {
         width: 24px;
         height: 24px;
-        background-color: v.$text-muted;
     }
+
     &-pagination-bullet-active {
         background-color: v.$color-warning;
+    }
+
+    &-button {
+        background: #000;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        padding: 20px;
+        color: white;
+        top: 13% !important;
+    }
+    &-button-prev {
+        background-color: v.$bg-primary;
+        color: v.$color-primary;
+    }
+    &-button-next {
+        background-color: v.$color-brand-pop;
+        color: v.$bg-primary;
+    }
+
+    @media (min-width: v.$breakpoint-tablet) {
+        &-button {
+            width: 100px;
+            height: 100px;
+            padding: 35px;
+            top: 35% !important;
+        }
+        &-button-prev {
+            left: 50px !important;
+        }
+        &-button-next {
+            right: 60px !important;
+        }
     }
 }

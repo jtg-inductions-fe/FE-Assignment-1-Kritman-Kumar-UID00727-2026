@@ -3,6 +3,6 @@
 .main {
     @media (max-width: v.$breakpoint-mobile) {
         margin: 0 auto;
-        overflow: hidden;
+        overflow-x: scroll;
     }
 }
