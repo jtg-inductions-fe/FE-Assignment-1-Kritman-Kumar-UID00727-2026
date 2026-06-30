@@ -4,7 +4,9 @@
 
 .badge {
     @include t.text-link();
+
     @include mx.flex($align: center, $justify: center, $gap: 16px);
+
     color: v.$color-accent;
     width: 224px;
     height: 56px;
