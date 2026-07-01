@@ -32,7 +32,7 @@
     grid-template-columns: 1fr;
     gap: $gap;
 
-    @media (min-width: #{$breakpoint + 1px}) {
+    @media (width > $breakpoint) {
         grid-template-columns: repeat($cols, minmax(0, 1fr));
     }
 }
@@ -48,7 +48,7 @@
     grid-template-columns: $cols;
     gap: $gap;
 
-    @media (width < #{$breakpoint}) {
+    @media (width <= $breakpoint) {
         @include flex($direction: column-reverse, $align: center);
         gap: 32px;
     }

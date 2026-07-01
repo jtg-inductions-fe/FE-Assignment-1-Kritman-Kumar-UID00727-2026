@@ -180,7 +180,7 @@ select {
     align-items: center;
     justify-content: space-between;
 }
-@media (width < 1440px) {
+@media (width <= 1440px) {
     .hero {
         display: flex;
         flex-direction: column-reverse;
@@ -293,7 +293,7 @@ select {
     gap: 0px;
     position: relative;
 }
-@media (min-width: 431px) {
+@media (width > 430px) {
     .sidebar__links {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
@@ -649,7 +649,7 @@ select {
         padding: 8px 16px;
         top: auto;
     }
-    .gallery__floating-icon-badge-icon {
+    .gallery__floating-badge-icon {
         width: 8px;
         height: 8px;
     }
