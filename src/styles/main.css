@@ -568,23 +568,19 @@ select {
 .gallery__floating-icon {
     position: absolute;
     border-radius: 100px;
-}
-.gallery__floating-icon--send {
     background-color: #f85e9f;
     height: 64px;
     padding: 18px;
     width: 64px;
+}
+.gallery__floating-icon--pos-left {
     top: 42%;
     left: 0;
     transform: translateX(-50%);
 }
-.gallery__floating-icon--contact {
+.gallery__floating-icon--pos-bottom {
     bottom: 0;
     right: 130px;
-    background-color: #f85e9f;
-    height: 64px;
-    padding: 18px;
-    width: 64px;
 }
 .gallery__floating-badge {
     display: flex;
@@ -618,7 +614,7 @@ select {
         margin-right: 1.94%;
         aspect-ratio: 575/640;
     }
-    .gallery__floating-icon--contact {
+    .gallery__floating-icon--pos-bottom {
         right: 22.61%;
     }
     .gallery__floating-badge {
@@ -634,27 +630,26 @@ select {
         max-width: 295px;
         height: 324px;
     }
-    .gallery__floating-icon--send {
+    .gallery__floating-icon {
         height: 32px;
         padding: 8px;
         width: 32px;
+    }
+    .gallery__floating-icon--pos-left {
         top: 42%;
     }
-    .gallery__floating-icon--contact {
+    .gallery__floating-icon--pos-bottom {
         right: 22%;
-        height: 32px;
-        padding: 8px;
-        width: 32px;
     }
     .gallery__floating-badge {
         height: 28px;
-        max-width: 85px;
+        min-width: 85px;
         font-size: 7px;
         bottom: 83px;
         padding: 8px 16px;
         top: auto;
     }
-    .gallery__floating-icon--location {
+    .gallery__floating-icon-badge-icon {
         width: 8px;
         height: 8px;
     }

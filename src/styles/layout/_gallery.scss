@@ -25,29 +25,26 @@
         height: 640px;
         margin-right: 15px;
     }
+    //
 
     &__floating-icon {
         position: absolute;
         border-radius: v.$radius-pill;
-    }
-
-    &__floating-icon--send {
         background-color: v.$color-accent;
         height: 64px;
         padding: 18px;
         width: 64px;
+    }
+
+    &__floating-icon--pos-left {
         top: 42%;
         left: 0;
         transform: translateX(-50%);
     }
 
-    &__floating-icon--contact {
+    &__floating-icon--pos-bottom {
         bottom: 0;
         right: 130px;
-        background-color: v.$color-accent;
-        height: 64px;
-        padding: 18px;
-        width: 64px;
     }
 
     &__floating-badge {
@@ -81,7 +78,7 @@
             aspect-ratio: 575 / 640;
         }
 
-        &__floating-icon--contact {
+        &__floating-icon--pos-bottom {
             right: 22.61%;
         }
 
@@ -101,29 +98,29 @@
             height: 324px;
         }
 
-        &__floating-icon--send {
+        &__floating-icon {
             height: 32px;
             padding: 8px;
             width: 32px;
+        }
+
+        &__floating-icon--pos-left {
             top: 42%;
         }
 
-        &__floating-icon--contact {
+        &__floating-icon--pos-bottom {
             right: 22%;
-            height: 32px;
-            padding: 8px;
-            width: 32px;
         }
 
         &__floating-badge {
             height: 28px;
-            max-width: 85px;
+            min-width: 85px;
             font-size: 7px;
             bottom: 83px;
             padding: 8px 16px;
             top: auto;
         }
-        &__floating-icon--location {
+        &__floating-icon-badge-icon {
             width: 8px;
             height: 8px;
         }
