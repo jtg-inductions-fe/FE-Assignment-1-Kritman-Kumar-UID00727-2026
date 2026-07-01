@@ -1,0 +1,49 @@
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+.nav-group {
+    &__title {
+        @include t.heading-custom(23px, 23px, 23px);
+    }
+    &__list--disable-company {
+        display: none;
+    }
+    &__list--disable-contact {
+        display: none;
+    }
+    &__contact::after {
+        content: ' Us';
+    }
+
+    @media (min-width: v.$breakpoint-tablet) {
+        min-width: 277px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        &__list--disable-company {
+            display: block;
+        }
+        &__list--disable-contact {
+            display: block;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        &__item {
+            @include t.text-md();
+            color: v.$text-secondary;
+        }
+
+        &__contact::after {
+            content: '';
+        }
+    }
+    @media (min-width: v.$breakpoint-desktop) {
+        min-width: 166px;
+    }
+}

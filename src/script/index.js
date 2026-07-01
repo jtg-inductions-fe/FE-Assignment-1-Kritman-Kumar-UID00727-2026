@@ -10,11 +10,13 @@ import {
 } from './components/hamburgerMenu.js';
 import { showTravelPointData } from './components/travelPoint.js';
 import { toggleClass } from './data/navItem.js';
+import { footerDropsAria, toggleFooterLink } from './components/footer.js';
 // ----------------------------------------------------------
 //                        DOM Element
 // ----------------------------------------------------------
 const hamburgerEle = document.querySelector('.nav__menu');
 const asideEle = document.querySelector('#hamburger-menu');
+const footer = document.querySelector('footer');
 
 // ----------------------------------------------------------
 //                       EventListener
@@ -53,6 +55,12 @@ new Swiper('.swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+});
+
+footer.addEventListener('click', function (e) {
+    const targetSpan = e.target.dataset.footerName;
+    if (!footerDropsAria.includes(targetSpan)) return;
+    toggleFooterLink(targetSpan);
 });
 
 // Show the Travel Point data immediately.

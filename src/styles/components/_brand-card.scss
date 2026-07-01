@@ -1,0 +1,35 @@
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+.brand-card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__title {
+        @include t.heading-custom($default: 23px, $md: 23px, $lg: 23px);
+    }
+    &__description {
+        @include t.text();
+    }
+
+    @media (min-width: v.$breakpoint-tablet) {
+        gap: 28px;
+
+        &__description {
+            @include t.text-bold();
+        }
+    }
+
+    @media (min-width: v.$breakpoint-desktop) {
+        &__heading {
+            gap: 16px;
+        }
+    }
+}
