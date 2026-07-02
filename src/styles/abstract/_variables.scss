@@ -14,6 +14,22 @@ $text-muted: #19182580;
 $text-primary: #191825;
 $text-secondary: #191825bf;
 
+// ------------------------------------
+$shadow-ambient-deep:
+    0px 0px 0px 0px rgba(0, 0, 0, 0.07),
+    0px 34px 75px 0px rgba(0, 0, 0, 0.07),
+    0px 137px 137px 0px rgba(0, 0, 0, 0.06),
+    0px 308px 185px 0px rgba(0, 0, 0, 0.04),
+    0px 548px 219px 0px rgba(0, 0, 0, 0.01),
+    0px 856px 240px 0px rgba(0, 0, 0, 0);
+$shadow-soft: 0 0px 32px rgba(31, 38, 135, 0.37);
+$shadow-glossy-soft:
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.1);
+$radius-pill: 100px;
+$radius-md: 32px;
+$radius-sm: 16px;
+
 // Breakpoints for different screen sizes.
 $breakpoint-mobile: 430px;
 $breakpoint-tablet: 1024px;

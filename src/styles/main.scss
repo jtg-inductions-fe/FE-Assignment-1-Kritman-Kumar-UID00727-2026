@@ -1,8 +1,18 @@
+// ------------------ Base ------------------
 @forward './base/reset';
 @forward './base/typography';
-@forward './layout/header';
+
+// ------------------ Components ------------------
+@forward './components/header';
+@forward './components/logo';
+@forward './components/button';
+@forward './components/badge';
+@forward './components/main';
+
+// ---------------- Layout ----------------
 @forward './layout/hero';
+@forward './layout/sidebar';
+@forward './layout/nav';
 @forward './layout/content';
 @forward './layout/gallery';
 @forward './layout/brand';
-@forward './components/main';
