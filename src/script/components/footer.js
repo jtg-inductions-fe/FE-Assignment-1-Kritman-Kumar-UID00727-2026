@@ -28,19 +28,25 @@ const meetupEle = document.querySelector(`.${classNames.meetup}`);
  */
 export function toggleFooterLink(target) {
     if (!target) return;
-    let isOpen = null;
+    let isClosed = null;
     switch (target) {
         case 'contact':
-            isOpen = contactEle.classList.toggle(classNames.contact);
-            rotateIcon(contactEle, isOpen);
+            if (!contactEle) return;
+
+            isClosed = contactEle.classList.toggle(classNames.contact);
+            rotateIcon(contactEle, isClosed);
             break;
         case 'company':
-            isOpen = companyEle.classList.toggle(classNames.company);
-            rotateIcon(companyEle, isOpen);
+            if (!companyEle) return;
+
+            isClosed = companyEle.classList.toggle(classNames.company);
+            rotateIcon(companyEle, isClosed);
             break;
         case 'meetup':
-            isOpen = meetupEle.classList.toggle(classNames.meetup);
-            rotateIcon(meetupEle, isOpen);
+            if (!meetupEle) return;
+
+            isClosed = meetupEle.classList.toggle(classNames.meetup);
+            rotateIcon(meetupEle, isClosed);
             break;
         default:
             break;

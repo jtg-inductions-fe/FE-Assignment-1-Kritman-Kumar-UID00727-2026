@@ -17,14 +17,14 @@
         @include t.heading-custom($default: 23px, $md: 23px, $lg: 23px);
     }
     &__description {
-        @include t.text();
+        @include t.text;
     }
 
     @media (min-width: v.$breakpoint-tablet) {
         gap: 28px;
 
         &__description {
-            @include t.text-bold();
+            @include t.text-bold;
         }
     }
 

@@ -562,7 +562,10 @@
          -->
 
         <footer class="footer-section">
-            <section class="footer-section__top">
+            <section
+                class="footer-section__top"
+                aria-labelledby="footer-titile"
+            >
                 <div class="footer-section__brand brand-card">
                     <div class="brand-card__heading">
                         <img
@@ -570,7 +573,9 @@
                             src="./src/assets/icons/logo-main.png"
                             alt="Travlog logo"
                         />
-                        <h3 class="brand-card__title">Travlog</h3>
+                        <h3 id="footer-titile" class="brand-card__title">
+                            Travlog
+                        </h3>
                     </div>
                     <p class="brand-card__description">
                         Contrary to popular belief, Lorem Ipsum is not simply
@@ -582,7 +587,8 @@
                 <ul class="footer-section__social social-media">
                     <li class="social-media__item">
                         <a
-                            href="#"
+                            aria-label="facebook"
+                            href="https://www.facebook.com/"
                             class="social-media__link social-media__link--facebook"
                             ><i
                                 class="fa-brands fa-facebook"
@@ -592,7 +598,8 @@
                     </li>
                     <li class="social-media__item">
                         <a
-                            href="#"
+                            aria-label="twitter"
+                            href="https://x.com/"
                             class="social-media__link social-media__link--twitter"
                             ><i
                                 class="fa-brands fa-twitter"
@@ -602,7 +609,8 @@
                     </li>
                     <li class="social-media__item">
                         <a
-                            href="#"
+                            aria-label="instagram"
+                            href="https://www.instagram.com/"
                             class="social-media__link social-media__link--instagram"
                             ><i
                                 class="fa-brands fa-instagram"
@@ -613,11 +621,17 @@
                 </ul>
             </section>
 
-            <section class="footer-section__links">
+            <section
+                class="footer-section__links"
+                aria-labelledby="company-link"
+            >
                 <div class="footer-section__nav nav-group">
                     <div class="footer-section__heading">
-                        <h4 class="nav-group__title">Company</h4>
-                        <span
+                        <h4 id="company-link" class="nav-group__title">
+                            Company
+                        </h4>
+                        <button
+                            type="button"
                             class="footer-section__chevron-down"
                             data-footer-name="company"
                         >
@@ -626,30 +640,41 @@
                                 class="fa-solid fa-chevron-down"
                                 style="color: rgb(0, 0, 0)"
                             ></i>
-                        </span>
+                        </button>
                     </div>
                     <ul
                         class="nav-group__list nav-group__list--disable-company"
                     >
                         <li class="nav-group__item">
-                            <a href="" class="nav-group__link">About</a>
+                            <a
+                                href="javascript:void(0);"
+                                class="nav-group__link"
+                                >About</a
+                            >
                         </li>
                         <li class="nav-group__item">
-                            <a href="" class="nav-group__link">Career</a>
+                            <a
+                                href="javascript:void(0);"
+                                class="nav-group__link"
+                                >Career</a
+                            >
                         </li>
                         <li class="nav-group__item">
-                            <a href="" class="nav-group__link">Mobile</a>
+                            <a
+                                href="javascript:void(0);"
+                                class="nav-group__link"
+                                >Mobile</a
+                            >
                         </li>
                     </ul>
                 </div>
 
                 <div class="footer-section__nav nav-group">
                     <div class="footer-section__heading">
-                        <h4 class="nav-group__title nav-group__contact">
-                            Contact
-                        </h4>
+                        <h4 class="nav-group__title nav-group__contact"></h4>
 
-                        <span
+                        <button
+                            type="button"
                             class="footer-section__chevron-down"
                             data-footer-name="contact"
                         >
@@ -658,24 +683,38 @@
                                 class="fa-solid fa-chevron-down"
                                 style="color: rgb(0, 0, 0)"
                             ></i>
-                        </span>
+                        </button>
                     </div>
                     <ul
                         class="nav-group__list nav-group__list--disable-contact"
                     >
                         <li class="nav-group__item">
-                            <a href="" class="nav-group__link">Why Travlog?</a>
+                            <a
+                                href="javascript:void(0);"
+                                class="nav-group__link"
+                                >Why Travlog?</a
+                            >
                         </li>
                         <li class="nav-group__item">
-                            <a href="" class="nav-group__link"
+                            <a
+                                href="javascript:void(0);"
+                                class="nav-group__link"
                                 >Partner with us</a
                             >
                         </li>
                         <li class="nav-group__item">
-                            <a href="" class="nav-group__link">FAQ's</a>
+                            <a
+                                href="javascript:void(0);"
+                                class="nav-group__link"
+                                >FAQ's</a
+                            >
                         </li>
                         <li class="nav-group__item">
-                            <a href="" class="nav-group__link">Blog</a>
+                            <a
+                                href="javascript:void(0);"
+                                class="nav-group__link"
+                                >Blog</a
+                            >
                         </li>
                     </ul>
                 </div>
@@ -683,7 +722,8 @@
                 <div class="footer-section__contact contact-group">
                     <div class="footer-section__heading">
                         <h4 class="contact-group__title">Meet Us</h4>
-                        <span
+                        <button
+                            type="button"
                             class="footer-section__chevron-down"
                             data-footer-name="meetup"
                         >
@@ -692,7 +732,7 @@
                                 class="fa-solid fa-chevron-down"
                                 style="color: rgb(0, 0, 0)"
                             ></i>
-                        </span>
+                        </button>
                     </div>
                     <ul
                         class="contact-group__list contact-group__list--disable-meetup"
@@ -719,7 +759,7 @@
             </section>
             <img
                 class="footer-section__layer"
-                src="/src/assets/images/footer-eclips.png"
+                src="./src/assets/images/footer-eclips.png"
                 alt="layer image for footer"
             />
         </footer>

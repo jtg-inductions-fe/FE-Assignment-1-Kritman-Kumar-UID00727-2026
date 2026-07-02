@@ -13,8 +13,8 @@
     }
 
     &__item {
-        @include t.text-md();
         color: v.$text-secondary;
+        @include t.text-md;
     }
 
     &__list--disable-company {
@@ -24,7 +24,7 @@
         display: none;
     }
     &__contact::after {
-        content: ' Us';
+        content: 'Contact Us';
     }
 
     @media (min-width: v.$breakpoint-tablet) {
@@ -43,13 +43,8 @@
             @include mx.flex($direction: column, $gap: 32px);
         }
 
-        &__item {
-            @include t.text-md();
-            color: v.$text-secondary;
-        }
-
         &__contact::after {
-            content: '';
+            content: 'Contact';
         }
     }
     @media (min-width: v.$breakpoint-desktop) {

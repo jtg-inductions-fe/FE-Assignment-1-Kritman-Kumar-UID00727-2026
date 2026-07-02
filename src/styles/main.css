@@ -1182,11 +1182,6 @@ select {
     flex-wrap: nowrap;
     gap: 0;
 }
-.social-mediamedia__item {
-    width: 32px;
-    height: 32px;
-    padding: 8px;
-}
 .social-media__link--facebook {
     font-size: 32px;
 }
@@ -1229,11 +1224,11 @@ select {
     gap: 32px;
 }
 .nav-group__item {
+    color: rgba(25, 24, 37, 0.7490196078);
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 160%;
     font-family: 'Inter', sans-serif;
-    color: rgba(25, 24, 37, 0.7490196078);
 }
 .nav-group__list--disable-company {
     display: none;
@@ -1242,7 +1237,7 @@ select {
     display: none;
 }
 .nav-group__contact::after {
-    content: ' Us';
+    content: 'Contact Us';
 }
 @media (min-width: 1024px) {
     .nav-group {
@@ -1269,15 +1264,8 @@ select {
         flex-wrap: nowrap;
         gap: 32px;
     }
-    .nav-group__item {
-        font-size: 1.125rem;
-        font-weight: 400;
-        line-height: 160%;
-        font-family: 'Inter', sans-serif;
-        color: rgba(25, 24, 37, 0.7490196078);
-    }
     .nav-group__contact::after {
-        content: '';
+        content: 'Contact';
     }
 }
 @media (min-width: 1440px) {
@@ -1312,11 +1300,11 @@ select {
     gap: 32px;
 }
 .contact-group__item {
+    color: rgba(25, 24, 37, 0.7490196078);
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 160%;
     font-family: 'Inter', sans-serif;
-    color: rgba(25, 24, 37, 0.7490196078);
 }
 .contact-group__list--disable-meetup {
     display: none;
@@ -1342,13 +1330,6 @@ select {
         align-items: stretch;
         flex-wrap: nowrap;
         gap: 32px;
-    }
-    .contact-group__item {
-        font-size: 1.125rem;
-        font-weight: 400;
-        line-height: 160%;
-        font-family: 'Inter', sans-serif;
-        color: rgba(25, 24, 37, 0.7490196078);
     }
 }
 @media (min-width: 1440px) {
@@ -1437,8 +1418,6 @@ select {
     }
     .footer-section__top {
         min-width: 564px;
-    }
-    .footer-section__top {
         gap: 64px;
     }
     .footer-section__links {

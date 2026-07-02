@@ -1,13 +1,17 @@
 @forward './base/reset';
 @forward './base/typography';
+
+// ---------------------------------------
+@forward './components/main';
+
+// ---------------------------------------
+@forward './layout/travel-point.scss';
+@forward './layout/testimonial.scss';
+@forward './layout/footer-section';
 @forward './layout/header';
 @forward './layout/hero';
 @forward './layout/content';
 @forward './layout/gallery';
 @forward './layout/brand';
-@forward './components/main';
-@forward './layout/travel-point.scss';
-@forward './layout/testimonial.scss';
-@forward './layout/footer-section';
 
 @import '../../node_modules/@glidejs/glide/src/assets/sass/glide.core';
