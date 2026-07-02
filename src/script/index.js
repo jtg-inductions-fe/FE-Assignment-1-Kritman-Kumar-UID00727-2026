@@ -57,6 +57,10 @@ new Swiper('.swiper', {
     },
 });
 
+/**
+ * Global event listener for the footer container.
+ * Uses event delegation to capture clicks on chevron icon wrappers.
+ */
 footer.addEventListener('click', function (e) {
     const targetSpan = e.target.dataset.footerName;
     if (!footerDropsAria.includes(targetSpan)) return;

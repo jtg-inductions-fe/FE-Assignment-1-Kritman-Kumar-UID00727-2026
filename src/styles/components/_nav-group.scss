@@ -1,10 +1,22 @@
 @use '../abstract/variables' as v;
 @use '../base/typography' as t;
+@use '../abstract/mixins' as mx;
 
 .nav-group {
     &__title {
         @include t.heading-custom(23px, 23px, 23px);
     }
+
+    &__list {
+        margin-top: 16px;
+        @include mx.flex($direction: column, $gap: 32px);
+    }
+
+    &__item {
+        @include t.text-md();
+        color: v.$text-secondary;
+    }
+
     &__list--disable-company {
         display: none;
     }
@@ -17,9 +29,7 @@
 
     @media (min-width: v.$breakpoint-tablet) {
         min-width: 277px;
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
+        @include mx.flex($direction: column, $gap: 32px);
 
         &__list--disable-company {
             display: block;
@@ -29,9 +39,8 @@
         }
 
         &__list {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
+            margin-top: 0;
+            @include mx.flex($direction: column, $gap: 32px);
         }
 
         &__item {

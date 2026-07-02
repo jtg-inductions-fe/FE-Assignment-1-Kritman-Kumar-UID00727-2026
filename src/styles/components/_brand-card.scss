@@ -1,4 +1,5 @@
 @use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
 @use '../base/typography' as t;
 
 .brand-card {

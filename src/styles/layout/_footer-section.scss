@@ -1,4 +1,5 @@
 @use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
 
 @forward '../components/brand-card';
 @forward '../components/social-media';
@@ -8,33 +9,24 @@
 .footer-section {
     padding: 64px 32px;
     margin-top: 49px;
-    display: flex;
-    flex-direction: column;
-    gap: 79px;
+    @include mx.flex($direction: column, $gap: 79px);
+
     &__top {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-        align-items: start;
+        @include mx.flex($direction: column, $align: start, $gap: 32px);
     }
     &__links {
-        display: flex;
-        flex-direction: column;
-        gap: 79px;
+        @include mx.flex($direction: column, $gap: 79px);
     }
 
     &__heading {
-        display: flex;
-        justify-content: space-between;
+        @include mx.flex($justify: space-between);
     }
     &__chevron-down {
         height: 24px;
         width: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         border: 1px solid v.$text-secondary;
         border-radius: 50%;
+        @include mx.flex($align: center, $justify: center);
     }
 
     &__layer {
@@ -52,7 +44,6 @@
             display: none;
         }
         &__links {
-            display: flex;
             flex-direction: row;
             gap: 33px;
         }

@@ -1,20 +1,58 @@
+/**
+ * Valid target names for the footer dropdown accordion sections.
+ * Used for input validation during click events.
+ * @type {string[]}
+ */
 export const footerDropsAria = ['contact', 'company', 'meetup'];
 
-const classes = {
+/**
+ * Single source of truth for the CSS class names that control
+ * the visibility/state of each footer section.
+ */
+const classNames = {
     contact: 'nav-group__list--disable-contact',
     company: 'nav-group__list--disable-company',
     meetup: 'contact-group__list--disable-meetup',
 };
-Object.freeze(classes);
+Object.freeze(classNames);
 
 // ----------------------------------------------------------
-const contactEle = document.querySelector(`.${classes.contact}`);
-const companyEle = document.querySelector(`.${classes.company}`);
-const meetupEle = document.querySelector(`.${classes.meetup}`);
 
+const contactEle = document.querySelector(`.${classNames.contact}`);
+const companyEle = document.querySelector(`.${classNames.company}`);
+const meetupEle = document.querySelector(`.${classNames.meetup}`);
+
+/**
+ * Toggles the visibility modifier class of a specific footer section.
+ * @param {string} target - The name of the section to toggle ('contact', 'company', or 'meetup')
+ */
 export function toggleFooterLink(target) {
-    contactEle.classList.toggle(classes.contact);
-    companyEle.classList.toggle(classes.company);
-    meetupEle.classList.toggle(classes.meetup);
-    meetupEle.classList.toggle(classes[target]);
+    if (!target) return;
+    let isOpen = null;
+    switch (target) {
+        case 'contact':
+            isOpen = contactEle.classList.toggle(classNames.contact);
+            rotateIcon(contactEle, isOpen);
+            break;
+        case 'company':
+            isOpen = companyEle.classList.toggle(classNames.company);
+            rotateIcon(companyEle, isOpen);
+            break;
+        case 'meetup':
+            isOpen = meetupEle.classList.toggle(classNames.meetup);
+            rotateIcon(meetupEle, isOpen);
+            break;
+        default:
+            break;
+    }
+}
+
+function rotateIcon(ele, isRotate) {
+    if (isRotate) {
+        ele.previousElementSibling.querySelector('i').style.transform =
+            'rotate(0deg)';
+    } else {
+        ele.previousElementSibling.querySelector('i').style.transform =
+            'rotate(180deg)';
+    }
 }

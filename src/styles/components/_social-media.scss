@@ -1,10 +1,9 @@
 @use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
 
 .social-media {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 160px;
+    @include mx.flex($justify: space-between, $align: center);
 
     &media__item {
         width: 32px;
