@@ -4,7 +4,7 @@
 
 .nav-group {
     &__title {
-        @include t.heading-custom(23px, 23px, 23px);
+        @include t.heading-secondary;
     }
 
     &__list {

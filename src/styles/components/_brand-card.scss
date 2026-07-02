@@ -14,7 +14,7 @@
     }
 
     &__title {
-        @include t.heading-custom($default: 23px, $md: 23px, $lg: 23px);
+        @include t.heading-secondary;
     }
     &__description {
         @include t.text;
