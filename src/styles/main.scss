@@ -2,11 +2,16 @@
 @forward './components/header';
 @forward './components/logo';
 @forward './components/button';
+@forward './components/badge';
 
 // ------------------ Base ------------------
 @forward './base/reset';
 @forward './base/typography';
 
-// ------------------ layout ------------------
-@forward './layout/nav.scss';
-@forward './layout/sidebar.scss';
+// ---------------- Layout ----------------
+@forward './layout/hero';
+@forward './layout/sidebar';
+@forward './layout/nav';
+@forward './layout/content';
+@forward './layout/gallery';
+@forward './layout/main';

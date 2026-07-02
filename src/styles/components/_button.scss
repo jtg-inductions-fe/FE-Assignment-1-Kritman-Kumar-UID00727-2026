@@ -1,4 +1,5 @@
 @use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
 @use '../base/typography' as t;
 @use '../abstract/functions' as fn;
 
@@ -6,7 +7,7 @@
     @include t.text-link();
 
     border-radius: v.$radius-pill;
-    padding: fn.rem(24px) 4rem;
+    padding: 24px 64px;
     color: v.$color-primary;
     cursor: pointer;
 
@@ -15,7 +16,18 @@
         color: v.$color-bg-muted;
     }
 
-    @media (min-width: #{v.$breakpoint-mobile + 1px}) {
-        padding: 1rem 2rem;
+    &--secondary {
+        @include mx.flex($justify: center, $align: center, $gap: 8px);
+
+        color: v.$color-primary;
+        background-color: v.$color-bg-muted;
+    }
+
+    @media (max-width: v.$breakpoint-mobile) {
+        padding: 24px 32px;
+        width: 100%;
+    }
+    @media (width > v.$breakpoint-mobile) {
+        padding: 16px 32px;
     }
 }

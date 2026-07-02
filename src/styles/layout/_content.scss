@@ -1,0 +1,65 @@
+// ----------------------------------------------------------------------
+//       import global utilities (functions, mixins, variables )
+// ----------------------------------------------------------------------
+@use '../abstract/functions' as fn;
+@use '../abstract/mixins' as mx;
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+// ----------------------------------------------------------------------
+//       Forward reusable UI
+// ----------------------------------------------------------------------
+@forward '../components/button';
+
+.content {
+    &__text {
+        @include mx.flex($direction: column, $gap: 43px);
+    }
+
+    &__description--w-full {
+        display: block;
+    }
+
+    &__title {
+        @include t.heading-xl();
+    }
+    &__title--accent {
+        color: v.$color-accent;
+    }
+
+    &__description {
+        @include t.text();
+    }
+
+    &__actions {
+        @include mx.flex($justify: left, $align: center, $gap: 32px);
+    }
+
+    @media (width < v.$breakpoint-desktop) {
+        &__text {
+            @include mx.flex($direction: column, $gap: 43px, $align: center);
+        }
+
+        &__title {
+            max-width: 600px;
+        }
+
+        &__description {
+            max-width: 430px;
+        }
+
+        &__description--w-full {
+            display: inline;
+        }
+    }
+    @media (width <= v.$breakpoint-mobile) {
+        &__actions {
+            @include mx.flex($direction: column, $gap: 24px);
+            width: 100%;
+        }
+
+        &__text {
+            @include mx.flex($direction: column, $align: center, $gap: 20px);
+        }
+    }
+}

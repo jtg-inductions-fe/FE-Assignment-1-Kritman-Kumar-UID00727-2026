@@ -32,7 +32,24 @@
     grid-template-columns: 1fr;
     gap: $gap;
 
-    @media (min-width: #{$breakpoint + 1px}) {
+    @media (width > $breakpoint) {
         grid-template-columns: repeat($cols, minmax(0, 1fr));
+    }
+}
+
+/// Responsive Grid Layout Mixin
+/// Generates a CSS Grid container that automatically collapses to a single column on smaller viewports.
+///
+/// @param {Number} $cols [3] - column ratio like 1fr 3fr 2fr.
+/// @param {Length} $gap [0] - Spacing size between grid rows and columns (px, rem, em, etc.)
+/// @param {Length} $breakpoint [430] - Maximum screen width threshold where layout falls back to 1 column
+@mixin grid-aria($cols: 1fr, $gap: 0, $breakpoint: 430px) {
+    display: grid;
+    grid-template-columns: $cols;
+    gap: $gap;
+
+    @media (width <= $breakpoint) {
+        @include flex($direction: column-reverse, $align: center);
+        gap: 32px;
     }
 }

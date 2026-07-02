@@ -1,0 +1,12 @@
+@use '../abstract/variables' as v;
+
+.main {
+    padding: 0 9%;
+    @media (max-width: v.$breakpoint-tablet) {
+        padding: 0 3%;
+    }
+    @media (width <= v.$breakpoint-mobile) {
+        margin: 0 auto;
+        overflow: hidden;
+    }
+}

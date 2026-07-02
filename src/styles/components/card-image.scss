@@ -1,0 +1,51 @@
+// ----------------------------------------------------------------------
+//       import global utilities (functions, mixins, variables )
+// ----------------------------------------------------------------------
+@use '../abstract/variables' as v;
+
+.card-image {
+    position: absolute;
+    width: 272px;
+    height: 300px;
+    border-radius: v.$radius-md;
+
+    &--top {
+        top: 0;
+        left: 0;
+    }
+    &--bottom {
+        bottom: 0;
+        left: 0;
+    }
+    &--right {
+        height: 400px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    @media (v.$breakpoint-mobile < width < v.$breakpoint-tablet) {
+        width: 47.3%;
+        aspect-ratio: 272 / 300;
+        object-fit: cover;
+
+        &--right {
+            aspect-ratio: 272 / 400;
+        }
+    }
+
+    @media (width <= v.$breakpoint-mobile) {
+        max-width: 140px;
+        height: 154px;
+        border-radius: v.$radius-sm;
+
+        &--top {
+            top: 0;
+            left: 0;
+        }
+
+        &--right {
+            height: 205px;
+        }
+    }
+}

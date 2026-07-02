@@ -11,6 +11,8 @@ body {
     min-height: 100vh;
     // Smooths out font rendering on macOS
     -webkit-font-smoothing: antialiased;
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
 /* Locks the body whenever the aside does NOT have the disabled class */

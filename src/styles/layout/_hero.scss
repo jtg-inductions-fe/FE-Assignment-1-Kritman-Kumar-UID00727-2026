@@ -1,0 +1,101 @@
+// ----------------------------------------------------------------------
+//       import global utilities (functions, mixins, variables )
+// ----------------------------------------------------------------------
+@use '../abstract/functions' as fn;
+@use '../abstract/mixins' as mx;
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+// ----------------------------------------------------------------------
+//       Forward reusable UI
+// ----------------------------------------------------------------------
+@forward '../components/button';
+
+.hero {
+    position: relative;
+    padding: 64px 0;
+    @include mx.grid-aria(
+        $cols: minmax(0, 420px) minmax(0, 772px),
+        $breakpoint: v.$breakpoint-desktop
+    );
+    align-items: center;
+    justify-content: space-between;
+
+    &__content {
+        @include mx.flex($direction: column, $gap: 43px);
+    }
+
+    &__gallery {
+        @include mx.flex($justify: center, $align: end);
+        position: relative;
+        width: 772px;
+        height: 713px;
+    }
+
+    &__ellipse {
+        top: 12rem;
+        left: 12rem;
+        position: absolute;
+        z-index: -1;
+        opacity: 0.5;
+
+        filter: blur(50px);
+        transform: rotate(0deg);
+        box-shadow: 0 0 300px 250px rgba(255, 87, 34, 0.8);
+    }
+
+    &__floating-icon--triangle {
+        position: absolute;
+        top: 721px;
+        left: 0;
+        transform: translateX(-95px);
+    }
+
+    @media (width < v.$breakpoint-desktop) {
+        &__floating-icon--triangle {
+            top: auto;
+            left: 100px;
+            bottom: 12px;
+        }
+        &__content {
+            margin-top: 35px;
+            @include mx.flex(
+                $direction: column,
+                $justify: center,
+                $align: center,
+                $gap: 43px
+            );
+            text-align: center;
+        }
+    }
+
+    @media (v.$breakpoint-mobile < width < v.$breakpoint-tablet) {
+        &__gallery {
+            width: 100%;
+            max-width: 772px;
+            height: auto;
+        }
+        &__floating-icon--triangle {
+            display: none;
+        }
+    }
+
+    @media (max-width: v.$breakpoint-mobile) {
+        padding: 0;
+        &__floating-icon--triangle {
+            display: none;
+        }
+    }
+
+    @media (width <= v.$breakpoint-mobile) {
+        margin-top: 33px;
+        &__content {
+            margin-top: auto;
+            gap: 24px;
+        }
+        &__gallery {
+            max-width: 396px;
+            max-height: 366px;
+        }
+    }
+}

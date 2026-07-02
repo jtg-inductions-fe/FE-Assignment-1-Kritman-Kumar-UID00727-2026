@@ -22,7 +22,7 @@
     @media (min-width: #{v.$breakpoint-tablet + 1px}) {
         @include mx.flex($justify: center, $align: center);
 
-        margin-top: 2rem;
+        margin-top: 32px;
         padding: 0 9%;
     }
 }
