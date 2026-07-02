@@ -27,17 +27,11 @@
         font-size: fn.rem(44px);
     }
 }
-@mixin heading-custom($default: 28px, $md: 28px, $lg: 28px) {
-    font-size: fn.rem($default);
+@mixin heading-primary() {
+    font-size: fn.rem(28px);
     font-weight: 700;
     line-height: 120%;
     font-family: 'Circular Std', sans-serif;
-    @media (width > v.$breakpoint-mobile) {
-        font-size: fn.rem($md);
-    }
-    @media (width > v.$breakpoint-tablet) {
-        font-size: fn.rem($lg);
-    }
 }
 
 @mixin heading-md() {

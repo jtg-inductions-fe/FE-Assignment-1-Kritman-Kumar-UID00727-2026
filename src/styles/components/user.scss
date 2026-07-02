@@ -13,7 +13,7 @@
         text-align: center;
     }
     &__name {
-        @include t.heading-custom();
+        @include t.heading-primary;
         color: v.$color-warning;
     }
     &__name--secondary {
@@ -21,7 +21,7 @@
         font-size: 23px;
     }
     &__comment {
-        @include t.text-bold();
+        @include t.text-bold;
         color: v.$text-secondary;
         text-align: center;
     }
@@ -29,7 +29,7 @@
     @media (min-width: v.$breakpoint-tablet) {
         gap: 56px;
         &__comment {
-            @include t.text-bold();
+            @include t.text-bold;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -37,7 +37,7 @@
 
     @media (min-width: v.$breakpoint-desktop) {
         &__comment {
-            @include t.text-bold();
+            @include t.text-bold;
             max-width: 800px;
             margin: 0 auto;
         }

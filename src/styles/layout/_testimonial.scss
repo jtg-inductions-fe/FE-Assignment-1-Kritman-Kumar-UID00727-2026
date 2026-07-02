@@ -21,13 +21,13 @@
         @include mx.flex($direction: column, $align: center, $gap: 16px);
     }
     &__label {
-        @include t.heading-md();
+        @include t.heading-md;
         color: v.$color-accent;
         letter-spacing: 20%;
         text-transform: uppercase;
     }
     &__title {
-        @include t.heading-lg();
+        @include t.heading-lg;
     }
 
     @media (min-width: v.$breakpoint-tablet) {

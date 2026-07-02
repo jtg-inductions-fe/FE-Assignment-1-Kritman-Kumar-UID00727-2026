@@ -922,16 +922,6 @@ select {
     font-family: 'Circular Std', sans-serif;
     color: #ff5722;
 }
-@media (width > 430px) {
-    .user__name {
-        font-size: 1.75rem;
-    }
-}
-@media (width > 1024px) {
-    .user__name {
-        font-size: 1.75rem;
-    }
-}
 .user__name--secondary {
     color: rgba(25, 24, 37, 0.7490196078);
     font-size: 23px;

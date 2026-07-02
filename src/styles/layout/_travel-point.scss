@@ -33,17 +33,17 @@
     }
 
     &__tagline {
-        @include t.heading-md();
+        @include t.heading-md;
         color: v.$color-accent;
         text-transform: uppercase;
         letter-spacing: 20%;
     }
     &__title {
-        @include t.heading-lg();
+        @include t.heading-lg;
         text-align: center;
     }
     &__description {
-        @include t.text();
+        @include t.text;
         text-align: center;
     }
     &__data-grid {
