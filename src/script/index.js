@@ -3,16 +3,15 @@
 // ----------------------------------------------------------
 import {
     toggleMenu,
-    handleKeyPress,
+    handleEscape,
     handleOutsideClick,
 } from './components/hamburgerMenu.js';
 import { showTravelPointData } from './components/travelPoint.js';
-import { toggleClass } from './data/navItem.js';
 
 // ----------------------------------------------------------
 //                        DOM Element
 // ----------------------------------------------------------
-const hamburgerEle = document.querySelector('.nav__menu');
+const hamburgerEle = document.querySelector('.nav__toggle');
 const asideEle = document.querySelector('#hamburger-menu');
 
 // ----------------------------------------------------------
@@ -21,22 +20,23 @@ const asideEle = document.querySelector('#hamburger-menu');
 
 // open the mobile navigation menu
 hamburgerEle.addEventListener('click', () =>
-    toggleMenu(hamburgerEle, asideEle, toggleClass),
+    toggleMenu(hamburgerEle, asideEle),
 );
 
 // close the mobile navigation menu when close is button clicked or link clicked.
 asideEle.addEventListener('click', (e) => {
-    if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') return;
-    toggleMenu(hamburgerEle, asideEle, toggleClass);
+    const clickableElement = e.target.closest('.sidebar__link, .sidebar__btn');
+    if (!clickableElement) return;
+    toggleMenu(hamburgerEle, asideEle);
 });
 
 // close the mobile navigation menu when Escape Key is pressed.
 window.addEventListener('keyup', (e) =>
-    handleKeyPress(e, hamburgerEle, asideEle, toggleClass),
+    handleEscape(e, hamburgerEle, asideEle),
 );
 
 window.addEventListener('click', (e) =>
-    handleOutsideClick(e, hamburgerEle, asideEle, toggleClass),
+    handleOutsideClick(e, hamburgerEle, asideEle),
 );
 
 (function init() {
