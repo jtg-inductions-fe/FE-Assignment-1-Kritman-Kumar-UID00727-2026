@@ -33,26 +33,26 @@
     }
 
     &__tagline {
-        @include t.heading-md();
         color: v.$color-accent;
-        text-transform: uppercase;
+        text-transform: upper case;
         letter-spacing: 20%;
+        @include t.heading-md();
     }
     &__title {
-        @include t.heading-lg();
         text-align: center;
+        @include t.heading-lg();
     }
     &__description {
-        @include t.text();
         text-align: center;
+        @include t.text();
     }
     &__data-grid {
+        min-width: 348px;
         @include mx.grid(
             $cols: 2,
             $gap: 16px,
             $breakpoint: v.$breakpoint-mobile
         );
-        min-width: 348px;
     }
 
     &__img-badge {

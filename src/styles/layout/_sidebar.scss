@@ -19,8 +19,8 @@
     box-shadow: v.$shadow-soft;
 
     &__links {
-        @include mx.grid($cols: 1);
         position: relative;
+        @include mx.grid($cols: 1);
     }
 
     &__link {

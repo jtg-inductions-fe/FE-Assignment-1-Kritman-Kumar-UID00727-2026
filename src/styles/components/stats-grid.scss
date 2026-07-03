@@ -6,7 +6,7 @@
     @include mx.flex($direction: column, $gap: 16px);
     border-radius: 32px;
     padding: 32px;
-    border: 1px solid v.$text-muted-lite();
+    border: 1px solid v.$text-muted-lite;
     &__number {
         display: block;
         @include t.text-data();

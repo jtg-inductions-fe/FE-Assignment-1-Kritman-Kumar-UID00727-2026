@@ -12,14 +12,14 @@
 @forward '../components/button';
 
 .hero {
+    align-items: center;
+    justify-content: space-between;
     position: relative;
     padding: 64px 130px;
     @include mx.grid-aria(
         $cols: minmax(0, 420px) minmax(0, 772px),
         $breakpoint: v.$breakpoint-desktop
     );
-    align-items: center;
-    justify-content: space-between;
 
     &__content {
         @include mx.flex($direction: column, $gap: 43px);
