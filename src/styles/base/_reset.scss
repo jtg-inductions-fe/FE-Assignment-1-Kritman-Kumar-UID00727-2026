@@ -19,6 +19,9 @@ body {
 body:has(#hamburger-menu:not(.aside--disabled)) {
     overflow: hidden;
 }
+body:has(.special-deals:not(.special-deals--hidden)) {
+    overflow: hidden;
+}
 
 // 3. Typography & Media Reset
 img,

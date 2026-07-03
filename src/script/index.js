@@ -11,25 +11,39 @@ import {
 import { showTravelPointData } from './components/travelPoint.js';
 import { toggleClass } from './data/navItem.js';
 import { footerDropsAria, toggleFooterLink } from './components/footer.js';
-// ----------------------------------------------------------
-//                        DOM Element
-// ----------------------------------------------------------
-const hamburgerEle = document.querySelector('.nav__menu');
-const asideEle = document.querySelector('#hamburger-menu');
-const footer = document.querySelector('footer');
+import { handleClick, toggleSpecialDeal } from './components/specialDeals.js';
+
+import {
+    hamburgerEle,
+    asideEle,
+    footer,
+    specialDealsEle,
+    navEle,
+} from './data/domElements.js';
 
 // ----------------------------------------------------------
 //                       EventListener
 // ----------------------------------------------------------
 
+specialDealsEle.addEventListener('click', handleClick);
+
 // open the mobile navigation menu
-hamburgerEle.addEventListener('click', () =>
-    toggleMenu(hamburgerEle, asideEle, toggleClass),
-);
+navEle.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON' || e.target.tagName === 'IMG') {
+        toggleMenu(hamburgerEle, asideEle, toggleClass);
+        return;
+    }
+    if (e.target.innerText === 'Special Deals') {
+        toggleSpecialDeal();
+    }
+});
 
 // close the mobile navigation menu when close is button clicked or link clicked.
 asideEle.addEventListener('click', (e) => {
     if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') return;
+    if (e.target.tagName === 'A' && e.target.innerText === 'Special Deals') {
+        toggleSpecialDeal();
+    }
     toggleMenu(hamburgerEle, asideEle, toggleClass);
 });
 
