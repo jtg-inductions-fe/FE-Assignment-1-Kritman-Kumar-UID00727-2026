@@ -1,3 +1,60 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+/* Locks the body whenever the aside does NOT have the disabled class */
+body:has(#hamburger-menu:not(.sidebar--disabled)) {
+    overflow: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+    display: block;
+    max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    border: none;
+    background: none;
+}
+
 .header {
     position: sticky;
     top: 0;
@@ -112,63 +169,6 @@
         0px 308px 185px 0px rgba(0, 0, 0, 0.04),
         0px 548px 219px 0px rgba(0, 0, 0, 0.01),
         0px 856px 240px 0px rgba(0, 0, 0, 0);
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-    max-width: 1800px;
-    margin: 0 auto;
-}
-
-/* Locks the body whenever the aside does NOT have the disabled class */
-body:has(#hamburger-menu:not(.sidebar--disabled)) {
-    overflow: hidden;
-}
-
-img,
-svg,
-video,
-canvas {
-    display: block;
-    max-width: 100%;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    overflow-wrap: break-word;
-}
-
-ul,
-ol {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-input,
-button,
-textarea,
-select {
-    font: inherit;
-    border: none;
-    background: none;
 }
 
 .hero {
@@ -655,12 +655,55 @@ select {
     }
 }
 
-.main {
-    padding: 0 9%;
+.brand-section {
+    margin-top: 72px;
+    padding: 0 16px;
 }
-@media (max-width: 1024px) {
+.brand-section__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 24px;
+    row-gap: 32px;
+}
+.brand-section__item-img {
+    max-height: 20px;
+}
+@media (width > 430px) {
+    .brand-section {
+        padding: 64px 0;
+        max-width: 567px;
+        margin: 0 auto;
+    }
+    .brand-section__list {
+        justify-content: center;
+        gap: 24px;
+    }
+    .brand-section__item-img {
+        max-height: 32px;
+    }
+}
+@media (width > 1024px) {
+    .brand-section {
+        max-width: 1192px;
+        padding: 60px 0;
+    }
+    .brand-section__list {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+}
+
+.main {
+    padding: 0 130px;
+}
+@media (max-width: 430px) {
     .main {
-        padding: 0 3%;
+        padding: 0 12px;
+        margin: 0 auto;
+        overflow: hidden;
     }
 }
 @media (width <= 430px) {

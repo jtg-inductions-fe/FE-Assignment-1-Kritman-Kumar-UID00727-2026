@@ -1,0 +1,39 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+.brand-section {
+    margin-top: 72px;
+    padding: 0 16px;
+
+    &__list {
+        @include mx.flex($wrap: wrap, $justify: center, $gap: 24px);
+        row-gap: 32px;
+    }
+    &__item-img {
+        max-height: 20px;
+    }
+
+    @media (width > v.$breakpoint-mobile) {
+        padding: 64px 0;
+        max-width: 567px;
+        margin: 0 auto;
+
+        &__list {
+            justify-content: center;
+            gap: 24px;
+        }
+
+        &__item-img {
+            max-height: 32px;
+        }
+    }
+
+    @media (width > v.$breakpoint-tablet) {
+        max-width: 1192px;
+        padding: 60px 0;
+
+        &__list {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+    }
+}
