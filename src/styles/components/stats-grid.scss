@@ -1,0 +1,21 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+@use '../base/typography' as t;
+
+.stat-card {
+    @include mx.flex($direction: column, $gap: 16px);
+    border-radius: 32px;
+    padding: 32px;
+    border: 1px solid v.$text-muted-lite;
+    &__number {
+        display: block;
+        @include t.text-data();
+        color: v.$color-warning;
+        text-align: center;
+    }
+    &__label {
+        display: block;
+        @include t.text-md();
+        text-align: center;
+    }
+}

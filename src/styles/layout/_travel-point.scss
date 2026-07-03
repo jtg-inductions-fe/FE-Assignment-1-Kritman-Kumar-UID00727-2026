@@ -1,0 +1,109 @@
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+@use '../abstract/mixins' as mx;
+
+@forward '../components/stats-grid.scss';
+
+.travel-point {
+    position: relative;
+    padding: 0;
+    margin-top: 130px;
+    @include mx.flex($direction: column, $gap: 32px);
+
+    &__img {
+        width: 100%;
+    }
+
+    &__body {
+        @include mx.flex(
+            $direction: column,
+            $justify: center,
+            $gap: 32px,
+            $align: center
+        );
+    }
+
+    &__header {
+        @include mx.flex(
+            $direction: column,
+            $justify: center,
+            $gap: 16px,
+            $align: center
+        );
+    }
+
+    &__tagline {
+        color: v.$color-accent;
+        text-transform: upper case;
+        letter-spacing: 20%;
+        @include t.heading-md();
+    }
+    &__title {
+        text-align: center;
+        @include t.heading-lg();
+    }
+    &__description {
+        text-align: center;
+        @include t.text();
+    }
+    &__data-grid {
+        min-width: 348px;
+        @include mx.grid(
+            $cols: 2,
+            $gap: 16px,
+            $breakpoint: v.$breakpoint-mobile
+        );
+    }
+
+    &__img-badge {
+        display: none;
+    }
+
+    @media (min-width: v.$breakpoint-tablet) {
+        margin-top: 70px;
+        gap: 64px;
+        &__description {
+            max-width: 840px;
+        }
+
+        &__data-grid {
+            padding: 40px 0;
+            min-width: 894px;
+            gap: 32px;
+        }
+    }
+
+    @media (min-width: v.$breakpoint-desktop) {
+        flex-direction: row;
+        justify-content: space-between;
+        &__body {
+            max-width: 455px;
+            position: relative;
+            right: 120px;
+            top: 15px;
+        }
+        &__header {
+            align-items: start;
+        }
+
+        &__tagline {
+            letter-spacing: 20%;
+        }
+        &__title {
+            text-align: left;
+        }
+        &__description {
+            text-align: left;
+        }
+        &__data-grid {
+            min-width: 455px;
+        }
+        &__img-badge {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 290px;
+            transform: translateX(50%);
+        }
+    }
+}
