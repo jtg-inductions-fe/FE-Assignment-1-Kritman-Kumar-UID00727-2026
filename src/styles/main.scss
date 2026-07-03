@@ -3,6 +3,8 @@
 
 // ---------------------------------------
 @forward './components/main';
+@forward './components/overlay-backdrop';
+@forward './components/button';
 
 // ---------------------------------------
 @forward './layout/travel-point.scss';

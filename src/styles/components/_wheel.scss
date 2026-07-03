@@ -1,0 +1,17 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+@use '../base/typography' as t;
+
+.wheel {
+    width: 227px;
+    height: 227px;
+    border-radius: v.$radius-xl;
+
+    &__loading {
+        background-color: v.$color-bg-muted;
+        color: v.$bg-backdrop;
+        @include mx.flex($justify: center, $align: center);
+
+        @include t.text-link;
+    }
+}

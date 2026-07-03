@@ -1,2 +1,75 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+@use '../base/typography' as t;
+
+@forward '../components/wheel';
+
 .special-deals {
+    min-width: 360px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5001;
+    border-radius: 24px 24px 0 0;
+    background-color: v.$bg-primary;
+    padding: 24px;
+
+    @include mx.flex($direction: column, $align: center, $gap: 20px);
+
+    &--hidden {
+        display: none;
+    }
+    &__wheel--hidden {
+        display: none;
+    }
+
+    &__close-btn {
+        width: max-content;
+        padding: 3px;
+        position: absolute;
+        top: 19px;
+        right: 23px;
+        padding: 0;
+    }
+
+    &__close-btn:active {
+        transform: scale(0.92);
+    }
+
+    &__heading {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        text-align: center;
+    }
+
+    &__title {
+        color: v.$color-accent;
+        font-size: 12px;
+        @include t.text-link;
+    }
+
+    &__sub-title {
+        @include t.text-bold;
+    }
+
+    &__instruction {
+        color: v.$text-muted;
+        @include t.text-link;
+    }
+
+    &__wheel-container {
+        height: 236px;
+        width: 227px;
+        position: relative;
+    }
+
+    &__caret-down {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -10px;
+        width: max-content;
+    }
 }
