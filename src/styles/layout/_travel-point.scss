@@ -35,7 +35,7 @@
     &__tagline {
         @include t.heading-md;
         color: v.$color-accent;
-        text-transform: uppercase;
+        text-transform: upper case;
         letter-spacing: 20%;
     }
     &__title {
@@ -47,12 +47,12 @@
         text-align: center;
     }
     &__data-grid {
+        min-width: 348px;
         @include mx.grid(
             $cols: 2,
             $gap: 16px,
             $breakpoint: v.$breakpoint-mobile
         );
-        min-width: 348px;
     }
 
     &__img-badge {
@@ -75,10 +75,11 @@
 
     @media (min-width: v.$breakpoint-desktop) {
         flex-direction: row;
+        justify-content: space-between;
         &__body {
             max-width: 455px;
             position: relative;
-            right: 70px;
+            right: 120px;
             top: 15px;
         }
         &__header {

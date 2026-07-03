@@ -1,12 +1,19 @@
+// ------------------ Base ------------------
 @forward './base/reset';
 @forward './base/typography';
-@forward './layout/header';
+
+// ------------------ Components ------------------
+@forward './components/header';
+@forward './components/logo';
+@forward './components/button';
+@forward './components/badge';
+
+// ---------------- Layout ----------------
 @forward './layout/hero';
+@forward './layout/sidebar';
+@forward './layout/nav';
 @forward './layout/content';
 @forward './layout/gallery';
 @forward './layout/brand';
-@forward './components/main';
+@forward './layout/main';
 @forward './layout/travel-point';
-@forward './layout/testimonial';
-
-@import '../../node_modules/@glidejs/glide/src/assets/sass/glide.core';

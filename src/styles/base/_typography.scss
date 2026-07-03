@@ -7,10 +7,12 @@
     line-height: 120%;
     color: v.$text-dark-display;
     font-family: 'Circular Std', sans-serif;
-    @media (width > v.$breakpoint-mobile) {
+
+    @media (min-width: #{v.$breakpoint-mobile + 1px}) {
         font-size: fn.rem(56px);
     }
-    @media (width > v.$breakpoint-tablet) {
+
+    @media (min-width: #{v.$breakpoint-tablet + 1px}) {
         font-size: fn.rem(69px);
     }
 }
@@ -20,10 +22,12 @@
     font-weight: 700;
     line-height: 120%;
     font-family: 'Circular Std', sans-serif;
-    @media (width > v.$breakpoint-mobile) {
+
+    @media (min-width: #{v.$breakpoint-mobile + 1px}) {
         font-size: fn.rem(40px);
     }
-    @media (width > v.$breakpoint-tablet) {
+
+    @media (min-width: #{v.$breakpoint-tablet + 1px}) {
         font-size: fn.rem(44px);
     }
 }
@@ -39,7 +43,8 @@
     font-weight: 700;
     line-height: 120%;
     font-family: 'Circular Std', sans-serif;
-    @media (width > v.$breakpoint-mobile) {
+
+    @media (min-width: #{v.$breakpoint-mobile + 1px}) {
         font-size: fn.rem(23px);
     }
 }
@@ -50,10 +55,12 @@
     color: v.$text-muted;
     line-height: 160%;
     font-family: 'Inter', sans-serif;
-    @media (width > v.$breakpoint-mobile) {
+
+    @media (min-width: #{v.$breakpoint-mobile + 1px}) {
         font-size: fn.rem(18px);
     }
 }
+
 @mixin text-md() {
     font-size: fn.rem(18px);
     font-weight: 400;
@@ -70,16 +77,19 @@
 
 @mixin text-link() {
     font-size: fn.rem(14px);
+
     font-weight: 700;
     line-height: 120%;
     font-family: 'Circular Std', sans-serif;
 }
+
 @mixin text-bold() {
     font-size: fn.rem(18px);
     font-weight: 450;
     line-height: 160%;
     font-family: 'Circular Std', sans-serif;
-    @media (width > v.$breakpoint-mobile) {
+
+    @media (min-width: #{v.$breakpoint-mobile + 1px}) {
         font-size: fn.rem(23px);
     }
 }
