@@ -1,64 +1,40 @@
-/**
- * Valid target names for the footer dropdown accordion sections.
- * Used for input validation during click events.
- * @type {string[]}
- */
-export const footerDropsAria = ['contact', 'company', 'meetup'];
-
-/**
- * Single source of truth for the CSS class names that control
- * the visibility/state of each footer section.
- */
-const classNames = {
-    contact: 'nav-group__list--disable-contact',
-    company: 'nav-group__list--disable-company',
-    meetup: 'contact-group__list--disable-meetup',
-};
-Object.freeze(classNames);
-
-// ----------------------------------------------------------
-
-const contactEle = document.querySelector(`.${classNames.contact}`);
-const companyEle = document.querySelector(`.${classNames.company}`);
-const meetupEle = document.querySelector(`.${classNames.meetup}`);
+const hideClass = 'nav-group--none';
+let prevOpen = null;
 
 /**
  * Toggles the visibility modifier class of a specific footer section.
- * @param {string} target - The name of the section to toggle ('contact', 'company', or 'meetup')
+ * @param {Event} e - The name of the section to toggle ('contact', 'company', or 'meetup')
  */
-export function toggleFooterLink(target) {
-    if (!target) return;
-    let isClosed = null;
-    switch (target) {
-        case 'contact':
-            if (!contactEle) return;
 
-            isClosed = contactEle.classList.toggle(classNames.contact);
-            rotateIcon(contactEle, isClosed);
-            break;
-        case 'company':
-            if (!companyEle) return;
+export function toggleFooterLink(e) {
+    const currentGroup = e.currentTarget;
+    const currentList = currentGroup.querySelector('.nav-group__list');
 
-            isClosed = companyEle.classList.toggle(classNames.company);
-            rotateIcon(companyEle, isClosed);
-            break;
-        case 'meetup':
-            if (!meetupEle) return;
+    const isAlreadyOpen = !currentList.classList.contains(hideClass);
 
-            isClosed = meetupEle.classList.toggle(classNames.meetup);
-            rotateIcon(meetupEle, isClosed);
-            break;
-        default:
-            break;
+    if (prevOpen && prevOpen !== currentGroup) {
+        const prevList = prevOpen.querySelector('.nav-group__list');
+        if (prevList) {
+            prevList.classList.add(hideClass);
+            rotateIcon(currentGroup, false);
+        }
+    }
+
+    if (isAlreadyOpen) {
+        currentList.classList.add(hideClass);
+        rotateIcon(currentGroup, true);
+        prevOpen = null;
+    } else {
+        currentList.classList.remove(hideClass);
+        rotateIcon(currentGroup, false);
+        prevOpen = currentGroup;
     }
 }
 
 function rotateIcon(ele, isRotate) {
     if (isRotate) {
-        ele.previousElementSibling.querySelector('i').style.transform =
-            'rotate(0deg)';
+        ele.querySelector('i').style.transform = 'rotate(0deg)';
     } else {
-        ele.previousElementSibling.querySelector('i').style.transform =
-            'rotate(180deg)';
+        ele.querySelector('i').style.transform = 'rotate(180deg)';
     }
 }

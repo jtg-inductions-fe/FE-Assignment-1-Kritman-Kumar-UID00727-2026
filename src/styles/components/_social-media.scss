@@ -5,20 +5,11 @@
     width: 160px;
     @include mx.flex($justify: space-between, $align: center);
 
-    &__link--facebook {
-        font-size: 32px;
-    }
-
-    &__link--twitter {
+    &__link {
         background-color: v.$color-brand-pop;
         padding: 8px;
         border-radius: 50%;
         text-align: center;
-    }
-    &__link--instagram {
-        background-color: v.$color-brand-pop;
-        padding: 8px;
-        border-radius: 50%;
-        text-align: center;
+        color: white;
     }
 }

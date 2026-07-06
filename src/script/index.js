@@ -10,13 +10,13 @@ import {
 } from './components/hamburgerMenu.js';
 import { showTravelPointData } from './components/travelPoint.js';
 import { toggleClass } from './data/navItem.js';
-import { footerDropsAria, toggleFooterLink } from './components/footer.js';
+import { toggleFooterLink } from './components/footer.js';
 // ----------------------------------------------------------
 //                        DOM Element
 // ----------------------------------------------------------
 const hamburgerEle = document.querySelector('.nav__menu');
 const asideEle = document.querySelector('#hamburger-menu');
-const footer = document.querySelector('footer');
+const navAccordions = document.getElementsByClassName('nav-group');
 
 // ----------------------------------------------------------
 //                       EventListener
@@ -61,11 +61,9 @@ new Swiper('.swiper', {
  * Global event listener for the footer container.
  * Uses event delegation to capture clicks on chevron icon wrappers.
  */
-footer.addEventListener('click', function (e) {
-    const targetSpan = e.target.dataset.footerName;
-    if (!footerDropsAria.includes(targetSpan)) return;
-    toggleFooterLink(targetSpan);
-});
+for (let i = 0; i < navAccordions.length; i++) {
+    navAccordions[i].addEventListener('click', toggleFooterLink);
+}
 
 // Show the Travel Point data immediately.
 (function init() {
