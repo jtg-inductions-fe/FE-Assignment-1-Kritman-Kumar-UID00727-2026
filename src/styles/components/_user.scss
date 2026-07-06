@@ -9,37 +9,37 @@
         margin: 0 auto;
     }
     &__info {
-        @include mx.flex($direction: column, $gap: 32px);
         text-align: center;
+        @include mx.flex($direction: column, $gap: 32px);
     }
     &__name {
-        @include t.heading-primary;
         color: v.$color-warning;
+        @include t.heading-primary;
     }
     &__name--secondary {
         color: v.$text-secondary;
         font-size: 23px;
     }
     &__comment {
-        @include t.text-bold;
         color: v.$text-secondary;
         text-align: center;
+        @include t.text-bold;
     }
 
     @media (min-width: v.$breakpoint-tablet) {
         gap: 56px;
         &__comment {
-            @include t.text-bold;
             max-width: 600px;
             margin: 0 auto;
+            @include t.text-bold;
         }
     }
 
     @media (min-width: v.$breakpoint-desktop) {
         &__comment {
-            @include t.text-bold;
             max-width: 800px;
             margin: 0 auto;
+            @include t.text-bold;
         }
     }
 }

@@ -3,12 +3,13 @@ let prevOpen = null;
 
 /**
  * Toggles the visibility modifier class of a specific footer section.
- * @param {Event} e - The name of the section to toggle ('contact', 'company', or 'meetup')
+ * @param {Event} e - The click event fired on the footer nav-group container
  */
 
 export function toggleFooterLink(e) {
     const currentGroup = e.currentTarget;
     const currentList = currentGroup.querySelector('.nav-group__list');
+    if (!currentList) return;
 
     const isAlreadyOpen = !currentList.classList.contains(hideClass);
 
@@ -16,7 +17,7 @@ export function toggleFooterLink(e) {
         const prevList = prevOpen.querySelector('.nav-group__list');
         if (prevList) {
             prevList.classList.add(hideClass);
-            rotateIcon(currentGroup, false);
+            rotateIcon(currentGroup, true);
         }
     }
 

@@ -56,13 +56,6 @@
         top: 415px;
     }
 
-    @media (width < v.$breakpoint-desktop) {
-        &__cards-container {
-            max-width: 575px;
-            width: 100%;
-        }
-    }
-
     @media (v.$breakpoint-mobile < width < v.$breakpoint-tablet) {
         &__bg-layer {
             max-height: 40.25%;
@@ -71,6 +64,7 @@
         }
 
         &__cards-container {
+            height: auto;
             width: 74.48%;
             margin-right: 1.94%;
             aspect-ratio: 575 / 640;

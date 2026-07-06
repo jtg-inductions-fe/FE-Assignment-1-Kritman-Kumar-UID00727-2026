@@ -6,7 +6,7 @@
 .card-image {
     position: absolute;
     width: 272px;
-    height: 300px;
+    max-height: 300px;
     border-radius: v.$radius-md;
 
     &--top {
@@ -18,7 +18,7 @@
         left: 0;
     }
     &--right {
-        height: 400px;
+        max-height: 400px;
         right: 0;
         top: 50%;
         transform: translateY(-50%);

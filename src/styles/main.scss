@@ -3,8 +3,6 @@
 @forward './base/typography';
 
 // ---------------------------------------
-@forward './layout/footer-section';
-@forward './layout/header';
 // ------------------ Components ------------------
 @forward './components/header';
 @forward './components/logo';
@@ -12,14 +10,15 @@
 @forward './components/badge';
 
 // ---------------- Layout ----------------
+@forward './layout/main';
+@forward './layout/travel-point';
+@forward './layout/testimonial';
 @forward './layout/hero';
 @forward './layout/sidebar';
 @forward './layout/nav';
 @forward './layout/content';
 @forward './layout/gallery';
 @forward './layout/brand';
+@forward './layout/footer-section';
 
 @import '../../node_modules/@glidejs/glide/src/assets/sass/glide.core';
-@forward './layout/main';
-@forward './layout/travel-point';
-@forward './layout/testimonial';

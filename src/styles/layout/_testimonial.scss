@@ -51,10 +51,10 @@
         @include mx.flex($direction: column, $align: center, $gap: 16px);
     }
     &__label {
-        @include t.heading-md;
         color: v.$color-accent;
         letter-spacing: 20%;
         text-transform: uppercase;
+        @include t.heading-md;
     }
     &__title {
         @include t.heading-lg;
