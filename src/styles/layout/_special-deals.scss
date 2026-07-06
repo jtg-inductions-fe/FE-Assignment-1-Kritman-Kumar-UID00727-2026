@@ -3,6 +3,7 @@
 @use '../base/typography' as t;
 
 @forward '../components/wheel';
+@forward '../components/deal';
 
 .special-deals {
     min-width: 360px;
@@ -43,28 +44,8 @@
         transform: scale(0.92);
     }
 
-    &__heading {
-        @include mx.grid($cols: 1, $gap: 8px);
-
-        text-align: center;
-    }
-
-    &__title {
-        color: v.$color-accent;
-        font-size: 12px;
-        @include t.text-link;
-    }
-
-    &__sub-title {
-        @include t.text-bold;
-    }
-
-    &__instruction {
-        color: v.$text-muted;
-        @include t.text-link;
-    }
-
     &__wheel-container {
+        margin: 0 auto;
         height: 236px;
         width: 227px;
         position: relative;
@@ -74,8 +55,43 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: -10px;
+        top: -12px;
+        font-size: 1.5rem;
+        z-index: 5002;
         width: max-content;
+    }
+
+    &__greet {
+        text-align: center;
+        margin-bottom: 5px;
+        @include t.text-link;
+    }
+
+    &__badge-btn {
+        min-width: 312px;
+        border: 1px solid v.$color-bg-muted;
+        max-width: 312px;
+        height: 49px;
+        @include t.text-link;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: transform 0.1s ease-in;
+    }
+
+    &__badge-btn:hover {
+        transform: translateY(-2px);
+    }
+    &__badge-btn:active {
+        transform: scale(0.92);
+    }
+
+    &__badge {
+        background-color: v.$color-brand-pop;
+        padding: 3px 8px;
+        display: block;
+        border-radius: 100%;
     }
 
     @media (min-width: v.$breakpoint-desktop) {

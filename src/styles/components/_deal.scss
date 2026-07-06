@@ -1,0 +1,43 @@
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+.deals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid;
+    padding: 16px;
+    min-width: 305px;
+    border-radius: 16px;
+    background: #ffffff
+        linear-gradient(
+            90deg,
+            rgba(244, 67, 108, 0.05) 0%,
+            rgba(124, 58, 237, 0.05) 100%
+        );
+
+    border: 1px solid rgba(244, 67, 108, 0.2);
+
+    &__text {
+        display: block;
+        @include t.text-link;
+        max-width: 140px;
+    }
+
+    &__code {
+        padding: 3px 10px;
+        border-radius: 20px;
+        box-shadow: v.$wheel-shadow;
+        background-color: v.$bg-primary;
+        margin-top: 5px;
+    }
+
+    &__validity {
+        margin-top: 5px;
+        color: v.$color-brand-pop;
+    }
+
+    &__code-copy {
+        cursor: pointer;
+    }
+}

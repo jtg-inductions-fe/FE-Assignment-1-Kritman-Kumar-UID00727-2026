@@ -1,0 +1,28 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+@use '../base/typography' as t;
+
+@forward '../components/wheel';
+@forward '../components/deal';
+
+.heading {
+    text-align: center;
+    @include mx.grid($cols: 1, $gap: 8px);
+    padding-bottom: 10px;
+
+    &__title {
+        color: v.$color-accent;
+        font-size: 12px;
+        @include t.text-link;
+    }
+
+    &__sub-title {
+        @include t.text-bold;
+        font-weight: 700;
+    }
+
+    &__instruction {
+        color: v.$text-muted;
+        @include t.text-link;
+    }
+}

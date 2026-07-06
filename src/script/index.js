@@ -11,7 +11,11 @@ import {
 import { showTravelPointData } from './components/travelPoint.js';
 import { toggleClass } from './data/navItem.js';
 import { footerDropsAria, toggleFooterLink } from './components/footer.js';
-import { handleClick, toggleSpecialDeal } from './components/specialDeals.js';
+import {
+    fetchOffer,
+    handleClick,
+    toggleSpecialDeal,
+} from './components/specialDeals.js';
 
 import {
     hamburgerEle,
@@ -24,8 +28,6 @@ import {
 // ----------------------------------------------------------
 //                       EventListener
 // ----------------------------------------------------------
-
-specialDealsEle.addEventListener('click', handleClick);
 
 // open the mobile navigation menu
 navEle.addEventListener('click', (e) => {
@@ -71,6 +73,8 @@ new Swiper('.swiper', {
     },
 });
 
+specialDealsEle.addEventListener('click', handleClick);
+
 /**
  * Global event listener for the footer container.
  * Uses event delegation to capture clicks on chevron icon wrappers.
@@ -84,4 +88,5 @@ footer.addEventListener('click', function (e) {
 // Show the Travel Point data immediately.
 (function init() {
     showTravelPointData();
+    fetchOffer();
 })();

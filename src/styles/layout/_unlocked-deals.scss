@@ -1,0 +1,12 @@
+.unlocked-deals {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    max-height: 80dvh;
+    overflow-y: scroll;
+    padding: 0 10px;
+    &--hidden {
+        display: none;
+    }
+}

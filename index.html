@@ -570,131 +570,86 @@
                 ></span>
             </button>
 
-            <hgroup class="special-deals__heading">
-                <h3 class="special-deals__title">
-                    <span>
-                        <i class="fa-solid fa-gift" style="color: #f4436c"></i
-                    ></span>
-                    SPECIAL DEALS
-                </h3>
-                <h4 class="special-deals__sub-title">Spin & Win!</h4>
-                <p class="text special-deals__instruction">
-                    Tap the center of the wheel to spin
-                </p>
-            </hgroup>
+            <article id="deals">
+                <hgroup class="heading">
+                    <h3 class="heading__title">
+                        <span>
+                            <i
+                                class="fa-solid fa-gift"
+                                style="color: #f4436c"
+                            ></i
+                        ></span>
+                        SPECIAL DEALS
+                    </h3>
+                    <h4 class="heading__sub-title">Spin & Win!</h4>
+                    <p class="heading__instruction">
+                        Tap the center of the wheel to spin
+                    </p>
+                </hgroup>
 
-            <article class="special-deals__page-1">
                 <div class="special-deals__wheel-container">
                     <div class="special-deals__caret-down">
                         <span
                             ><i
                                 class="fa-sharp fa-solid fa-caret-down"
-                                style="color: #aaaa"
+                                style="color: #f85e9f"
                             ></i
                         ></span>
                     </div>
                     <!-- this displayed only when event or data is not fetched -->
-                    <div class="wheel wheel__loading">Loading...</div>
+                    <!-- <div class="wheel wheel__loading">Loading...</div> -->
 
                     <!-- this displayed only when event or data fetched now here is static data -->
-                    <ul
-                        class="wheel wheel__loadded special-deals__wheel--hidden"
-                    >
-                        <li class="wheel__item wheel__item--top">
-                            20% off Flights
-                        </li>
-                        <li class="wheel__item wheel__item--right">
-                            Free Hotel Nights
-                        </li>
-                        <li class="wheel__item wheel__item--buttom">
-                            VIP Lounge Access
-                        </li>
-                        <li class="wheel__item wheel__item--left">
-                            10% off Packages
-                        </li>
-                        <li class="wheel__btn">
-                            <button type="button" class="btn">Spin</button>
-                        </li>
+                    <ul class="wheel wheel__loading">
+                        Loading...
                     </ul>
+                    <button
+                        data-name="spin-wheel"
+                        class="btn wheel__btn spin-button special-deals--hidden"
+                        type="button"
+                    >
+                        Spin
+                    </button>
                 </div>
 
-                <div class="special-deals__greet special-deals__wheel--hidden">
-                    <span>You won!</span>
-                </div>
+                <div id="greet" class="special-deals--hidden">
+                    <div class="special-deals__greet">
+                        <span>You won!</span>
+                    </div>
 
-                <div class="deals special-deals__wheel--hidden">
-                    <div class="deals__offer">
-                        <span class="deals__title">20% Off Flights</span>
-                        <span class="deals__validaty">Expires in 7d</span>
-                    </div>
-                    <div class="deals__code">
-                        <span>FLY20-ABCD</span>
-                        <span
-                            ><i
-                                class="fa-regular fa-copy"
-                                style="color: rgb(0, 0, 0)"
-                            ></i
-                        ></span>
-                    </div>
+                    <div class="deals"></div>
                 </div>
             </article>
 
-            <article class="special-deals__page-2 special-deals__wheel--hidden">
-                <div class="deals">
-                    <div class="deals__offer">
-                        <span class="deals__title">20% Off Flights</span>
-                        <span class="deals__validaty">Expires in 7d</span>
-                    </div>
-                    <div class="deals__code">
-                        <span>FLY20-ABCD</span>
-                        <span
-                            ><i
-                                class="fa-regular fa-copy"
-                                style="color: rgb(0, 0, 0)"
+            <article class="unlocked-deals unlocked-deals--hidden">
+                <hgroup class="heading">
+                    <h3 class="heading__title">
+                        <span>
+                            <i
+                                class="fa-solid fa-gift"
+                                style="color: #f4436c"
                             ></i
                         ></span>
-                    </div>
-                </div>
+                        SPECIAL DEALS
+                    </h3>
+                    <h4 class="heading__sub-title">Unlocked Deals</h4>
+                    <p class="heading__instruction">
+                        All the deals you’ve unlocked yet!
+                    </p>
+                </hgroup>
 
-                <div class="deals">
-                    <div class="deals__offer">
-                        <span class="deals__title">20% Off Flights</span>
-                        <span class="deals__validaty">Expires in 7d</span>
-                    </div>
-                    <div class="deals__code">
-                        <span>FLY20-ABCD</span>
-                        <span
-                            ><i
-                                class="fa-regular fa-copy"
-                                style="color: rgb(0, 0, 0)"
-                            ></i
-                        ></span>
-                    </div>
-                </div>
-
-                <div class="deals">
-                    <div class="deals__offer">
-                        <span class="deals__title">20% Off Flights</span>
-                        <span class="deals__validaty">Expires in 7d</span>
-                    </div>
-                    <div class="deals__code">
-                        <span>FLY20-ABCD</span>
-                        <span
-                            ><i
-                                class="fa-regular fa-copy"
-                                style="color: rgb(0, 0, 0)"
-                            ></i
-                        ></span>
-                    </div>
-                </div>
+                <div class="unlocked-deals" id="unlocked-deals-root"></div>
             </article>
 
-            <button
-                class="btn special-deals__badge-btn special-deals__wheel--hidden"
-            >
-                <span>View All Unlocked Deals</span>
-                <span class="special-deals__badge">2</span>
-            </button>
+            <div class="special-deals__close-container">
+                <button
+                    class="btn special-deals__badge-btn"
+                    data-name="unlocked-deals"
+                >
+                    View All Unlocked Deals
+                    <span class="special-deals__badge">2</span>
+                </button>
+            </div>
         </section>
         <div class="overlay-backdrop"></div>
 
@@ -880,6 +835,7 @@
                     </ul>
                 </div>
             </section>
+
             <img
                 class="footer-section__layer"
                 src="./src/assets/images/footer-eclips.png"

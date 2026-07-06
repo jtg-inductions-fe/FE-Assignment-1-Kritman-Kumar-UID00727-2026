@@ -82,6 +82,7 @@
     line-height: 120%;
     font-family: 'Circular Std', sans-serif;
 }
+
 @mixin text-bold() {
     font-size: fn.rem(18px);
     font-weight: 450;

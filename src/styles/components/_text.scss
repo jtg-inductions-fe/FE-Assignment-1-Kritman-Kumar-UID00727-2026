@@ -1,0 +1,20 @@
+.text {
+    text-align: center;
+    &__top {
+        transform: rotate(-45deg);
+    }
+    &__left {
+        transform: rotate(135deg);
+    }
+    &__right {
+        transform: rotate(45deg);
+    }
+    &__bottom {
+        transform: rotate(-135deg);
+    }
+
+    &__title {
+        display: block;
+        width: 80%;
+    }
+}

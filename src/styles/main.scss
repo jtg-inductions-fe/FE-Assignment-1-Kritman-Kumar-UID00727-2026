@@ -5,6 +5,7 @@
 @forward './components/main';
 @forward './components/overlay-backdrop';
 @forward './components/button';
+@forward './components/heading';
 
 // ---------------------------------------
 @forward './layout/travel-point.scss';
@@ -15,6 +16,7 @@
 @forward './layout/content';
 @forward './layout/gallery';
 @forward './layout/brand';
+@forward './layout/unlocked-deals';
 @forward './layout/special-deals';
 
 @import '../../node_modules/@glidejs/glide/src/assets/sass/glide.core';
