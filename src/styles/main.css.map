@@ -22,7 +22,10 @@
         "components/_link.scss",
         "layout/_header.scss",
         "layout/_hero.scss",
+        "layout/_sidebar.scss",
+        "layout/_nav.scss",
         "layout/_content.scss",
+        "components/_card-image.scss",
         "layout/_gallery.scss",
         "layout/_brand.scss",
         "../../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss"
