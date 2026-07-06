@@ -16,3 +16,4 @@ export const greetEle = document.querySelector('#greet');
 export const unlockedDealsListEle = document.querySelector(
     '#unlocked-deals-root',
 );
+export const alertEle = document.querySelector('.special-deals__alert');

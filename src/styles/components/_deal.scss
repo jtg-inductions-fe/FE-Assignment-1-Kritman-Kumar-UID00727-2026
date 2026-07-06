@@ -18,6 +18,12 @@
 
     border: 1px solid rgba(244, 67, 108, 0.2);
 
+    &--disable {
+        pointer-events: none;
+        text-decoration: line-through;
+        color: v.$text-muted;
+    }
+
     &__text {
         display: block;
         @include t.text-link;
