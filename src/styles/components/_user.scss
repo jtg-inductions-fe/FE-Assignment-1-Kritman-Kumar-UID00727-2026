@@ -1,0 +1,45 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+@use '../base/typography' as t;
+
+.user {
+    @include mx.flex($direction: column, $gap: 64px);
+
+    &__avatar {
+        margin: 0 auto;
+    }
+    &__info {
+        @include mx.flex($direction: column, $gap: 32px);
+        text-align: center;
+    }
+    &__name {
+        @include t.heading-primary;
+        color: v.$color-warning;
+    }
+    &__name--secondary {
+        color: v.$text-secondary;
+        font-size: 23px;
+    }
+    &__comment {
+        @include t.text-bold;
+        color: v.$text-secondary;
+        text-align: center;
+    }
+
+    @media (min-width: v.$breakpoint-tablet) {
+        gap: 56px;
+        &__comment {
+            @include t.text-bold;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (min-width: v.$breakpoint-desktop) {
+        &__comment {
+            @include t.text-bold;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    }
+}

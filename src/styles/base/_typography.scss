@@ -31,6 +31,12 @@
         font-size: fn.rem(44px);
     }
 }
+@mixin heading-primary() {
+    font-size: fn.rem(28px);
+    font-weight: 700;
+    line-height: 120%;
+    font-family: 'Circular Std', sans-serif;
+}
 
 @mixin heading-md() {
     font-size: fn.rem(16px);
@@ -78,7 +84,7 @@
 }
 
 @mixin text-bold() {
-    font-size: 1rem;
+    font-size: fn.rem(18px);
     font-weight: 450;
     line-height: 160%;
     font-family: 'Circular Std', sans-serif;
