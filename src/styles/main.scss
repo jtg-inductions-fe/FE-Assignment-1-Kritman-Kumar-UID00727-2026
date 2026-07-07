@@ -5,8 +5,11 @@
 @forward './components/main';
 @forward './components/overlay-backdrop';
 @forward './components/button';
-@forward './components/heading';
+@forward './components/deals-text';
 @forward './components/alert';
+@forward './components/reward-text';
+@forward './components/wheel';
+@forward './components/deal';
 
 // ---------------------------------------
 @forward './layout/travel-point.scss';

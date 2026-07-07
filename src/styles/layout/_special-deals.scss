@@ -25,6 +25,10 @@
         display: none;
     }
 
+    &__slide-down {
+        transform: translate(-50%, 100%);
+    }
+
     &__wheel-container {
         margin: 0 auto;
         height: 236px;
@@ -40,6 +44,7 @@
         font-size: 1.5rem;
         z-index: 5002;
         width: max-content;
+        color: v.$color-accent;
     }
 
     &__greet {

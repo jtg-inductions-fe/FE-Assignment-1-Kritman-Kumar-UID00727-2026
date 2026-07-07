@@ -3,7 +3,7 @@
 @use '../abstract/functions' as fn;
 @use '../base/typography' as t;
 
-@forward '../components/text';
+@forward '../components/reward-text';
 
 .wheel {
     width: fn.rem(227px);
@@ -30,7 +30,7 @@
 
         background-color: v.$bg-primary;
         border: 2px solid v.$bg-primary;
-        box-shadow: v.$wheel-shadow;
+        box-shadow: v.$shadow-sm;
         position: relative;
     }
 

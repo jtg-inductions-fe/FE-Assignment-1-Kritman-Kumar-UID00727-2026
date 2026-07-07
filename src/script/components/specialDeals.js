@@ -180,23 +180,23 @@ function renderDealsWheel() {
 
 function renderWheel() {
     wheelEle.innerHTML = `<li class="wheel__item wheel__item--top">
-                            <div class="text text__top">
-                                <span class="text__title">${state.currentReward[0].label}</span>
+                            <div class="reward-text__top">
+                                <span class="reward-text__title">${escapeHTML(state.currentReward[0].label)}</span>
                             </div>
                         </li>
                         <li class="wheel__item wheel__item--right">
-                            <div class="text text__right">
-                                <span class="text__title">${state.currentReward[1].label}</span>
+                            <div class="reward-text reward-text__right">
+                                <span class="text__title">${escapeHTML(state.currentReward[1].label)}</span>
                             </div>
                         </li>
                         <li class="wheel__item wheel__item--bottom">
-                            <div class="text text__bottom">
-                                <span class="text__title">${state.currentReward[2].label}</span>
+                            <div class="reward-text reward-text__bottom">
+                                <span class="reward-text__title">${escapeHTML(state.currentReward[2].label)}</span>
                             </div>
                         </li>
                         <li class="wheel__item wheel__item--left">
-                            <div class="text text__left">
-                                <span class="text__title">${state.currentReward[3].label}</span>
+                            <div class="reward-text reward-text__left">
+                                <span class="reward-text__title">${escapeHTML(state.currentReward[3].label)}</span>
                             </div>
                         </li>`;
 }
@@ -244,8 +244,7 @@ function updateWinEle(selectedReward) {
                     <span data-name="copy-code" class="deals__code-copy"
                         ><i
                             data-name="copy-code"
-                            class="fa-regular fa-copy"
-                            style="color: rgb(0, 0, 0)"
+                            class="fa-regular fa-copy" 
                         ></i
                     ></span>
                 </div>
@@ -294,18 +293,17 @@ function renderWonReward() {
      
                         <div class="deals__offer ${style}">
                             <span class="deals__text deals__title"
-                                >${state.unlockedDeals[i].label}</span
+                                >${escapeHTML(state.unlockedDeals[i].label)}</span
                             >
                             <span class="deals__text deals__validity"
                                 >expire in ${checkDaysLeft(state.unlockedDeals[i].expiresAt)}d</span
                             >
                         </div>
                         <div class="${style}" >
-                            <span class="deals__code">${state.unlockedDeals[i].promoCode}</span>
+                            <span class="deals__code">${escapeHTML(state.unlockedDeals[i].promoCode)}</span>
                             <span data-name="copy-code"
                                 ><i data-name="copy-code"
                                     class="fa-regular fa-copy"
-                                    style="color: rgb(0, 0, 0)"
                                 ></i
                             ></span>
                         </div>
@@ -350,7 +348,6 @@ async function handleCopyCode(ele) {
  * @global {Object} classLists - Global object containing UI CSS class names.
  * @returns {void} This function utilizes an asynchronous timer to change DOM classes and does not return a value.
  */
-
 function showMessage(message, timeOut) {
     if (!Number(timeOut)) timeOut = 1500;
 
@@ -384,7 +381,7 @@ function getCurrentReward() {
         }
         while (idx < 4) {
             state.currentReward[idx++] = {
-                label: 'No Spacial Deal',
+                label: 'No Special Deal',
                 promoCode: '',
                 validFor: '',
                 id: '',
@@ -420,6 +417,21 @@ function markWonReward(reward) {
     today.setDate(today.getDate() + reward.validFor);
     reward.expiresAt = today.toISOString().split('T')[0];
     return reward;
+}
+
+function escapeHTML(str) {
+    if (!str) return '';
+    return str.replace(
+        /[&<>'"]/g,
+        (tag) =>
+            ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;',
+            })[tag] || tag,
+    );
 }
 
 // ==============================================================
@@ -510,7 +522,8 @@ function spinWheel() {
 
     const randomIndex = Math.floor(Math.random() * state.currentReward.length);
     const selectedReward = markWonReward(state.currentReward[randomIndex]);
-
+    // updating state
+    state.currentReward[randomIndex].isUnlocked = true;
     state.lastWonIdx = randomIndex;
 
     if (selectedReward.id) {
@@ -547,13 +560,11 @@ function spinWheel() {
  */
 
 function addNewDeal(idx) {
-    const randomIdx = Math.floor(Math.random() * state.offers.length);
-
     let flag = false;
 
     for (let i = 0; i < state.offers.length; i++) {
-        if (canAdd(state.offers[randomIdx])) {
-            state.currentReward[idx] = state.offers[randomIdx];
+        if (canAdd(state.offers[idx])) {
+            state.currentReward[idx] = state.offers[idx];
             flag = true;
             break;
         }

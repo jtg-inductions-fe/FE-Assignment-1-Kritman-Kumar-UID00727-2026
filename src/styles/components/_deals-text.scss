@@ -3,15 +3,13 @@
 @use '../abstract/functions' as fn;
 @use '../base/typography' as t;
 
-@forward '../components/wheel';
-@forward '../components/deal';
-
-.heading {
+.deals-text {
     text-align: center;
     @include mx.grid($cols: 1, $gap: 8px);
     padding-bottom: 10px;
 
     &__title {
+        text-transform: uppercase;
         color: v.$color-accent;
         font-size: fn.rem(12px);
         @include t.text-link;
