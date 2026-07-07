@@ -1092,13 +1092,19 @@ select {
     align-items: center;
     flex-wrap: nowrap;
     gap: 16px;
+    transition: 0.3s transform ease-in-out;
+}
+.brand-card__heading:hover {
+    transform: scale(1.01);
+}
+.brand-card__logo {
+    display: inline-block;
 }
 .brand-card__title {
     font-size: 1.4375rem;
     font-weight: 700;
     line-height: 120%;
     font-family: 'Circular Std', sans-serif;
-    cursor: pointer;
 }
 .brand-card__description {
     font-size: 1rem;
@@ -1149,6 +1155,9 @@ select {
     border-radius: 50%;
     text-align: center;
     color: white;
+}
+.social-media__link:hover {
+    box-shadow: 0 0 3px black;
 }
 
 .nav-group__title {

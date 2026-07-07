@@ -7,12 +7,20 @@
 
     &__heading {
         @include mx.flex($align: center, $gap: 16px);
+        transition: 0.3s transform ease-in-out;
+    }
+    &__heading:hover {
+        transform: scale(1.01);
+    }
+
+    &__logo {
+        display: inline-block;
     }
 
     &__title {
         @include t.heading-secondary;
-        cursor: pointer;
     }
+
     &__description {
         @include t.text;
     }
