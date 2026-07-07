@@ -2,7 +2,6 @@
 @use '../abstract/mixins' as mx;
 @use '../abstract/functions' as fn;
 @use '../base/typography' as t;
-
 @forward '../components/reward-text';
 
 .wheel {

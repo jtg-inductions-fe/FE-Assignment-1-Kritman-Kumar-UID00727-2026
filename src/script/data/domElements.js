@@ -1,6 +1,6 @@
 export const hamburgerEle = document.querySelector('#hamburger-btn');
 export const asideEle = document.querySelector('#hamburger-menu');
-export const navAccordions = document.querySelector('#footer');
+export const navAccordions = document.querySelectorAll('.nav-group');
 export const specialDealsEle = document.querySelector('#special-deals');
 export const backdropEle = document.querySelector('#overlay');
 export const navEle = document.querySelectorAll('#nav-links');
