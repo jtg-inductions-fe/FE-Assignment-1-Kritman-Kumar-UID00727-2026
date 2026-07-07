@@ -1,6 +1,7 @@
 @use '../abstract/mixins' as mx;
 
 .reward-text {
+    width: 80%;
     text-align: center;
     @include mx.flex($justify: center);
     &__top {
@@ -20,5 +21,4 @@
         display: block;
         text-align: center;
     }
-    width: 80%;
 }

@@ -5,8 +5,8 @@
 
 .deals-text {
     text-align: center;
-    @include mx.grid($cols: 1, $gap: 8px);
     padding-bottom: 10px;
+    @include mx.grid($cols: 1, $gap: 8px);
 
     &__title {
         text-transform: uppercase;
@@ -16,8 +16,8 @@
     }
 
     &__sub-title {
-        @include t.text-bold;
         font-weight: 700;
+        @include t.text-bold;
     }
 
     &__instruction {

@@ -31,6 +31,12 @@
             href="https://cdn.jsdelivr.net/npm/@vetixy/circular-std@1.0.0/dist/index.min.css"
         />
 
+        <!-- font-awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        />
+
         <!-- Google Fonts (Inter) -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,11 +62,10 @@
     <body>
         <header class="header">
             <nav class="nav" aria-label="Primary navigation">
-                <!-- Hamburger Menu Button  -->
                 <button
                     id="hamburger-btn"
                     type="button"
-                    class="nav__menu btn--none"
+                    class="nav__toggle"
                     aria-label="open navigation menu"
                     aria-expanded="false"
                     aria-controls="hamburger-menu"
@@ -70,83 +75,66 @@
                         alt="hamburger menu icon"
                     />
                 </button>
-
-                <!-- website Logo -->
                 <a
                     href="/"
                     aria-label="Travel Point Home"
-                    class="nav__logo a--none"
+                    class="logo nav__logo"
                 >
                     <img
                         src="src/assets/icons/logo-main.png"
                         alt="Travel Point Logo"
                     />
                 </a>
-
-                <!-- Desktop Navigation Links -->
-                <ul class="nav__links-lg nav__links--lg" id="nav-links">
-                    <li class="li--none nav--active">
-                        <a class="a--none nav--links" href="/">home</a>
+                <ul class="nav__list nav__list--desktop" id="nav-links">
+                    <li class="nav__item">
+                        <a class="nav__link nav__link--active" href="/">home</a>
                     </li>
-                    <li class="li--none">
-                        <a class="a--none nav--links" href="#discover"
-                            >Discover</a
-                        >
+                    <li>
+                        <a class="nav__link" href="#discover">Discover</a>
                     </li>
-                    <li class="li--none">
+                    <li>
                         <a
                             id="special-deals-nav-link"
-                            class="a--none nav--links"
+                            class="nav__link"
                             href="#deals"
                             >Special Deals</a
                         >
                     </li>
-                    <li class="li--none">
-                        <a class="a--none nav--links" href="#contact"
-                            >Contact</a
-                        >
+                    <li>
+                        <a class="nav__link" href="#contact">Contact</a>
                     </li>
                 </ul>
-
-                <!-- Authentication Buttons -->
                 <div class="nav__auth" id="nav-auth">
-                    <button type="button" class="btn btn--none">Log In</button>
-                    <button type="button" class="btn btn--primary btn--none">
+                    <button type="button" class="btn btn nav__btn">
+                        Log In
+                    </button>
+                    <button type="button" class="btn btn nav__btn btn--primary">
                         Sign Up
                     </button>
                 </div>
             </nav>
-            <!-- 
-            ------------------------------------------------------------------------------------
-                        Mobile Sidebar Navigation 
-            ------------------------------------------------------------------------------------
-             -->
-            <aside id="hamburger-menu" class="aside aside--disabled">
+
+            <aside id="hamburger-menu" class="sidebar sidebar--disabled">
                 <!-- Sidebar Links -->
-                <ul class="aside__links">
-                    <li class="li--none">
-                        <button type="button" class="btn">X</button>
+                <ul class="sidebar__links">
+                    <li>
+                        <button type="button" class="btn sidebar__btn">
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <a class="sidebar__link" href="/">home</a>
+                    </li>
+                    <li>
+                        <a class="sidebar__link" href="#discover">Discover</a>
                     </li>
                     <li class="li--none">
-                        <a class="a--none nav--links" href="/">home</a>
-                    </li>
-                    <li class="li--none">
-                        <a class="a--none nav--links" href="#discover"
-                            >Discover</a
-                        >
-                    </li>
-                    <li class="li--none">
-                        <a
-                            id="aside-deal"
-                            class="a--none nav--links"
-                            href="#deals"
+                        <a id="aside-deal" class="sidebar__link" href="#deals"
                             >Special Deals</a
                         >
                     </li>
-                    <li class="li--none">
-                        <a class="a--none nav--links" href="#contact"
-                            >Contact</a
-                        >
+                    <li>
+                        <a class="sidebar__link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </aside>
@@ -158,18 +146,17 @@
         ---------------------------------------------------------------------------------
          -->
         <main class="main">
-            <section class="hero" aria-labelledby="hero-heading">
+            <section class="hero" aria-labelledby="content-heading">
                 <div
                     class="hero__ellipse hero__ellipse--gradient"
                     aria-hidden="true"
                 ></div>
 
-                <article class="content">
+                <article class="hero__content">
                     <div class="content__text">
-                        <span class="content__badge">
+                        <span class="badge">
                             Explore the world!
                             <img
-                                class="content__badge-icon"
                                 src="./src/assets/icons/bag-icon.png"
                                 alt=""
                                 aria-hidden="true"
@@ -193,9 +180,12 @@
                     </p>
 
                     <div class="content__actions">
-                        <button class="btn btn--primary">Get Started</button>
+                        <button type="button" class="btn btn--primary">
+                            Get Started
+                        </button>
 
                         <button
+                            type="button"
                             class="btn btn--secondary"
                             aria-label="Watch video demo of our travel services"
                         >
@@ -211,7 +201,7 @@
                 </article>
 
                 <figure
-                    class="gallery"
+                    class="hero__gallery"
                     aria-label="Photo gallery of global travel destinations"
                 >
                     <img
@@ -221,33 +211,33 @@
                     />
 
                     <div class="gallery__cards-container">
-                        <div class="gallery__cards-container-left">
-                            <img
-                                class="gallery__card-img--top"
-                                src="./src/assets/images/hero-travel-1.jpg"
-                                alt="Scenic ocean water view from a stone stairway"
-                            />
-                            <img
-                                class="gallery__card-img--right"
-                                src="./src/assets/images/hero-travel-3.jpg"
-                                alt="Hiker taking a photograph of a vast mountain view"
-                            />
-                        </div>
+                        <!-- <div> -->
+                        <img
+                            class="card-image card-image--top"
+                            src="./src/assets/images/hero-travel-1.jpg"
+                            alt="Scenic ocean water view from a stone stairway"
+                        />
+                        <img
+                            class="card-image card-image--right"
+                            src="./src/assets/images/hero-travel-3.jpg"
+                            alt="Hiker taking a photograph of a vast mountain view"
+                        />
+                        <!-- </div> -->
 
                         <img
-                            class="gallery__card-img--bottom"
+                            class="card-image card-image--bottom"
                             src="./src/assets/images/hero-travel-2.jpg"
                             alt="Traveler sitting and looking out over a mountain landscape"
                         />
                         <!-- icons -->
                         <img
-                            class="gallery__floating-icon gallery__floating-icon--send"
+                            class="gallery__floating-icon gallery__floating-icon--pos-left"
                             src="./src/assets/icons/send-icon.png"
                             alt=""
                             aria-hidden="true"
                         />
                         <img
-                            class="gallery__floating-icon gallery__floating-icon--contact"
+                            class="gallery__floating-icon gallery__floating-icon--pos-bottom"
                             src="./src/assets/images/contact.png"
                             alt=""
                             aria-hidden="true"
@@ -256,7 +246,7 @@
                             class="gallery__floating-icon gallery__floating-badge"
                         >
                             <img
-                                class="gallery__floating-icon--location"
+                                class="gallery__floating-badge-icon"
                                 src="./src/assets/images/location-img.png"
                                 alt=""
                                 aria-hidden="true"
@@ -339,33 +329,30 @@
 
                     <ul class="travel-point__data-grid">
                         <li class="stat-card">
-                            <span class="stat-card__number">500+</span>
-                            <span class="stat-card__label"
-                                >Holiday Package</span
-                            >
+                            <span class="stat-card__number"></span>
+                            <span class="stat-card__label"></span>
                         </li>
 
                         <li class="stat-card">
-                            <span class="stat-card__number">100+</span>
-                            <span class="stat-card__label">Luxury Hotel</span>
+                            <span class="stat-card__number"></span>
+                            <span class="stat-card__label"></span>
                         </li>
 
                         <li class="stat-card">
-                            <span class="stat-card__number">7</span>
-                            <span class="stat-card__label"
-                                >Premium Airlines</span
-                            >
+                            <span class="stat-card__number"></span>
+                            <span class="stat-card__label"></span>
                         </li>
 
                         <li class="stat-card">
-                            <span class="stat-card__number">2k+</span>
-                            <span class="stat-card__label">Happy Customer</span>
+                            <span class="stat-card__number"></span>
+                            <span class="stat-card__label"></span>
                         </li>
                     </ul>
                     <img
                         class="travel-point__img-badge"
                         src="/src/assets/icons/travel-point-star-icon.png"
-                        alt="start badge"
+                        alt=""
+                        aria-hidden="true"
                     />
                 </div>
             </section>
@@ -379,7 +366,7 @@
                     </h2>
                 </hgroup>
 
-                <div class="swiper">
+                <div class="swiper testimonials-section__swiper">
                     <div class="swiper-wrapper">
                         <article class="swiper-slide user">
                             <div class="user__avatar">
@@ -554,8 +541,12 @@
                     </div>
 
                     <!-- If we need navigation buttons -->
-                    <div class="swiper-button swiper-button-prev"></div>
-                    <div class="swiper-button swiper-button-next"></div>
+                    <div
+                        class="testimonials-section__button testimonials-section__button--prev swiper-button-prev"
+                    ></div>
+                    <div
+                        class="testimonials-section__button testimonials-section__button--next swiper-button-next"
+                    ></div>
                 </div>
 
                 <div class="swiper-pagination"></div>
@@ -566,7 +557,7 @@
             <div id="deals__alert" class="alert special-deals--hidden">
                 copied
             </div>
-            <button type="button" data-name="close" class="btn btn__close">
+            <button type="button" data-name="close" class="btn btn--close">
                 <span data-name="close" data-name="close"
                     ><i data-name="close" class="fa-solid fa-x"></i
                 ></span>
@@ -596,7 +587,7 @@
                     <button
                         id="spin-btn"
                         data-name="spin-wheel"
-                        class="btn btn__rounded spin-button special-deals--hidden"
+                        class="btn btn--rounded special-deals--hidden"
                         type="button"
                     >
                         Spin
@@ -631,7 +622,7 @@
                 <button
                     type="button"
                     id="special-deals__nav-btn"
-                    class="btn btn__badge"
+                    class="btn btn--badge"
                     data-name="unlocked-deals"
                 >
                     Loading...
@@ -652,15 +643,15 @@
                 aria-labelledby="footer-titile"
             >
                 <div class="footer-section__brand brand-card">
-                    <div class="brand-card__heading">
-                        <img
-                            class="brand-card__logo"
-                            src="./src/assets/icons/logo-main.png"
-                            alt="Travlog logo"
-                        />
-                        <h3 id="footer-titile" class="brand-card__title">
-                            Travlog
-                        </h3>
+                    <div>
+                        <a href="/" class="brand-card__heading">
+                            <img
+                                class="brand-card__logo"
+                                src="./src/assets/icons/logo-main.png"
+                                alt="Travlog logo"
+                            />
+                            <span class="brand-card__title"> Travlog </span>
+                        </a>
                     </div>
                     <p class="brand-card__description">
                         Contrary to popular belief, Lorem Ipsum is not simply
@@ -674,18 +665,15 @@
                         <a
                             aria-label="facebook"
                             href="https://www.facebook.com/"
-                            class="social-media__link social-media__link--facebook"
-                            ><i
-                                class="fa-brands fa-facebook"
-                                style="color: #5d50c6"
-                            ></i
+                            class="social-media__link social-media__link"
+                            ><i class="fa-brands fa-facebook-f"></i
                         ></a>
                     </li>
                     <li class="social-media__item">
                         <a
                             aria-label="twitter"
                             href="https://x.com/"
-                            class="social-media__link social-media__link--twitter"
+                            class="social-media__link social-media__link"
                             ><i
                                 class="fa-brands fa-twitter"
                                 style="color: #ffffff"
@@ -696,7 +684,7 @@
                         <a
                             aria-label="instagram"
                             href="https://www.instagram.com/"
-                            class="social-media__link social-media__link--instagram"
+                            class="social-media__link social-media__link"
                             ><i
                                 class="fa-brands fa-instagram"
                                 style="color: #ffffff"
@@ -716,6 +704,8 @@
                             Company
                         </h4>
                         <button
+                            aria-label="Open user profile menu"
+                            aria-expanded="false"
                             type="button"
                             class="footer-section__chevron-down"
                             data-footer-name="company"
@@ -727,9 +717,7 @@
                             ></i>
                         </button>
                     </div>
-                    <ul
-                        class="nav-group__list nav-group__list--disable-company"
-                    >
+                    <ul class="nav-group__list nav-group--none">
                         <li class="nav-group__item">
                             <a href="#" class="nav-group__link">About</a>
                         </li>
@@ -753,6 +741,8 @@
                         ></h4>
 
                         <button
+                            aria-label="Open user profile menu"
+                            aria-expanded="false"
                             type="button"
                             class="footer-section__chevron-down"
                             data-footer-name="contact"
@@ -764,9 +754,7 @@
                             ></i>
                         </button>
                     </div>
-                    <ul
-                        class="nav-group__list nav-group__list--disable-contact"
-                    >
+                    <ul class="nav-group__list nav-group--none">
                         <li class="nav-group__item">
                             <a href="#" class="nav-group__link">Why Travlog?</a>
                         </li>
@@ -784,10 +772,12 @@
                     </ul>
                 </div>
 
-                <div class="footer-section__contact contact-group">
+                <div class="footer-section__nav nav-group">
                     <div class="footer-section__heading">
-                        <h4 class="contact-group__title">Meet Us</h4>
+                        <h4 class="nav-group__title">Meet Us</h4>
                         <button
+                            aria-label="Open user profile menu"
+                            aria-expanded="false"
                             type="button"
                             class="footer-section__chevron-down"
                             data-footer-name="meetup"
@@ -799,24 +789,18 @@
                             ></i>
                         </button>
                     </div>
-                    <ul
-                        class="contact-group__list contact-group__list--disable-meetup"
-                    >
-                        <li class="contact-group__item">
-                            <a
-                                href="tel:+0092123456789"
-                                class="contact-group__link"
+                    <ul class="nav-group__list nav-group--none">
+                        <li class="nav-group__item">
+                            <a href="tel:+0092123456789" class=""
                                 >+00 92 1234 56789</a
                             >
                         </li>
-                        <li class="contact-group__item">
-                            <a
-                                href="mailto:info@travlog.com"
-                                class="contact-group__link"
+                        <li class="nav-group__item">
+                            <a href="mailto:info@travlog.com" class=""
                                 >info@travlog.com</a
                             >
                         </li>
-                        <li class="contact-group__item">
+                        <li class="nav-group__item">
                             205. R Street, New York BD23200
                         </li>
                     </ul>

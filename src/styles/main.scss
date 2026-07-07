@@ -1,8 +1,8 @@
+// ------------------ Base ------------------
 @forward './base/reset';
 @forward './base/typography';
 
 // ---------------------------------------
-@forward './components/main';
 @forward './components/overlay-backdrop';
 @forward './components/button';
 @forward './components/deals-text';
@@ -10,17 +10,20 @@
 @forward './components/reward-text';
 @forward './components/wheel';
 @forward './components/deal';
+@forward './components/header';
 
 // ---------------------------------------
-@forward './layout/travel-point.scss';
-@forward './layout/testimonial.scss';
+@forward './layout/travel-point';
+@forward './layout/testimonial';
 @forward './layout/footer-section';
-@forward './layout/header';
 @forward './layout/hero';
+@forward './layout/sidebar';
+@forward './layout/nav';
 @forward './layout/content';
 @forward './layout/gallery';
 @forward './layout/brand';
 @forward './layout/unlocked-deals';
 @forward './layout/special-deals';
+@forward './layout/footer-section';
 
 @import '../../node_modules/@glidejs/glide/src/assets/sass/glide.core';

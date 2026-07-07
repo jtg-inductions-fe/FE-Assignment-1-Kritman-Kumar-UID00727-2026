@@ -12,8 +12,6 @@
 @forward '../components/button';
 
 .content {
-    @include mx.flex($direction: column, $gap: 43px);
-
     &__text {
         @include mx.flex($direction: column, $gap: 43px);
     }
@@ -22,41 +20,15 @@
         display: block;
     }
 
-    &__badge {
-        @include t.text-link();
-        color: v.$color-accent;
-        width: 224px;
-        height: 56px;
-        box-sizing: border-box;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-
-        padding: 16px 32px;
-        border-radius: 100px;
-
-        opacity: 1;
-        transform: rotate(0deg);
-
-        box-shadow:
-            0px 0px 0px 0px rgba(0, 0, 0, 0.07),
-            0px 34px 75px 0px rgba(0, 0, 0, 0.07),
-            0px 137px 137px 0px rgba(0, 0, 0, 0.06),
-            0px 308px 185px 0px rgba(0, 0, 0, 0.04),
-            0px 548px 219px 0px rgba(0, 0, 0, 0.01),
-            0px 856px 240px 0px rgba(0, 0, 0, 0);
-    }
-
     &__title {
-        @include t.heading-xl();
+        @include t.heading-xl;
     }
     &__title--accent {
         color: v.$color-accent;
     }
 
     &__description {
-        @include t.text();
+        @include t.text;
     }
 
     &__actions {
@@ -64,15 +36,6 @@
     }
 
     @media (width < v.$breakpoint-desktop) {
-        margin-top: 35px;
-        @include mx.flex(
-            $direction: column,
-            $justify: center,
-            $align: center,
-            $gap: 43px
-        );
-        text-align: center;
-
         &__text {
             @include mx.flex($direction: column, $gap: 43px, $align: center);
         }
@@ -90,12 +53,9 @@
         }
     }
     @media (width <= v.$breakpoint-mobile) {
-        margin-top: auto;
-
-        gap: 24px;
         &__actions {
-            @include mx.flex($direction: column, $gap: 24px);
             width: 100%;
+            @include mx.flex($direction: column, $gap: 24px);
         }
 
         &__text {

@@ -1,7 +1,22 @@
 @use '../abstract/variables' as v;
 
-.nav__logo {
+.logo {
     display: block;
     width: 40px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
+
+    position: absolute;
+    left: 3.7%;
+    transform: translateX(0%);
+
+    @media (min-width: 500px) {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @media (min-width: #{v.$breakpoint-tablet + 1px}) {
+        position: static;
+        left: auto;
+        transform: none;
+    }
 }

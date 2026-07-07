@@ -4,7 +4,6 @@
 @forward '../components/brand-card';
 @forward '../components/social-media';
 @forward '../components/nav-group';
-@forward '../components/contact-group';
 
 .footer-section {
     padding: 64px 32px;
@@ -27,6 +26,7 @@
         border: 1px solid v.$text-secondary;
         border-radius: 50%;
         @include mx.flex($align: center, $justify: center);
+        cursor: pointer;
     }
 
     &__layer {

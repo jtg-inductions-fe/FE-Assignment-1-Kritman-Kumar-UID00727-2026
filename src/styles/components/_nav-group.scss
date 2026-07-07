@@ -17,12 +17,10 @@
         @include t.text-md;
     }
 
-    &__list--disable-company {
+    &--none {
         display: none;
     }
-    &__list--disable-contact {
-        display: none;
-    }
+
     &__contact::after {
         content: 'Contact Us';
     }

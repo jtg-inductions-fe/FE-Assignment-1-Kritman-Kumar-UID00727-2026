@@ -12,14 +12,25 @@
 @forward '../components/button';
 
 .hero {
+    align-items: center;
+    justify-content: space-between;
     position: relative;
     padding: 64px 130px;
     @include mx.grid-aria(
         $cols: minmax(0, 420px) minmax(0, 772px),
         $breakpoint: v.$breakpoint-desktop
     );
-    align-items: center;
-    justify-content: space-between;
+
+    &__content {
+        @include mx.flex($direction: column, $gap: 43px);
+    }
+
+    &__gallery {
+        position: relative;
+        width: 772px;
+        height: 713px;
+        @include mx.flex($justify: center, $align: end);
+    }
 
     &__ellipse {
         top: 12rem;
@@ -42,10 +53,32 @@
 
     @media (width < v.$breakpoint-desktop) {
         &__floating-icon--triangle {
-            position: absolute;
             top: auto;
             left: 100px;
             bottom: 12px;
+        }
+        &__content {
+            margin-top: 35px;
+            text-align: center;
+            @include mx.flex(
+                $direction: column,
+                $justify: center,
+                $align: center,
+                $gap: 43px
+            );
+        }
+    }
+
+    @media (v.$breakpoint-mobile < width < v.$breakpoint-tablet) {
+        padding: 64px 0;
+
+        &__gallery {
+            width: 100%;
+            max-width: 772px;
+            height: auto;
+        }
+        &__floating-icon--triangle {
+            display: none;
         }
     }
 
@@ -58,5 +91,13 @@
 
     @media (width <= v.$breakpoint-mobile) {
         margin-top: 33px;
+        &__content {
+            margin-top: auto;
+            gap: 24px;
+        }
+        &__gallery {
+            max-width: 396px;
+            max-height: 366px;
+        }
     }
 }

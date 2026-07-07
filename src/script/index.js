@@ -1,16 +1,12 @@
-// ----------------------------------------------------------
-//                        imports
-// ----------------------------------------------------------
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs';
 
 import {
     toggleMenu,
-    handleKeyPress,
+    handleEscape,
     handleOutsideClick,
 } from './components/hamburgerMenu.js';
 import { showTravelPointData } from './components/travelPoint.js';
-import { toggleClass } from './data/navItem.js';
-import { footerDropsAria, toggleFooterLink } from './components/footer.js';
+import { toggleFooterLink } from './components/footer.js';
 import {
     fetchOffer,
     handleClick,
@@ -19,8 +15,8 @@ import {
 
 import {
     hamburgerEle,
+    navAccordions,
     asideEle,
-    footer,
     specialDealsEle,
     specialDealsNavLink,
     asideDealNavEle,
@@ -32,7 +28,7 @@ import {
 
 // open the mobile navigation menu
 hamburgerEle.addEventListener('click', () => {
-    toggleMenu(hamburgerEle, asideEle, toggleClass);
+    toggleMenu(hamburgerEle, asideEle);
 });
 
 specialDealsNavLink.addEventListener('click', function () {
@@ -44,22 +40,26 @@ asideEle.addEventListener('click', (e) => {
     if (e.target === asideDealNavEle) {
         toggleSpecialDeal();
     }
-    toggleMenu(hamburgerEle, asideEle, toggleClass);
+    toggleMenu(hamburgerEle, asideEle);
 });
 
 // close the mobile navigation menu when Escape Key is pressed.
 window.addEventListener('keyup', (e) =>
-    handleKeyPress(e, hamburgerEle, asideEle, toggleClass),
+    handleEscape(e, hamburgerEle, asideEle),
 );
 
 // Close the mobile navigation menu when the user clicks outside the screen.
 window.addEventListener('click', (e) =>
-    handleOutsideClick(e, hamburgerEle, asideEle, toggleClass),
+    handleOutsideClick(e, hamburgerEle, asideEle),
 );
 
 // Library setup for the testimonials section
 new Swiper('.swiper', {
     loop: true,
+
+    autoplay: {
+        delay: 5000,
+    },
 
     pagination: {
         el: '.swiper-pagination',
@@ -77,11 +77,9 @@ specialDealsEle.addEventListener('click', handleClick);
  * Global event listener for the footer container.
  * Uses event delegation to capture clicks on chevron icon wrappers.
  */
-footer.addEventListener('click', function (e) {
-    const targetSpan = e.target.dataset.footerName;
-    if (!footerDropsAria.includes(targetSpan)) return;
-    toggleFooterLink(targetSpan);
-});
+for (let i = 0; i < navAccordions.length; i++) {
+    navAccordions[i].addEventListener('click', toggleFooterLink);
+}
 
 // Show the Travel Point data immediately.
 (function init() {

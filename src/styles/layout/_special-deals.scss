@@ -16,7 +16,6 @@
     border-radius: 24px 24px 0 0;
     background-color: v.$bg-primary;
     padding: 24px;
-
     transition: transform 0.3s ease-in-out;
 
     @include mx.flex($direction: column, $align: center, $gap: 20px);

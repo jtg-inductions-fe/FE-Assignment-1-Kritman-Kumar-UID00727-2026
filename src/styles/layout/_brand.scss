@@ -5,8 +5,8 @@
     padding: 0 16px;
 
     &__list {
-        @include mx.flex($wrap: wrap, $justify: center, $gap: 24px);
         row-gap: 32px;
+        @include mx.flex($wrap: wrap, $justify: center, $gap: 24px);
     }
     &__item-img {
         max-height: 20px;

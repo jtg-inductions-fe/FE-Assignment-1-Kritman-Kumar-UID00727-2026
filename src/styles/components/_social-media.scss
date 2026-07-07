@@ -9,16 +9,7 @@
         font-size: 2rem;
     }
 
-    &__link--twitter {
-        background-color: v.$color-brand-pop;
-        padding: 8px;
-        border-radius: 50%;
-        text-align: center;
-    }
-    &__link--instagram {
-        background-color: v.$color-brand-pop;
-        padding: 8px;
-        border-radius: 50%;
-        text-align: center;
+    &__link:hover {
+        box-shadow: v.$shadow-sm;
     }
 }
