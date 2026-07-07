@@ -18,7 +18,6 @@
         "components/_brand-card.scss",
         "components/_social-media.scss",
         "components/_nav-group.scss",
-        "components/_contact-group.scss",
         "layout/_footer-section.scss",
         "components/_logo.scss",
         "components/_link.scss",

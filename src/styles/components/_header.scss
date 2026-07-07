@@ -1,0 +1,28 @@
+@use '../abstract/functions' as fn;
+@use '../abstract/mixins' as mx;
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: v.$bg-primary;
+
+    @include mx.flex($direction: column);
+
+    margin-top: 0;
+    padding: 0 4.5%;
+
+    @media (min-width: #{v.$breakpoint-mobile + 1px}) {
+        padding: 0 6.25%;
+    }
+
+    @media (min-width: #{v.$breakpoint-tablet + 1px}) {
+        @include mx.flex($justify: center, $align: center);
+
+        margin-top: 32px;
+        padding: 0 9%;
+    }
+}

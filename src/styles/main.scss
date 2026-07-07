@@ -1,3 +1,4 @@
+// ------------------ Base ------------------
 @forward './base/reset';
 @forward './base/typography';
 
@@ -6,12 +7,13 @@
 @forward './components/overlay-backdrop';
 @forward './components/button';
 
-// ---------------------------------------
-@forward './layout/travel-point.scss';
-@forward './layout/testimonial.scss';
-@forward './layout/footer-section';
-@forward './layout/header';
+// ---------------- Layout ----------------
+@forward './layout/main';
+@forward './layout/travel-point';
+@forward './layout/testimonial';
 @forward './layout/hero';
+@forward './layout/sidebar';
+@forward './layout/nav';
 @forward './layout/content';
 @forward './layout/gallery';
 @forward './layout/brand';
