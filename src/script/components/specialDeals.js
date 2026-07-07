@@ -33,11 +33,9 @@ export function toggleSpecialDeal() {
     if (backdropEle.classList.contains(classLists.toggleSpecialDeal)) {
         specialDealsEle.classList.remove(classLists.toggleSpecialDeal);
         backdropEle.classList.remove(classLists.toggleSpecialDeal);
-        specialDealsEle.classList.add(classLists.slideUp);
         return;
     }
     // else close the specialDeals section with small animation
-    specialDealsEle.classList.remove(classLists.slideUp);
     specialDealsEle.classList.add(classLists.slideDown);
 
     setTimeout(() => {

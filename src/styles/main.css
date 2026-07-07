@@ -1451,7 +1451,7 @@ select {
 }
 .special-deals__close-btn {
     width: max-content;
-    padding: 3px;
+    padding: 0.1875rem;
     position: absolute;
     top: 19px;
     right: 23px;
@@ -1472,7 +1472,7 @@ select {
 }
 .special-deals__title {
     color: #f85e9f;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 120%;

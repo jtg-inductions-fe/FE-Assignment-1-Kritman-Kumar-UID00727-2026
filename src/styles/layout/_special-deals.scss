@@ -1,6 +1,7 @@
 @use '../abstract/variables' as v;
 @use '../abstract/mixins' as mx;
 @use '../base/typography' as t;
+@use '../abstract/functions' as fn;
 
 @forward '../components/wheel';
 
@@ -33,7 +34,7 @@
 
     &__close-btn {
         width: max-content;
-        padding: 3px;
+        padding: fn.rem(3px);
         position: absolute;
         top: 19px;
         right: 23px;
@@ -51,7 +52,7 @@
 
     &__title {
         color: v.$color-accent;
-        font-size: 12px;
+        font-size: fn.rem(12px);
         @include t.text-link;
     }
 

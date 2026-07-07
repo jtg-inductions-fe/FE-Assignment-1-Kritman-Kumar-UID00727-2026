@@ -555,7 +555,10 @@
             </section>
         </main>
 
-        <section class="special-deals">
+        <section
+            aria-labelledby="special-deals"
+            class="special-deals special-deals--hidden"
+        >
             <button
                 type="button"
                 data-name="close"
@@ -571,7 +574,7 @@
             </button>
 
             <hgroup class="special-deals__heading">
-                <h3 class="special-deals__title">
+                <h3 id="special-deals" class="special-deals__title">
                     <span>
                         <i class="fa-solid fa-gift" style="color: #f4436c"></i
                     ></span>
@@ -696,7 +699,7 @@
                 <span class="special-deals__badge">2</span>
             </button>
         </section>
-        <div class="overlay-backdrop"></div>
+        <div class="overlay-backdrop special-deals--hidden"></div>
 
         <!-- 
         ---------------------------------------------------------------------------------
