@@ -58,6 +58,7 @@
             <nav class="nav" aria-label="Primary navigation">
                 <!-- Hamburger Menu Button  -->
                 <button
+                    id="hamburger-btn"
                     type="button"
                     class="nav__menu btn--none"
                     aria-label="open navigation menu"
@@ -93,7 +94,10 @@
                         >
                     </li>
                     <li class="li--none">
-                        <a class="a--none nav--links" href="#deals"
+                        <a
+                            id="special-deals-nav-link"
+                            class="a--none nav--links"
+                            href="#deals"
                             >Special Deals</a
                         >
                     </li>
@@ -132,7 +136,10 @@
                         >
                     </li>
                     <li class="li--none">
-                        <a class="a--none nav--links" href="#deals"
+                        <a
+                            id="aside-deal"
+                            class="a--none nav--links"
+                            href="#deals"
                             >Special Deals</a
                         >
                     </li>
@@ -555,8 +562,13 @@
             </section>
         </main>
 
-        <section class="special-deals">
-            <div class="special-deals__alert special-deals--hidden">copied</div>
+        <section id="special-deals" class="special-deals special-deals--hidden">
+            <div
+                id="deals__alert"
+                class="special-deals__alert special-deals--hidden"
+            >
+                copied
+            </div>
             <button
                 type="button"
                 data-name="close"
@@ -597,10 +609,11 @@
                             ></i
                         ></span>
                     </div>
-                    <ul class="wheel wheel__loading">
+                    <ul id="wheel" class="wheel wheel__loading">
                         Loading...
                     </ul>
                     <button
+                        id="spin-btn"
                         data-name="spin-wheel"
                         class="btn wheel__btn spin-button special-deals--hidden"
                         type="button"
@@ -614,11 +627,11 @@
                         <span>You won!</span>
                     </div>
 
-                    <div class="deals"></div>
+                    <div class="deals" id="win-ele"></div>
                 </div>
             </article>
 
-            <article class="unlocked-deals unlocked-deals--hidden">
+            <article id="rewards" class="unlocked-deals unlocked-deals--hidden">
                 <hgroup class="heading">
                     <h3 class="heading__title">
                         <span>
@@ -640,6 +653,7 @@
 
             <div class="special-deals__close-container">
                 <button
+                    id="special-deals__nav-btn"
                     class="btn special-deals__badge-btn"
                     data-name="unlocked-deals"
                 >
@@ -647,7 +661,7 @@
                 </button>
             </div>
         </section>
-        <div class="overlay-backdrop"></div>
+        <div id="overlay" class="overlay-backdrop special-deals--hidden"></div>
 
         <!-- 
         ---------------------------------------------------------------------------------
@@ -655,7 +669,7 @@
         ---------------------------------------------------------------------------------
          -->
 
-        <footer class="footer-section">
+        <footer id="footer" class="footer-section">
             <section
                 class="footer-section__top"
                 aria-labelledby="footer-titile"

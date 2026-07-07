@@ -4,7 +4,7 @@ import {
     wheelEle,
     dealButtonEle,
     dealsEle,
-    unlockedDealsEle,
+    rewardsSectionEle,
     winOfferEle,
     spinButtonEle,
     greetEle,
@@ -143,7 +143,7 @@ function toggleDealsPage(actionName) {
     }
 
     dealsEle.classList.toggle(classLists.hideSpecialDeal);
-    unlockedDealsEle.classList.toggle(classLists.hideUnlockedDeals);
+    rewardsSectionEle.classList.toggle(classLists.hideUnlockedDeals);
 }
 
 /**
@@ -236,7 +236,7 @@ function updateWinEle(selectedReward) {
                         >${selectedReward.label}</span
                     >
                     <span class="deals__text deals__validity"
-                        > ${selectedReward.validFor}</span
+                        > Expire in ${selectedReward.validFor}d</span
                     >
                 </div>
                 <div>
@@ -297,7 +297,7 @@ function renderWonReward() {
                                 >${state.unlockedDeals[i].label}</span
                             >
                             <span class="deals__text deals__validity"
-                                >${state.unlockedDeals[i].validFor}</span
+                                >expire in ${checkDaysLeft(state.unlockedDeals[i].expiresAt)}d</span
                             >
                         </div>
                         <div class="${style}" >
@@ -404,24 +404,22 @@ function getCurrentReward() {
     }
 }
 
-/**
- * Calculates and returns a user-friendly relative expiration string based on the remaining days of the current month.
- * Evaluates a target expiration numerical day against the current date, checking for expired status, same-day urgency, or day differences.
- * @param {number|undefined|null} validFor - The calendar day integer of the current month when the deal expires.
- * @returns {string} Text descriptor of the offer's life cycle status (e.g., 'Expires in 5d', 'expired', 'Expires Today').
- */
-function formatRelativeDate(validFor) {
-    if (!validFor) return 'Expires in 7d';
-
+function checkDaysLeft(expiresAtString) {
     const today = new Date();
-    const currentDay = today.getDate();
+    const expireDate = new Date(expiresAtString);
 
-    if (validFor < currentDay) {
-        return 'expired';
-    }
-    const remainingDays = validFor - currentDay;
-    if (remainingDays === 0) return 'Expires Today';
-    return `Expires in ${remainingDays}d`;
+    today.setHours(0, 0, 0, 0);
+    expireDate.setHours(0, 0, 0, 0);
+
+    const diffTime = expireDate - today;
+    return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+}
+
+function markWonReward(reward) {
+    const today = new Date();
+    today.setDate(today.getDate() + reward.validFor);
+    reward.expiresAt = today.toISOString().split('T')[0];
+    return reward;
 }
 
 // ==============================================================
@@ -462,6 +460,8 @@ export async function fetchOffer() {
                 3000,
             );
         }
+        alert('some thing went wrong please try again letter.');
+        toggleDealsPage();
     }
 }
 
@@ -482,7 +482,7 @@ function storeOfferWithId(offers) {
         ...offer,
         id: crypto.randomUUID(),
         isUnlocked: false,
-        validFor: formatRelativeDate(offer.validFor),
+        validFor: offer.validFor || 7,
     }));
 }
 
@@ -509,7 +509,7 @@ function spinWheel() {
     }
 
     const randomIndex = Math.floor(Math.random() * state.currentReward.length);
-    const selectedReward = state.currentReward[randomIndex];
+    const selectedReward = markWonReward(state.currentReward[randomIndex]);
 
     state.lastWonIdx = randomIndex;
 
@@ -581,9 +581,9 @@ function addNewDeal(idx) {
  */
 function canAdd(current) {
     for (const reward of state.currentReward) {
+        if (!current.validFor) return false;
         if (reward.id === current.id) return false;
     }
     if (current.isUnlocked) return false;
-    if (current.validFor === 'expired') return false;
     return true;
 }

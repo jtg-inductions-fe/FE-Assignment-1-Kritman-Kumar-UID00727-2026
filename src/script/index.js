@@ -22,7 +22,8 @@ import {
     asideEle,
     footer,
     specialDealsEle,
-    navEle,
+    specialDealsNavLink,
+    asideDealNavEle,
 } from './data/domElements.js';
 
 // ----------------------------------------------------------
@@ -30,20 +31,17 @@ import {
 // ----------------------------------------------------------
 
 // open the mobile navigation menu
-navEle.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON' || e.target.tagName === 'IMG') {
-        toggleMenu(hamburgerEle, asideEle, toggleClass);
-        return;
-    }
-    if (e.target.innerText === 'Special Deals') {
-        toggleSpecialDeal();
-    }
+hamburgerEle.addEventListener('click', () => {
+    toggleMenu(hamburgerEle, asideEle, toggleClass);
+});
+
+specialDealsNavLink.addEventListener('click', function () {
+    toggleSpecialDeal();
 });
 
 // close the mobile navigation menu when close is button clicked or link clicked.
 asideEle.addEventListener('click', (e) => {
-    if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') return;
-    if (e.target.tagName === 'A' && e.target.innerText === 'Special Deals') {
+    if (e.target === asideDealNavEle) {
         toggleSpecialDeal();
     }
     toggleMenu(hamburgerEle, asideEle, toggleClass);
