@@ -3,9 +3,6 @@
 @use '../abstract/functions' as fn;
 @use '../base/typography' as t;
 
-@forward '../components/wheel';
-@forward '../components/deal';
-
 .special-deals {
     min-width: fn.rem(360px);
     position: fixed;

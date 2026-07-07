@@ -2,8 +2,6 @@
 @use '../base/typography' as t;
 @use '../abstract/mixins' as mx;
 
-@forward '../components/stats-grid.scss';
-
 .travel-point {
     position: relative;
     padding: 0;

@@ -1,10 +1,6 @@
 @use '../abstract/variables' as v;
 @use '../abstract/mixins' as mx;
 
-@forward '../components/brand-card';
-@forward '../components/social-media';
-@forward '../components/nav-group';
-
 .footer-section {
     padding: 64px 32px;
     margin-top: 49px;

@@ -2,9 +2,6 @@
 @use '../abstract/mixins' as mx;
 @use '../base/typography' as t;
 
-@forward '../components/user';
-@forward '../components/rating';
-
 .testimonials-section {
     position: relative;
     padding: 64px 32px;

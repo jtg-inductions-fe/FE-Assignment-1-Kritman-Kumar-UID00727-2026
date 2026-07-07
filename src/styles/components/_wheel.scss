@@ -44,19 +44,19 @@
     }
 
     &__item--top {
-        border-radius: 100% 0 0 0;
+        border-radius: fn.rem(227px) 0 0 0;
         background-color: v.$color-accent;
     }
     &__item--left {
-        border-radius: 0 0 100% 0;
+        border-radius: 0 0 fn.rem(227px) 0;
         background-color: v.$color-amber;
     }
     &__item--right {
         background-color: v.$color-brand-pop;
-        border-radius: 0 100% 0 0;
+        border-radius: 0 fn.rem(227px) 0 0;
     }
     &__item--bottom {
         background-color: v.$color-sky-dark;
-        border-radius: 0 0 0 100%;
+        border-radius: 0 0 0 fn.rem(227px);
     }
 }
