@@ -1,12 +1,13 @@
 @use '../abstract/variables' as v;
 @use '../abstract/mixins' as mx;
+@use '../abstract/functions' as fn;
 @use '../base/typography' as t;
 
 @forward '../components/wheel';
 @forward '../components/deal';
 
 .special-deals {
-    min-width: 360px;
+    min-width: fn.rem(360px);
     position: fixed;
     bottom: 0;
     left: 50%;
@@ -20,49 +21,8 @@
 
     @include mx.flex($direction: column, $align: center, $gap: 20px);
 
-    &__alert {
-        position: absolute;
-        z-index: 5002;
-        padding: 5px 10px;
-        border-radius: 5px;
-        left: 10px;
-        top: 10px;
-        background-color: v.$color-warning;
-        color: v.$bg-primary;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-        animation: slideInRight 0.3s ease-out forwards;
-    }
-
-    @keyframes slideInRight {
-        from {
-            transform: translateX(-30%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-
-    &__slide-down {
-        transform: translate(-50%, 100%);
-    }
-
     &--hidden {
         display: none;
-    }
-
-    &__close-btn {
-        width: max-content;
-        padding: 3px;
-        position: absolute;
-        top: 19px;
-        right: 23px;
-    }
-
-    &__close-btn:active {
-        transform: scale(0.92);
     }
 
     &__wheel-container {
@@ -86,26 +46,6 @@
         text-align: center;
         margin-bottom: 5px;
         @include t.text-link;
-    }
-
-    &__badge-btn {
-        min-width: 312px;
-        border: 1px solid v.$color-bg-muted;
-        max-width: 312px;
-        height: 49px;
-        @include t.text-link;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        transition: transform 0.1s ease-in;
-    }
-
-    &__badge-btn:hover {
-        transform: translateY(-2px);
-    }
-    &__badge-btn:active {
-        transform: scale(0.92);
     }
 
     &__badge {

@@ -1,12 +1,13 @@
 @use '../abstract/variables' as v;
 @use '../abstract/mixins' as mx;
+@use '../abstract/functions' as fn;
 @use '../base/typography' as t;
 
 @forward '../components/text';
 
 .wheel {
-    width: 227px;
-    height: 227px;
+    width: fn.rem(227px);
+    height: fn.rem(227px);
     border-radius: v.$radius-xl;
 
     transition: transform 2s cubic-bezier(0.1, 0.8, 0.3, 1);
@@ -33,36 +34,10 @@
         position: relative;
     }
 
-    &__btn {
-        width: 43px;
-        height: 43px;
-        padding: 0;
-        position: absolute;
-        text-align: center;
-        font-size: 10px;
-        top: 50%;
-        left: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 3px solid v.$color-accent;
-        color: v.$color-accent;
-        background-color: v.$bg-primary;
-        transform: translate(-50%, -50%);
-        transition: background-color 0.1s ease-in-out;
-    }
-
-    &__btn:active {
-        background-color: v.$color-warning;
-        color: v.$bg-backdrop;
-    }
-
     &__item {
-        width: 110px;
-        height: 110px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: fn.rem(110px);
+        height: fn.rem(110px);
+        @include mx.flex($justify: center, $align: center);
 
         @include t.text-link();
         color: v.$bg-primary;

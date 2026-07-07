@@ -1,13 +1,14 @@
 @use '../abstract/variables' as v;
 @use '../base/typography' as t;
+@use '../abstract/mixins' as mx;
+@use '../abstract/functions' as fn;
 
 .deals {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include mx.flex($justify: center, $align: center);
+
     border: 2px solid;
     padding: 16px;
-    min-width: 305px;
+    min-width: fn.rem(305px);
     border-radius: 16px;
     background: #ffffff
         linear-gradient(
@@ -26,8 +27,8 @@
 
     &__text {
         display: block;
+        max-width: fn.rem(140px);
         @include t.text-link;
-        max-width: 140px;
     }
 
     &__code {
@@ -35,11 +36,11 @@
         border-radius: 20px;
         box-shadow: v.$wheel-shadow;
         background-color: v.$bg-primary;
-        margin-top: 5px;
+        margin-top: fn.rem(5px);
     }
 
     &__validity {
-        margin-top: 5px;
+        margin-top: fn.rem(5px);
         color: v.$color-brand-pop;
     }
 

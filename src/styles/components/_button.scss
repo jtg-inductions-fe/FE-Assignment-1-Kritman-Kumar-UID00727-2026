@@ -1,5 +1,6 @@
 @use '../abstract/variables' as v;
 @use '../abstract/mixins' as mx;
+@use '../abstract/functions' as fn;
 @use '../base/typography' as t;
 
 .btn {
@@ -17,6 +18,59 @@
         @include mx.flex($justify: center, $align: center, $gap: 8px);
         color: v.$color-primary;
         background-color: v.$color-bg-muted;
+    }
+
+    &__rounded {
+        width: fn.rem(43px);
+        height: fn.rem(43px);
+        padding: 0;
+        position: absolute;
+        text-align: center;
+        font-size: 10px;
+        top: 50%;
+        left: 50%;
+        @include mx.flex($justify: center, $align: center);
+        border: 3px solid v.$color-accent;
+        color: v.$color-accent;
+        background-color: v.$bg-primary;
+        transform: translate(-50%, -50%);
+        transition: background-color 0.1s ease-in-out;
+    }
+
+    &__rounded:active {
+        background-color: v.$color-warning;
+        color: v.$bg-backdrop;
+    }
+    &__close {
+        width: max-content;
+        padding: 3px;
+        position: absolute;
+        top: 19px;
+        right: 23px;
+    }
+
+    &__close:active {
+        transform: scale(0.92);
+    }
+
+    &__badge {
+        min-width: 312px;
+        border: 1px solid v.$color-bg-muted;
+        max-width: 312px;
+        height: 49px;
+        @include t.text-link;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: transform 0.1s ease-in;
+    }
+
+    &__badge-btn:hover {
+        transform: translateY(-2px);
+    }
+    &__badge-btn:active {
+        transform: scale(0.92);
     }
 
     @media (max-width: v.$breakpoint-mobile) {

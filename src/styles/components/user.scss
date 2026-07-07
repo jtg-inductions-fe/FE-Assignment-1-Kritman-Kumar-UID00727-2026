@@ -1,5 +1,6 @@
 @use '../abstract/variables' as v;
 @use '../abstract/mixins' as mx;
+@use '../abstract/functions' as fn;
 @use '../base/typography' as t;
 
 .user {
@@ -18,7 +19,7 @@
     }
     &__name--secondary {
         color: v.$text-secondary;
-        font-size: 23px;
+        font-size: fn.rem(23px);
     }
     &__comment {
         @include t.text-bold;
