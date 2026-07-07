@@ -26,10 +26,10 @@
     }
 
     &__gallery {
-        @include mx.flex($justify: center, $align: end);
         position: relative;
         width: 772px;
         height: 713px;
+        @include mx.flex($justify: center, $align: end);
     }
 
     &__ellipse {
@@ -59,17 +59,19 @@
         }
         &__content {
             margin-top: 35px;
+            text-align: center;
             @include mx.flex(
                 $direction: column,
                 $justify: center,
                 $align: center,
                 $gap: 43px
             );
-            text-align: center;
         }
     }
 
     @media (v.$breakpoint-mobile < width < v.$breakpoint-tablet) {
+        padding: 64px 0;
+
         &__gallery {
             width: 100%;
             max-width: 772px;

@@ -1,0 +1,41 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+@use '../base/typography' as t;
+
+.brand-card {
+    @include mx.flex($direction: column, $gap: 32px);
+
+    &__heading {
+        @include mx.flex($align: center, $gap: 16px);
+        transition: 0.3s transform ease-in-out;
+    }
+    &__heading:hover {
+        transform: scale(1.01);
+    }
+
+    &__logo {
+        display: inline-block;
+    }
+
+    &__title {
+        @include t.heading-secondary;
+    }
+
+    &__description {
+        @include t.text;
+    }
+
+    @media (min-width: v.$breakpoint-tablet) {
+        gap: 28px;
+
+        &__description {
+            @include t.text-bold;
+        }
+    }
+
+    @media (min-width: v.$breakpoint-desktop) {
+        &__heading {
+            gap: 16px;
+        }
+    }
+}

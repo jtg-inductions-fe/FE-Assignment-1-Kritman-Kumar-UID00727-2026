@@ -1,0 +1,76 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+@forward '../components/brand-card';
+@forward '../components/social-media';
+@forward '../components/nav-group';
+
+.footer-section {
+    padding: 64px 32px;
+    margin-top: 49px;
+    @include mx.flex($direction: column, $gap: 79px);
+
+    &__top {
+        @include mx.flex($direction: column, $align: start, $gap: 32px);
+    }
+    &__links {
+        @include mx.flex($direction: column, $gap: 79px);
+    }
+
+    &__heading {
+        @include mx.flex($justify: space-between);
+    }
+    &__chevron-down {
+        height: 24px;
+        width: 24px;
+        border: 1px solid v.$text-secondary;
+        border-radius: 50%;
+        @include mx.flex($align: center, $justify: center);
+        cursor: pointer;
+    }
+
+    &__layer {
+        display: none;
+    }
+
+    @media (min-width: v.$breakpoint-tablet) {
+        padding: 64px;
+        padding-right: 63px;
+        margin-top: 120px;
+        gap: 55px;
+        position: relative;
+
+        &__chevron-down {
+            display: none;
+        }
+        &__links {
+            flex-direction: row;
+            gap: 33px;
+        }
+        &__layer {
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 105px;
+        }
+    }
+
+    @media (min-width: v.$breakpoint-desktop) {
+        padding: 64px 130px;
+        margin-top: 214px;
+        gap: 64px;
+        flex-direction: row;
+
+        &__top {
+            min-width: 564px;
+            gap: 64px;
+        }
+
+        &__links {
+            gap: 32px;
+        }
+        &__layer {
+            bottom: 5px;
+        }
+    }
+}

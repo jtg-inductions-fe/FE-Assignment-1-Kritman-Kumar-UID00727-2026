@@ -9,11 +9,14 @@ import {
     handleOutsideClick,
 } from './components/hamburgerMenu.js';
 import { showTravelPointData } from './components/travelPoint.js';
+import { toggleFooterLink } from './components/footer.js';
+
 // ----------------------------------------------------------
 //                        DOM Element
 // ----------------------------------------------------------
 const hamburgerEle = document.querySelector('.nav__toggle');
 const asideEle = document.querySelector('#hamburger-menu');
+const navAccordions = document.getElementsByClassName('nav-group');
 
 // ----------------------------------------------------------
 //                       EventListener
@@ -58,6 +61,14 @@ new Swiper('.swiper', {
         prevEl: '.swiper-button-prev',
     },
 });
+
+/**
+ * Global event listener for the footer container.
+ * Uses event delegation to capture clicks on chevron icon wrappers.
+ */
+for (let i = 0; i < navAccordions.length; i++) {
+    navAccordions[i].addEventListener('click', toggleFooterLink);
+}
 
 // Show the Travel Point data immediately.
 (function init() {

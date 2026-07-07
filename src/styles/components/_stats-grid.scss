@@ -9,13 +9,13 @@
     border: 1px solid v.$text-muted-lite;
     &__number {
         display: block;
-        @include t.text-data();
         color: v.$color-warning;
         text-align: center;
+        @include t.text-data;
     }
     &__label {
         display: block;
-        @include t.text-md();
         text-align: center;
+        @include t.text-md;
     }
 }

@@ -24,7 +24,7 @@
     }
 
     &__link {
-        @include t.text-link();
+        @include t.text-link;
         display: block;
         padding: 1.5rem;
         text-transform: capitalize;

@@ -21,14 +21,14 @@
     }
 
     &__title {
-        @include t.heading-xl();
+        @include t.heading-xl;
     }
     &__title--accent {
         color: v.$color-accent;
     }
 
     &__description {
-        @include t.text();
+        @include t.text;
     }
 
     &__actions {
@@ -54,8 +54,8 @@
     }
     @media (width <= v.$breakpoint-mobile) {
         &__actions {
-            @include mx.flex($direction: column, $gap: 24px);
             width: 100%;
+            @include mx.flex($direction: column, $gap: 24px);
         }
 
         &__text {

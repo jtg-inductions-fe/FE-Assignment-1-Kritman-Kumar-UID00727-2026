@@ -1,0 +1,19 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+.social-media {
+    width: 160px;
+    @include mx.flex($justify: space-between, $align: center);
+
+    &__link {
+        background-color: v.$color-brand-pop;
+        padding: 8px;
+        border-radius: 50%;
+        text-align: center;
+        color: white;
+    }
+
+    &__link:hover {
+        box-shadow: v.$shadow-sm;
+    }
+}
