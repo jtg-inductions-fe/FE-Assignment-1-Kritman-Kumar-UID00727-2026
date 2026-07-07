@@ -1403,8 +1403,8 @@ select {
 }
 
 .wheel {
-    width: 227px;
-    height: 227px;
+    width: 14.1875rem;
+    height: 14.1875rem;
     border-radius: 170px;
 }
 .wheel__loading {
@@ -1423,7 +1423,7 @@ select {
 }
 
 .special-deals {
-    min-width: 360px;
+    min-width: 22.5rem;
     position: fixed;
     bottom: 0;
     left: 50%;
@@ -1453,8 +1453,8 @@ select {
     width: max-content;
     padding: 0.1875rem;
     position: absolute;
-    top: 19px;
-    right: 23px;
+    top: 1.1875rem;
+    right: 1.4375rem;
 }
 .special-deals__close-btn:active {
     transform: scale(0.92);
@@ -1497,7 +1497,7 @@ select {
     font-family: 'Circular Std', sans-serif;
 }
 .special-deals__wheel-container {
-    height: 236px;
+    height: 14.75rem;
     width: 227px;
     position: relative;
 }

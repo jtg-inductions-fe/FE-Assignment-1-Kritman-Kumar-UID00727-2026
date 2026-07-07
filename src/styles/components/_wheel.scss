@@ -1,10 +1,11 @@
 @use '../abstract/variables' as v;
 @use '../abstract/mixins' as mx;
 @use '../base/typography' as t;
+@use '../abstract/functions' as fn;
 
 .wheel {
-    width: 227px;
-    height: 227px;
+    width: fn.rem(227px);
+    height: fn.rem(227px);
     border-radius: v.$radius-xl;
 
     &__loading {

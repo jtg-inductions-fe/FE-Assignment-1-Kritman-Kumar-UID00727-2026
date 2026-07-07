@@ -6,7 +6,7 @@
 @forward '../components/wheel';
 
 .special-deals {
-    min-width: 360px;
+    min-width: fn.rem(360px);
     position: fixed;
     bottom: 0;
     left: 50%;
@@ -36,8 +36,8 @@
         width: max-content;
         padding: fn.rem(3px);
         position: absolute;
-        top: 19px;
-        right: 23px;
+        top: fn.rem(19px);
+        right: fn.rem(23px);
     }
 
     &__close-btn:active {
@@ -66,7 +66,7 @@
     }
 
     &__wheel-container {
-        height: 236px;
+        height: fn.rem(236px);
         width: 227px;
         position: relative;
     }
