@@ -12,6 +12,14 @@ import {
     alertEle,
 } from '../data/domElements.js';
 
+/**
+ * @type {Object<string, string>}
+ * @property {string} TOGGLE_SPECIAL_DEAL - Toggles the visibility of the special deal.
+ * @property {string} SPIN_WHEEL - Triggers the fortune wheel rotation logic.
+ * @property {string} SHOW_UNLOCKED_DEALS - Opens the page displaying unlocked deals.
+ * @property {string} SHOW_DEALS - Opens the main Unlocked Deals directory page.
+ * @property {string} COPY_CODE - Copies the promotional code from the target element.
+ */
 const actionTypes = {
     TOGGLE_SPECIAL_DEAL: 'close',
     SPIN_WHEEL: 'spin-wheel',
@@ -20,12 +28,14 @@ const actionTypes = {
     COPY_CODE: 'copy-code',
 };
 
+// class name which used for toggle in HTML elements
 const classLists = {
     hideSpecialDeal: 'special-deals--hidden',
     slideDown: 'special-deals__slide-down',
     hideUnlockedDeals: 'unlocked-deals--hidden',
 };
 
+// global state for manage all the ui and logics (state -> ui).
 let state = {
     isSpinning: false,
     totalRotation: 0,
@@ -34,6 +44,7 @@ let state = {
     lastWonIdx: null,
 };
 
+// url for fetching special deals rewards.
 const OFFER_URL =
     'https://gist.githubusercontent.com/ameer-wajid-ali/1f29ebee4295cede36f8d74b45e576df/raw/122966c9a123861249f173911d8d93a76dc06d7a/';
 
