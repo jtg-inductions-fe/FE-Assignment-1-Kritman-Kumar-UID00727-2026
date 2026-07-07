@@ -26,6 +26,7 @@
         border: 1px solid v.$text-secondary;
         border-radius: 50%;
         @include mx.flex($align: center, $justify: center);
+        cursor: pointer;
     }
 
     &__layer {

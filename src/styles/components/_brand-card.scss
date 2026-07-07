@@ -11,6 +11,7 @@
 
     &__title {
         @include t.heading-secondary;
+        cursor: pointer;
     }
     &__description {
         @include t.text;

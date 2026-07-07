@@ -1098,6 +1098,7 @@ select {
     font-weight: 700;
     line-height: 120%;
     font-family: 'Circular Std', sans-serif;
+    cursor: pointer;
 }
 .brand-card__description {
     font-size: 1rem;
@@ -1258,6 +1259,7 @@ select {
     align-items: center;
     flex-wrap: nowrap;
     gap: 0;
+    cursor: pointer;
 }
 .footer-section__layer {
     display: none;

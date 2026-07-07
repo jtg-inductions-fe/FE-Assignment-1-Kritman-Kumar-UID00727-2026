@@ -16,8 +16,8 @@ export function toggleFooterLink(e) {
     if (prevOpen && prevOpen !== currentGroup) {
         const prevList = prevOpen.querySelector('.nav-group__list');
         if (prevList) {
+            rotateIcon(prevOpen, true);
             prevList.classList.add(hideClass);
-            rotateIcon(currentGroup, true);
         }
     }
 
