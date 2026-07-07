@@ -3,8 +3,6 @@
 @use '../base/typography' as t;
 @use '../abstract/functions' as fn;
 
-@forward '../components/button';
-
 .sidebar {
     position: fixed;
     z-index: 2000;

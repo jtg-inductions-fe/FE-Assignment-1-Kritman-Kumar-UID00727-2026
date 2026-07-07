@@ -10,8 +10,6 @@ const classLists = {
     slideDown: 'special-deals__slide-down',
 };
 
-Object.freeze(actionTypes);
-
 export function handleClick(e) {
     const actionName = e.target.dataset.name;
     if (!actionName) return;
