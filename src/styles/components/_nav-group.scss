@@ -15,6 +15,8 @@
     &__item {
         color: v.$text-secondary;
         @include t.text-md;
+        cursor: pointer;
+        max-width: max-content;
     }
     &__item:hover {
         color: v.$color-accent;
