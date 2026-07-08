@@ -1,6 +1,3 @@
-// ----------------------------------------------------------
-//                        imports
-// ----------------------------------------------------------
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs';
 
 import {
@@ -10,27 +7,36 @@ import {
 } from './components/hamburgerMenu.js';
 import { showTravelPointData } from './components/travelPoint.js';
 import { toggleFooterLink } from './components/footer.js';
+import { handleClick, toggleSpecialDeal } from './components/specialDeals.js';
 
-// ----------------------------------------------------------
-//                        DOM Element
-// ----------------------------------------------------------
-const hamburgerEle = document.querySelector('.nav__toggle');
-const asideEle = document.querySelector('#hamburger-menu');
-const navAccordions = document.getElementsByClassName('nav-group');
+import {
+    hamburgerEle,
+    asideEle,
+    specialDealsEle,
+    navAccordions,
+    navEle,
+} from './data/domElements.js';
 
 // ----------------------------------------------------------
 //                       EventListener
 // ----------------------------------------------------------
 
+specialDealsEle.addEventListener('click', handleClick);
+
 // open the mobile navigation menu
-hamburgerEle.addEventListener('click', () =>
-    toggleMenu(hamburgerEle, asideEle),
-);
+navEle.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON' || e.target.tagName === 'IMG') {
+        toggleMenu(hamburgerEle, asideEle);
+        return;
+    }
+    if (e.target.innerText === 'Special Deals') {
+        toggleSpecialDeal();
+    }
+});
 
 // close the mobile navigation menu when close is button clicked or link clicked.
 asideEle.addEventListener('click', (e) => {
-    const clickableElement = e.target.closest('.sidebar__link, .sidebar__btn');
-    if (!clickableElement) return;
+    if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') return;
     toggleMenu(hamburgerEle, asideEle);
 });
 

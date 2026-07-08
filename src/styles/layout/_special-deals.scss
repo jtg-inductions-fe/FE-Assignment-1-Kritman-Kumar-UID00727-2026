@@ -1,0 +1,90 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+@use '../base/typography' as t;
+@use '../abstract/functions' as fn;
+
+@forward '../components/wheel';
+
+.special-deals {
+    min-width: fn.rem(360px);
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5001;
+    border-radius: 24px 24px 0 0;
+    background-color: v.$bg-primary;
+    padding: 24px;
+    transition: transform 0.3s ease-in-out;
+
+    @include mx.flex($direction: column, $align: center, $gap: 20px);
+
+    &__slide-down {
+        transform: translate(-50%, 100%);
+    }
+
+    &--hidden {
+        display: none;
+    }
+
+    &__wheel--hidden {
+        display: none;
+    }
+
+    &__close-btn {
+        width: max-content;
+        padding: fn.rem(3px);
+        position: absolute;
+        top: fn.rem(19px);
+        right: fn.rem(23px);
+    }
+
+    &__close-btn:active {
+        transform: scale(0.92);
+    }
+
+    &__heading {
+        @include mx.grid($cols: 1, $gap: 8px);
+
+        text-align: center;
+    }
+
+    &__title {
+        color: v.$color-accent;
+        font-size: fn.rem(12px);
+        @include t.text-link;
+    }
+
+    &__sub-title {
+        @include t.text-bold;
+    }
+
+    &__instruction {
+        color: v.$text-muted;
+        @include t.text-link;
+    }
+
+    &__wheel-container {
+        height: fn.rem(236px);
+        width: 227px;
+        position: relative;
+    }
+
+    &__caret-down {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -10px;
+        width: max-content;
+    }
+
+    @media (min-width: v.$breakpoint-desktop) {
+        bottom: 70px;
+        border-radius: 24px;
+        transition: none;
+
+        &__slide-down {
+            transform: translate(-50%, 0);
+        }
+    }
+}

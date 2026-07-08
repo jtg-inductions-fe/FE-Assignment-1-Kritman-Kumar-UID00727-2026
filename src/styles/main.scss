@@ -3,12 +3,9 @@
 @forward './base/typography';
 
 // ---------------------------------------
-// ------------------ Components ------------------
-@forward './components/header';
-@forward './components/logo';
+@forward './components/overlay-backdrop';
 @forward './components/button';
-@forward './components/badge';
-
+@forward './components/header';
 // ---------------- Layout ----------------
 @forward './layout/main';
 @forward './layout/travel-point';
@@ -19,6 +16,7 @@
 @forward './layout/content';
 @forward './layout/gallery';
 @forward './layout/brand';
+@forward './layout/special-deals';
 @forward './layout/footer-section';
 
 @import '../../node_modules/@glidejs/glide/src/assets/sass/glide.core';

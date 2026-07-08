@@ -2,6 +2,7 @@
 @use './functions' as fn;
 
 $bg-primary: #ffffff;
+$bg-backdrop: #00000080;
 $color-bg-muted: #eeeeee;
 $color-accent: #f85e9f;
 $color-brand-pop: #5d50c6;
@@ -14,7 +15,6 @@ $text-muted: #1918259b;
 $text-primary: #191825;
 $text-secondary: #191825bf;
 $text-muted-lite: #1918251a;
-
 // ------------------------------------
 $shadow-ambient-deep:
     0px 0px 0px 0px rgba(0, 0, 0, 0.07),
@@ -31,6 +31,7 @@ $shadow-sm: 0 0 3px black;
 $radius-pill: 100px;
 $radius-md: 32px;
 $radius-sm: 16px;
+$radius-xl: 170px;
 
 // Breakpoints for different screen sizes.
 $breakpoint-mobile: 430px;
