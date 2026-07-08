@@ -59,32 +59,6 @@ select {
   background: none;
 }
 
-.alert {
-  position: absolute;
-  z-index: 5002;
-  padding: 5px 10px;
-  border-radius: 5px;
-  left: 10px;
-  top: 10px;
-  background-color: #ff5722;
-  color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: slideInRight 0.3s ease-out forwards;
-}
-@keyframes slideInRight {
-  from {
-    transform: translateX(-30%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.alert__slide-down {
-  transform: translate(-50%, 100%);
-}
-
 .badge {
   font-size: 0.875rem;
   font-weight: 700;
@@ -189,10 +163,15 @@ select {
   align-items: center;
   flex-wrap: nowrap;
   gap: 8px;
-  color: #222831;
   background-color: #eeeeee;
 }
 .btn--rounded {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
   padding: 0;
   width: 43px;
   height: 43px;
@@ -202,12 +181,6 @@ select {
   font-size: 0.625rem;
   top: 50%;
   left: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 0;
   border: 3px solid #f85e9f;
   color: #f85e9f;
   background-color: #ffffff;
@@ -1647,6 +1620,9 @@ select {
 .unlocked-deals {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
   gap: 10px;
   max-height: 70dvh;
   overflow-y: auto;

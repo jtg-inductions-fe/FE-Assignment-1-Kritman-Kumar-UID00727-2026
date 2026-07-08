@@ -128,7 +128,7 @@
                     <li>
                         <a class="sidebar__link" href="#discover">Discover</a>
                     </li>
-                    <li class="li--none">
+                    <li>
                         <a id="aside-deal" class="sidebar__link" href="#deals"
                             >Special Deals</a
                         >
@@ -554,11 +554,8 @@
         </main>
 
         <section id="special-deals" class="special-deals special-deals--hidden">
-            <div id="deals__alert" class="alert special-deals--hidden">
-                copied
-            </div>
-            <button type="button" data-name="close" class="btn--close">
-                <span data-name="close" data-name="close"
+            <button type="button" class="btn btn--close">
+                <span data-name="close"
                     ><i data-name="close" class="fa-solid fa-x"></i
                 ></span>
             </button>
@@ -582,12 +579,12 @@
                         ></span>
                     </div>
                     <ul id="wheel" class="wheel wheel__loading">
-                        Loading...
+                        <li>Loading...</li>
                     </ul>
                     <button
                         id="spin-btn"
                         data-name="spin-wheel"
-                        class="btn--rounded special-deals--hidden"
+                        class="btn btn--rounded special-deals--hidden"
                         type="button"
                     >
                         Spin
@@ -607,7 +604,7 @@
                 <hgroup class="deals-text">
                     <h3 class="deals-text__title">
                         <span> <i class="fa-solid fa-gift"></i></span>
-                        SPECIAL DEALS
+                        special deals
                     </h3>
                     <h4 class="deals-text__sub-title">Unlocked Deals</h4>
                     <p class="deals-text__instruction">
@@ -618,15 +615,16 @@
                 <div class="unlocked-deals" id="unlocked-deals-root"></div>
             </article>
 
-            <div class="special-deals__close-container">
+            <div
+                id="deal-container-button"
+                class="special-deals__close-container special-deals--hidden"
+            >
                 <button
                     type="button"
                     id="special-deals__nav-btn"
                     class="btn btn--badge"
                     data-name="unlocked-deals"
-                >
-                    Loading...
-                </button>
+                ></button>
             </div>
         </section>
         <div id="overlay" class="overlay-backdrop special-deals--hidden"></div>

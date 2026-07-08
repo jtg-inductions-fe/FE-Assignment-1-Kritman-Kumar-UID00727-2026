@@ -1,7 +1,7 @@
+@use '../abstract/mixins' as mx;
+
 .unlocked-deals {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    @include mx.flex($direction: column, $gap: 10px);
 
     max-height: 70dvh;
     overflow-y: auto;

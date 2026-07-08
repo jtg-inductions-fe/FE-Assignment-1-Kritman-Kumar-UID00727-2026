@@ -9,7 +9,7 @@ import {
     spinButtonEle,
     greetEle,
     unlockedDealsListEle,
-    alertEle,
+    dealContainerButtonEle,
 } from '../data/domElements.js';
 
 /**
@@ -162,6 +162,7 @@ function renderDealsWheel() {
     wheelEle.classList.remove('wheel__loading');
     wheelEle.classList.add('wheel__loaded');
     spinButtonEle.classList.remove(classLists.hideSpecialDeal);
+    dealContainerButtonEle.classList.remove(classLists.hideSpecialDeal);
     dealButtonEle.innerHTML = `View All Unlocked Deals
                           <span class="special-deals__badge">${state.unlockedDeals.length}</span> `;
     renderWheel();
@@ -329,13 +330,10 @@ function renderWonReward() {
  * @returns {Promise<void>} Resolves when the async code extraction and clipboard write operations are complete.
  */
 async function handleCopyCode(ele) {
-    try {
-        const code = ele.closest('div').querySelector('.deals__code').innerText;
-        await navigator.clipboard.writeText(code);
+    const code = ele.closest('div').querySelector('.deals__code').innerText;
+    navigator.clipboard.writeText(code).then(() => {
         showMessage('copied');
-    } catch (error) {
-        showMessage(error.message, 2000);
-    }
+    });
 }
 
 /**
@@ -348,14 +346,8 @@ async function handleCopyCode(ele) {
  * @global {Object} classLists - Global object containing UI CSS class names.
  * @returns {void} This function utilizes an asynchronous timer to change DOM classes and does not return a value.
  */
-function showMessage(message, timeOut) {
-    if (!Number(timeOut)) timeOut = 1500;
-
-    alertEle.classList.remove(classLists.hideSpecialDeal);
-    alertEle.innerText = message;
-    setTimeout(() => {
-        alertEle.classList.add(classLists.hideSpecialDeal);
-    }, timeOut);
+function showMessage(message) {
+    alert(message);
 }
 
 /**
@@ -464,14 +456,8 @@ export async function fetchOffer() {
         getCurrentReward();
         renderDealsWheel();
     } catch (e) {
-        if (e.message) {
-            showMessage(e.message, 3000);
-        } else {
-            showMessage(
-                'Some thing went wrong. Please Refresh the Page.',
-                3000,
-            );
-        }
+        console.log(e);
+
         alert('some thing went wrong please try again letter.');
         toggleDealsPage();
     }

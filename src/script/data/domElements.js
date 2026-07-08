@@ -14,9 +14,11 @@ export const greetEle = document.querySelector('#greet');
 export const unlockedDealsListEle = document.querySelector(
     '#unlocked-deals-root',
 );
-export const alertEle = document.querySelector('#deals__alert');
 export const specialDealsNavLink = document.querySelector(
     '#special-deals-nav-link',
 );
 export const asideDealNavEle = document.querySelector('#aside-deal');
 export const rewardsSectionEle = document.querySelector('#rewards');
+export const dealContainerButtonEle = document.querySelector(
+    '#deal-container-button',
+);
