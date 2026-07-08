@@ -15,6 +15,9 @@
         background-color: v.$color-brand-pop;
         color: v.$color-bg-muted;
     }
+    &:hover {
+        box-shadow: v.$shadow-sm;
+    }
 
     &--secondary {
         @include mx.flex($justify: center, $align: center, $gap: 8px);
@@ -37,7 +40,6 @@
         color: v.$color-accent;
         background-color: v.$bg-primary;
         transform: translate(-50%, -50%);
-        transition: background-color 0.1s ease-in-out;
         border-radius: 48px;
         cursor: pointer;
     }
@@ -52,6 +54,7 @@
         position: absolute;
         top: 19px;
         right: 23px;
+        cursor: pointer;
     }
 
     &--close:active {
@@ -68,7 +71,6 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
-        transition: transform 0.1s ease-in;
     }
 
     &--badge-btn:hover {

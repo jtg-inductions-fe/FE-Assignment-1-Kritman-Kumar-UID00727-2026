@@ -242,12 +242,12 @@ function updateWinEle(selectedReward) {
                 </div>
                 <div>
                     <span class="deals__code">${selectedReward.promoCode}</span>
-                    <span data-name="copy-code" class="deals__code-copy"
+                    <button data-name="copy-code" class="deals__code-copy"
                         ><i
                             data-name="copy-code"
                             class="fa-regular fa-copy" 
                         ></i
-                    ></span>
+                    ></button>
                 </div>
                 `;
             } else {
@@ -302,11 +302,11 @@ function renderWonReward() {
                         </div>
                         <div class="${style}" >
                             <span class="deals__code">${escapeHTML(state.unlockedDeals[i].promoCode)}</span>
-                            <span data-name="copy-code"
+                            <button data-name="copy-code"
                                 ><i data-name="copy-code"
                                     class="fa-regular fa-copy"
                                 ></i
-                            ></span>
+                            ></button>
                         </div>
                      
     `;

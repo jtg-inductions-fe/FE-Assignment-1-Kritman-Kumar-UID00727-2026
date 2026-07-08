@@ -4,7 +4,7 @@
 @use '../base/typography' as t;
 
 .special-deals {
-    min-width: fn.rem(360px);
+    max-width: fn.rem(360px);
     position: fixed;
     bottom: 0;
     left: 50%;

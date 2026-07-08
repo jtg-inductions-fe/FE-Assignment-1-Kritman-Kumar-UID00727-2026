@@ -90,18 +90,18 @@
                         <a class="nav__link nav__link--active" href="/">home</a>
                     </li>
                     <li>
-                        <a class="nav__link" href="#discover">Discover</a>
+                        <a class="nav__link" href="testimonials">Discover</a>
                     </li>
                     <li>
                         <a
                             id="special-deals-nav-link"
                             class="nav__link"
-                            href="#deals"
+                            href="#special-deals"
                             >Special Deals</a
                         >
                     </li>
                     <li>
-                        <a class="nav__link" href="#contact">Contact</a>
+                        <a class="nav__link" href="footer">Contact</a>
                     </li>
                 </ul>
                 <div class="nav__auth" id="nav-auth">
@@ -126,15 +126,20 @@
                         <a class="sidebar__link" href="/">home</a>
                     </li>
                     <li>
-                        <a class="sidebar__link" href="#discover">Discover</a>
+                        <a class="sidebar__link" href="testimonials"
+                            >Discover</a
+                        >
                     </li>
                     <li>
-                        <a id="aside-deal" class="sidebar__link" href="#deals"
+                        <a
+                            id="aside-deal"
+                            class="sidebar__link"
+                            href="#special-deals"
                             >Special Deals</a
                         >
                     </li>
                     <li>
-                        <a class="sidebar__link" href="#contact">Contact</a>
+                        <a class="sidebar__link" href="footer">Contact</a>
                     </li>
                 </ul>
             </aside>
@@ -358,7 +363,7 @@
             </section>
 
             <!-- Testimonials  -->
-            <section class="testimonials-section">
+            <section id="testimonials" class="testimonials-section">
                 <hgroup class="testimonials-section__heading">
                     <p class="testimonials-section__label">Testimonials</p>
                     <h2 class="testimonials-section__title">
@@ -553,18 +558,26 @@
             </section>
         </main>
 
-        <section id="special-deals" class="special-deals special-deals--hidden">
-            <button type="button" class="btn btn--close">
+        <section
+            id="special-deals"
+            aria-label="Special Deals"
+            class="special-deals special-deals--hidden"
+        >
+            <button type="button" class="btn--close" aria-label="Close deals">
                 <span data-name="close"
-                    ><i data-name="close" class="fa-solid fa-x"></i
+                    ><i
+                        data-name="close"
+                        class="fa-solid fa-x"
+                        aria-hidden="true"
+                    ></i
                 ></span>
             </button>
 
             <article id="deals">
                 <hgroup class="deals-text">
                     <h3 class="deals-text__title">
-                        <span> <i class="fa-solid fa-gift"></i></span>
-                        special deals
+                        <i class="fa-solid fa-gift" aria-hidden="true"></i>
+                        Special Deals
                     </h3>
                     <h4 class="deals-text__sub-title">Spin & Win!</h4>
                     <p class="deals-text__instruction">
@@ -575,11 +588,18 @@
                 <div class="special-deals__wheel-container">
                     <div class="special-deals__caret-down">
                         <span
-                            ><i class="fa-sharp fa-solid fa-caret-down"></i
+                            ><i
+                                class="fa-sharp fa-solid fa-caret-down"
+                                aria-hidden="true"
+                            ></i
                         ></span>
                     </div>
-                    <ul id="wheel" class="wheel wheel__loading">
-                        <li>Loading...</li>
+                    <ul
+                        aria-label="Reward selection wheel"
+                        id="wheel"
+                        class="wheel wheel__loading"
+                    >
+                        <li>Loading choices...</li>
                     </ul>
                     <button
                         id="spin-btn"
@@ -587,7 +607,7 @@
                         class="btn btn--rounded special-deals--hidden"
                         type="button"
                     >
-                        Spin
+                        Spin Wheel
                     </button>
                 </div>
 
@@ -596,19 +616,19 @@
                         <span>You won!</span>
                     </div>
 
-                    <div class="deals" id="win-ele"></div>
+                    <div class="deals" id="win-ele" aria-live="assertive"></div>
                 </div>
             </article>
 
             <article id="rewards" class="unlocked-deals unlocked-deals--hidden">
                 <hgroup class="deals-text">
                     <h3 class="deals-text__title">
-                        <span> <i class="fa-solid fa-gift"></i></span>
-                        special deals
+                        <i class="fa-solid fa-gift" aria-hidden="true"></i> Your
+                        Unlocked Rewards
                     </h3>
                     <h4 class="deals-text__sub-title">Unlocked Deals</h4>
                     <p class="deals-text__instruction">
-                        All the deals you’ve unlocked yet!
+                        All the deals you’ve unlocked so far!
                     </p>
                 </hgroup>
 
@@ -624,9 +644,11 @@
                     id="special-deals__nav-btn"
                     class="btn btn--badge"
                     data-name="unlocked-deals"
+                    aria-label="View unlocked deals"
                 ></button>
             </div>
         </section>
+
         <div id="overlay" class="overlay-backdrop special-deals--hidden"></div>
 
         <!-- 
@@ -641,15 +663,15 @@
                 aria-labelledby="footer-titile"
             >
                 <div class="footer-section__brand brand-card">
-                    <div>
-                        <a href="/" class="brand-card__heading">
+                    <div class="brand-card__heading">
+                        <a href="/">
                             <img
                                 class="brand-card__logo"
                                 src="./src/assets/icons/logo-main.png"
                                 alt="Travlog logo"
                             />
-                            <span class="brand-card__title"> Travlog </span>
                         </a>
+                        <span class="brand-card__title"> Travlog </span>
                     </div>
                     <p class="brand-card__description">
                         Contrary to popular belief, Lorem Ipsum is not simply
@@ -703,7 +725,7 @@
                             data-footer-name="company"
                         >
                             <i
-                                data-footer-name="company"
+                                data-name="toggle-footer"
                                 class="fa-solid fa-chevron-down"
                                 style="color: rgb(0, 0, 0)"
                             ></i>
@@ -740,7 +762,7 @@
                             data-footer-name="contact"
                         >
                             <i
-                                data-footer-name="contact"
+                                data-name="toggle-footer"
                                 class="fa-solid fa-chevron-down"
                                 style="color: rgb(0, 0, 0)"
                             ></i>
@@ -775,7 +797,7 @@
                             data-footer-name="meetup"
                         >
                             <i
-                                data-footer-name="meetup"
+                                data-name="toggle-footer"
                                 class="fa-solid fa-chevron-down"
                                 style="color: rgb(0, 0, 0)"
                             ></i>
@@ -793,7 +815,7 @@
                             >
                         </li>
                         <li class="nav-group__item">
-                            <a href=""> 205. R Street, New York BD23200 </a>
+                            <a href="#"> 205. R Street, New York BD23200 </a>
                         </li>
                     </ul>
                 </div>

@@ -43,7 +43,14 @@
     &__description {
         text-align: center;
         @include t.text;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
+
     &__data-grid {
         min-width: 348px;
         @include mx.grid(
