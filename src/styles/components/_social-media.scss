@@ -5,11 +5,17 @@
     width: 160px;
     @include mx.flex($justify: space-between, $align: center);
 
-    &__link--facebook {
-        font-size: 2rem;
+    &__link {
+        font-size: 1.3rem;
+        background-color: v.$color-brand-pop;
+        border-radius: 50%;
+        padding: 10px;
+        text-align: center;
+        color: v.$bg-primary;
     }
 
     &__link:hover {
         box-shadow: v.$shadow-sm;
+        color: v.$color-accent;
     }
 }

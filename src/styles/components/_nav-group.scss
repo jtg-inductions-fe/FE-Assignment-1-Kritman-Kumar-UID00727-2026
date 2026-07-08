@@ -16,6 +16,9 @@
         color: v.$text-secondary;
         @include t.text-md;
     }
+    &__item:hover {
+        color: v.$color-accent;
+    }
 
     &--none {
         display: none;
