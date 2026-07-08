@@ -34,28 +34,28 @@
     }
 
     &__item {
+        @include mx.flex($justify: center, $align: center);
         width: fn.rem(110px);
         height: fn.rem(110px);
-        @include mx.flex($justify: center, $align: center);
 
-        @include t.text-link();
+        @include t.text-link;
         color: v.$bg-primary;
-    }
 
-    &__item--top {
-        border-radius: fn.rem(227px) 0 0 0;
-        background-color: v.$color-accent;
-    }
-    &__item--left {
-        border-radius: 0 0 fn.rem(227px) 0;
-        background-color: v.$color-amber;
-    }
-    &__item--right {
-        background-color: v.$color-brand-pop;
-        border-radius: 0 fn.rem(227px) 0 0;
-    }
-    &__item--bottom {
-        background-color: v.$color-sky-dark;
-        border-radius: 0 0 0 fn.rem(227px);
+        &--top {
+            border-radius: fn.rem(227px) 0 0 0;
+            background-color: v.$color-accent;
+        }
+        &--left {
+            border-radius: 0 0 fn.rem(227px) 0;
+            background-color: v.$color-amber;
+        }
+        &--right {
+            background-color: v.$color-brand-pop;
+            border-radius: 0 fn.rem(227px) 0 0;
+        }
+        &--bottom {
+            background-color: v.$color-sky-dark;
+            border-radius: 0 0 0 fn.rem(227px);
+        }
     }
 }
