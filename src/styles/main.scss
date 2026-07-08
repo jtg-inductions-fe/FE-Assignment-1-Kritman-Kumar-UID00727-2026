@@ -3,20 +3,36 @@
 @forward './base/typography';
 
 // ---------------------------------------
-@forward './components/overlay-backdrop';
+@forward './components/badge';
+@forward './components/brand-card';
 @forward './components/button';
+@forward './components/card-image';
+@forward './components/deal';
+@forward './components/deals-text';
 @forward './components/header';
-// ---------------- Layout ----------------
-@forward './layout/main';
-@forward './layout/travel-point';
-@forward './layout/testimonial';
-@forward './layout/hero';
-@forward './layout/sidebar';
-@forward './layout/nav';
-@forward './layout/content';
-@forward './layout/gallery';
+@forward './components/logo';
+@forward './components/nav-group';
+@forward './components/overlay-backdrop';
+@forward './components/rating';
+@forward './components/reward-text';
+@forward './components/social-media';
+@forward './components/stats-grid';
+@forward './components/testimonial-card';
+@forward './components/user';
+@forward './components/wheel';
+
+// ---------------------------------------
 @forward './layout/brand';
-@forward './layout/special-deals';
+@forward './layout/content';
 @forward './layout/footer-section';
+@forward './layout/gallery';
+@forward './layout/hero';
+@forward './layout/main';
+@forward './layout/nav';
+@forward './layout/sidebar';
+@forward './layout/special-deals';
+@forward './layout/testimonial';
+@forward './layout/travel-point';
+@forward './layout/unlocked-deals';
 
 @import '../../node_modules/@glidejs/glide/src/assets/sass/glide.core';

@@ -63,6 +63,7 @@
         <header class="header">
             <nav class="nav" aria-label="Primary navigation">
                 <button
+                    id="hamburger-btn"
                     type="button"
                     class="nav__toggle"
                     aria-label="open navigation menu"
@@ -89,13 +90,18 @@
                         <a class="nav__link nav__link--active" href="/">home</a>
                     </li>
                     <li>
-                        <a class="nav__link" href="#discover">Discover</a>
+                        <a class="nav__link" href="testimonials">Discover</a>
                     </li>
                     <li>
-                        <a class="nav__link" href="#deals">Special Deals</a>
+                        <a
+                            id="special-deals-nav-link"
+                            class="nav__link"
+                            href="#special-deals"
+                            >Special Deals</a
+                        >
                     </li>
                     <li>
-                        <a class="nav__link" href="#contact">Contact</a>
+                        <a class="nav__link" href="footer">Contact</a>
                     </li>
                 </ul>
                 <div class="nav__auth" id="nav-auth">
@@ -120,13 +126,20 @@
                         <a class="sidebar__link" href="/">home</a>
                     </li>
                     <li>
-                        <a class="sidebar__link" href="#discover">Discover</a>
+                        <a class="sidebar__link" href="testimonials"
+                            >Discover</a
+                        >
                     </li>
                     <li>
-                        <a class="sidebar__link" href="#deals">Special Deals</a>
+                        <a
+                            id="aside-deal"
+                            class="sidebar__link"
+                            href="#special-deals"
+                            >Special Deals</a
+                        >
                     </li>
                     <li>
-                        <a class="sidebar__link" href="#contact">Contact</a>
+                        <a class="sidebar__link" href="footer">Contact</a>
                     </li>
                 </ul>
             </aside>
@@ -350,7 +363,7 @@
             </section>
 
             <!-- Testimonials  -->
-            <section class="testimonials-section">
+            <section id="testimonials" class="testimonials-section">
                 <hgroup class="testimonials-section__heading">
                     <p class="testimonials-section__label">Testimonials</p>
                     <h2 class="testimonials-section__title">
@@ -546,157 +559,97 @@
         </main>
 
         <section
-            aria-labelledby="special-deals"
+            id="special-deals"
+            aria-label="Special Deals"
             class="special-deals special-deals--hidden"
         >
-            <button
-                type="button"
-                data-name="close"
-                class="btn special-deals__close-btn"
-            >
+            <button type="button" class="btn--close" aria-label="Close deals">
                 <span data-name="close"
                     ><i
                         data-name="close"
                         class="fa-solid fa-x"
-                        style="color: rgb(0, 0, 0)"
+                        aria-hidden="true"
                     ></i
                 ></span>
             </button>
 
-            <hgroup class="special-deals__heading">
-                <h3 id="special-deals" class="special-deals__title">
-                    <span>
-                        <i class="fa-solid fa-gift" style="color: #f4436c"></i
-                    ></span>
-                    SPECIAL DEALS
-                </h3>
-                <h4 class="special-deals__sub-title">Spin & Win!</h4>
-                <p class="text special-deals__instruction">
-                    Tap the center of the wheel to spin
-                </p>
-            </hgroup>
+            <article id="deals">
+                <hgroup class="deals-text">
+                    <h3 class="deals-text__title">
+                        <i class="fa-solid fa-gift" aria-hidden="true"></i>
+                        Special Deals
+                    </h3>
+                    <h4 class="deals-text__sub-title">Spin & Win!</h4>
+                    <p class="deals-text__instruction">
+                        Tap the center of the wheel to spin
+                    </p>
+                </hgroup>
 
-            <article class="special-deals__page-1">
                 <div class="special-deals__wheel-container">
                     <div class="special-deals__caret-down">
                         <span
                             ><i
                                 class="fa-sharp fa-solid fa-caret-down"
-                                style="color: #aaaa"
+                                aria-hidden="true"
                             ></i
                         ></span>
                     </div>
-                    <!-- this displayed only when event or data is not fetched -->
-                    <div class="wheel wheel__loading">Loading...</div>
-
-                    <!-- this displayed only when event or data fetched now here is static data -->
                     <ul
-                        class="wheel wheel__loadded special-deals__wheel--hidden"
+                        aria-label="Reward selection wheel"
+                        id="wheel"
+                        class="wheel wheel__loading"
                     >
-                        <li class="wheel__item wheel__item--top">
-                            20% off Flights
-                        </li>
-                        <li class="wheel__item wheel__item--right">
-                            Free Hotel Nights
-                        </li>
-                        <li class="wheel__item wheel__item--buttom">
-                            VIP Lounge Access
-                        </li>
-                        <li class="wheel__item wheel__item--left">
-                            10% off Packages
-                        </li>
-                        <li class="wheel__btn">
-                            <button
-                                type="button"
-                                class="btn"
-                                data-name="spin-button"
-                            >
-                                Spin
-                            </button>
-                        </li>
+                        <li>Loading choices...</li>
                     </ul>
+                    <button
+                        id="spin-btn"
+                        data-name="spin-wheel"
+                        class="btn btn--rounded special-deals--hidden"
+                        type="button"
+                    >
+                        Spin Wheel
+                    </button>
                 </div>
 
-                <div class="special-deals__greet special-deals__wheel--hidden">
-                    <span>You won!</span>
-                </div>
+                <div id="greet" class="special-deals--hidden">
+                    <div class="special-deals__greet">
+                        <span>You won!</span>
+                    </div>
 
-                <div class="deals special-deals__wheel--hidden">
-                    <div class="deals__offer">
-                        <span class="deals__title">20% Off Flights</span>
-                        <span class="deals__validaty">Expires in 7d</span>
-                    </div>
-                    <div class="deals__code">
-                        <span>FLY20-ABCD</span>
-                        <span
-                            ><i
-                                class="fa-regular fa-copy"
-                                style="color: rgb(0, 0, 0)"
-                            ></i
-                        ></span>
-                    </div>
+                    <div class="deals" id="win-ele" aria-live="assertive"></div>
                 </div>
             </article>
 
-            <article class="special-deals__page-2 special-deals__wheel--hidden">
-                <div class="deals">
-                    <div class="deals__offer">
-                        <span class="deals__title">20% Off Flights</span>
-                        <span class="deals__validaty">Expires in 7d</span>
-                    </div>
-                    <div class="deals__code">
-                        <span>FLY20-ABCD</span>
-                        <span
-                            ><i
-                                class="fa-regular fa-copy"
-                                style="color: rgb(0, 0, 0)"
-                            ></i
-                        ></span>
-                    </div>
-                </div>
+            <article id="rewards" class="unlocked-deals unlocked-deals--hidden">
+                <hgroup class="deals-text">
+                    <h3 class="deals-text__title">
+                        <i class="fa-solid fa-gift" aria-hidden="true"></i> Your
+                        Unlocked Rewards
+                    </h3>
+                    <h4 class="deals-text__sub-title">Unlocked Deals</h4>
+                    <p class="deals-text__instruction">
+                        All the deals you’ve unlocked so far!
+                    </p>
+                </hgroup>
 
-                <div class="deals">
-                    <div class="deals__offer">
-                        <span class="deals__title">50% Off</span>
-                        <span class="deals__validaty">Expires in 9d</span>
-                    </div>
-                    <div class="deals__code">
-                        <span>FLY20-KU HT</span>
-                        <span
-                            ><i
-                                class="fa-regular fa-copy"
-                                style="color: rgb(0, 0, 0)"
-                            ></i
-                        ></span>
-                    </div>
-                </div>
-
-                <div class="deals">
-                    <div class="deals__offer">
-                        <span class="deals__title"> NO LIMITS</span>
-                        <span class="deals__validaty">Expires in 17d</span>
-                    </div>
-                    <div class="deals__code">
-                        <span>FLY20-PPO</span>
-                        <span
-                            ><i
-                                class="fa-regular fa-copy"
-                                style="color: rgb(0, 0, 0)"
-                            ></i
-                        ></span>
-                    </div>
-                </div>
+                <div class="unlocked-deals" id="unlocked-deals-root"></div>
             </article>
 
-            <button
-                type="button"
-                class="btn special-deals__badge-btn special-deals__wheel--hidden"
+            <div
+                id="deal-container-button"
+                class="special-deals__close-container special-deals--hidden"
             >
-                <span>View All Unlocked Deals</span>
-                <span class="special-deals__badge">2</span>
-            </button>
+                <button
+                    type="button"
+                    id="special-deals__nav-btn"
+                    class="btn btn--badge"
+                    data-name="unlocked-deals"
+                    aria-label="View unlocked deals"
+                ></button>
+            </div>
         </section>
-        <div class="overlay-backdrop special-deals--hidden"></div>
+
+        <div id="overlay" class="overlay-backdrop special-deals--hidden"></div>
 
         <!-- 
         ---------------------------------------------------------------------------------
@@ -704,21 +657,21 @@
         ---------------------------------------------------------------------------------
          -->
 
-        <footer class="footer-section">
+        <footer id="footer" class="footer-section">
             <section
                 class="footer-section__top"
                 aria-labelledby="footer-titile"
             >
                 <div class="footer-section__brand brand-card">
-                    <div>
-                        <a href="/" class="brand-card__heading">
+                    <div class="brand-card__heading">
+                        <a href="/">
                             <img
                                 class="brand-card__logo"
                                 src="./src/assets/icons/logo-main.png"
                                 alt="Travlog logo"
                             />
-                            <span class="brand-card__title"> Travlog </span>
                         </a>
+                        <span class="brand-card__title"> Travlog </span>
                     </div>
                     <p class="brand-card__description">
                         Contrary to popular belief, Lorem Ipsum is not simply
@@ -732,7 +685,7 @@
                         <a
                             aria-label="facebook"
                             href="https://www.facebook.com/"
-                            class="social-media__link social-media__link"
+                            class="social-media__link"
                             ><i class="fa-brands fa-facebook-f"></i
                         ></a>
                     </li>
@@ -740,22 +693,16 @@
                         <a
                             aria-label="twitter"
                             href="https://x.com/"
-                            class="social-media__link social-media__link"
-                            ><i
-                                class="fa-brands fa-twitter"
-                                style="color: #ffffff"
-                            ></i
+                            class="social-media__link"
+                            ><i class="fa-brands fa-twitter"></i
                         ></a>
                     </li>
                     <li class="social-media__item">
                         <a
                             aria-label="instagram"
                             href="https://www.instagram.com/"
-                            class="social-media__link social-media__link"
-                            ><i
-                                class="fa-brands fa-instagram"
-                                style="color: #ffffff"
-                            ></i
+                            class="social-media__link"
+                            ><i class="fa-brands fa-instagram"></i
                         ></a>
                     </li>
                 </ul>
@@ -778,7 +725,7 @@
                             data-footer-name="company"
                         >
                             <i
-                                data-footer-name="company"
+                                data-name="toggle-footer"
                                 class="fa-solid fa-chevron-down"
                                 style="color: rgb(0, 0, 0)"
                             ></i>
@@ -815,7 +762,7 @@
                             data-footer-name="contact"
                         >
                             <i
-                                data-footer-name="contact"
+                                data-name="toggle-footer"
                                 class="fa-solid fa-chevron-down"
                                 style="color: rgb(0, 0, 0)"
                             ></i>
@@ -850,7 +797,7 @@
                             data-footer-name="meetup"
                         >
                             <i
-                                data-footer-name="meetup"
+                                data-name="toggle-footer"
                                 class="fa-solid fa-chevron-down"
                                 style="color: rgb(0, 0, 0)"
                             ></i>
@@ -868,11 +815,12 @@
                             >
                         </li>
                         <li class="nav-group__item">
-                            205. R Street, New York BD23200
+                            <a href="#"> 205. R Street, New York BD23200 </a>
                         </li>
                     </ul>
                 </div>
             </section>
+
             <img
                 class="footer-section__layer"
                 src="./src/assets/images/footer-eclips.png"

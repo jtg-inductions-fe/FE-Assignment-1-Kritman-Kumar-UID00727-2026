@@ -1,0 +1,24 @@
+@use '../abstract/mixins' as mx;
+
+.reward-text {
+    width: 80%;
+    text-align: center;
+    @include mx.flex($justify: center);
+    &__top {
+        transform: rotate(-45deg);
+    }
+    &__left {
+        transform: rotate(135deg);
+    }
+    &__right {
+        transform: rotate(45deg);
+    }
+    &__bottom {
+        transform: rotate(-135deg);
+    }
+
+    &__title {
+        display: block;
+        text-align: center;
+    }
+}

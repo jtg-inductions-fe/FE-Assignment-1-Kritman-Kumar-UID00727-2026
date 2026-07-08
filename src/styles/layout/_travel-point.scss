@@ -2,8 +2,6 @@
 @use '../base/typography' as t;
 @use '../abstract/mixins' as mx;
 
-@forward '../components/stats-grid.scss';
-
 .travel-point {
     position: relative;
     padding: 0;
@@ -45,7 +43,14 @@
     &__description {
         text-align: center;
         @include t.text;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
+
     &__data-grid {
         min-width: 348px;
         @include mx.grid(

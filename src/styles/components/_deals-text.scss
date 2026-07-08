@@ -1,0 +1,27 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+@use '../abstract/functions' as fn;
+@use '../base/typography' as t;
+
+.deals-text {
+    text-align: center;
+    padding-bottom: 10px;
+    @include mx.grid($cols: 1, $gap: 8px);
+
+    &__title {
+        text-transform: uppercase;
+        color: v.$color-accent;
+        font-size: fn.rem(12px);
+        @include t.text-link;
+    }
+
+    &__sub-title {
+        font-weight: 700;
+        @include t.text-bold;
+    }
+
+    &__instruction {
+        color: v.$text-muted;
+        @include t.text-link;
+    }
+}

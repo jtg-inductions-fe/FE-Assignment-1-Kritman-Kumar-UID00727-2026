@@ -7,36 +7,39 @@ import {
 } from './components/hamburgerMenu.js';
 import { showTravelPointData } from './components/travelPoint.js';
 import { toggleFooterLink } from './components/footer.js';
-import { handleClick, toggleSpecialDeal } from './components/specialDeals.js';
+import {
+    fetchOffer,
+    handleClick,
+    toggleSpecialDeal,
+} from './components/specialDeals.js';
 
 import {
     hamburgerEle,
+    navAccordions,
     asideEle,
     specialDealsEle,
-    navAccordions,
-    navEle,
+    specialDealsNavLink,
+    asideDealNavEle,
 } from './data/domElements.js';
 
 // ----------------------------------------------------------
 //                       EventListener
 // ----------------------------------------------------------
 
-specialDealsEle.addEventListener('click', handleClick);
-
 // open the mobile navigation menu
-navEle.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON' || e.target.tagName === 'IMG') {
-        toggleMenu(hamburgerEle, asideEle);
-        return;
-    }
-    if (e.target.innerText === 'Special Deals') {
-        toggleSpecialDeal();
-    }
+hamburgerEle.addEventListener('click', () => {
+    toggleMenu(hamburgerEle, asideEle);
+});
+
+specialDealsNavLink.addEventListener('click', function () {
+    toggleSpecialDeal();
 });
 
 // close the mobile navigation menu when close is button clicked or link clicked.
 asideEle.addEventListener('click', (e) => {
-    if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') return;
+    if (e.target === asideDealNavEle) {
+        toggleSpecialDeal();
+    }
     toggleMenu(hamburgerEle, asideEle);
 });
 
@@ -68,6 +71,8 @@ new Swiper('.swiper', {
     },
 });
 
+specialDealsEle.addEventListener('click', handleClick);
+
 /**
  * Global event listener for the footer container.
  * Uses event delegation to capture clicks on chevron icon wrappers.
@@ -79,4 +84,5 @@ for (let i = 0; i < navAccordions.length; i++) {
 // Show the Travel Point data immediately.
 (function init() {
     showTravelPointData();
+    fetchOffer();
 })();

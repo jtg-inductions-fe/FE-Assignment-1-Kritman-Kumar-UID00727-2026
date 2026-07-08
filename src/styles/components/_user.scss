@@ -1,5 +1,6 @@
 @use '../abstract/variables' as v;
 @use '../abstract/mixins' as mx;
+@use '../abstract/functions' as fn;
 @use '../base/typography' as t;
 
 .user {
@@ -18,12 +19,18 @@
     }
     &__name--secondary {
         color: v.$text-secondary;
-        font-size: 23px;
+        font-size: fn.rem(23px);
     }
     &__comment {
         color: v.$text-secondary;
         text-align: center;
         @include t.text-bold;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     @media (min-width: v.$breakpoint-tablet) {

@@ -1,12 +1,10 @@
 @use '../abstract/variables' as v;
 @use '../abstract/mixins' as mx;
-@use '../base/typography' as t;
 @use '../abstract/functions' as fn;
-
-@forward '../components/wheel';
+@use '../base/typography' as t;
 
 .special-deals {
-    min-width: fn.rem(360px);
+    max-width: fn.rem(360px);
     position: fixed;
     bottom: 0;
     left: 50%;
@@ -19,53 +17,17 @@
 
     @include mx.flex($direction: column, $align: center, $gap: 20px);
 
-    &__slide-down {
-        transform: translate(-50%, 100%);
-    }
-
     &--hidden {
         display: none;
     }
 
-    &__wheel--hidden {
-        display: none;
-    }
-
-    &__close-btn {
-        width: max-content;
-        padding: fn.rem(3px);
-        position: absolute;
-        top: fn.rem(19px);
-        right: fn.rem(23px);
-    }
-
-    &__close-btn:active {
-        transform: scale(0.92);
-    }
-
-    &__heading {
-        @include mx.grid($cols: 1, $gap: 8px);
-
-        text-align: center;
-    }
-
-    &__title {
-        color: v.$color-accent;
-        font-size: fn.rem(12px);
-        @include t.text-link;
-    }
-
-    &__sub-title {
-        @include t.text-bold;
-    }
-
-    &__instruction {
-        color: v.$text-muted;
-        @include t.text-link;
+    &__slide-down {
+        transform: translate(-50%, 100%);
     }
 
     &__wheel-container {
-        height: fn.rem(236px);
+        margin: 0 auto;
+        height: 236px;
         width: 227px;
         position: relative;
     }
@@ -74,8 +36,24 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: -10px;
+        top: -12px;
+        font-size: 1.5rem;
+        z-index: 5002;
         width: max-content;
+        color: v.$color-accent;
+    }
+
+    &__greet {
+        text-align: center;
+        margin-bottom: 5px;
+        @include t.text-link;
+    }
+
+    &__badge {
+        background-color: v.$color-brand-pop;
+        padding: 3px 8px;
+        display: block;
+        border-radius: 100%;
     }
 
     @media (min-width: v.$breakpoint-desktop) {

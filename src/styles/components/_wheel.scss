@@ -1,12 +1,17 @@
 @use '../abstract/variables' as v;
 @use '../abstract/mixins' as mx;
-@use '../base/typography' as t;
 @use '../abstract/functions' as fn;
+@use '../base/typography' as t;
+@forward '../components/reward-text';
 
 .wheel {
     width: fn.rem(227px);
     height: fn.rem(227px);
     border-radius: v.$radius-xl;
+
+    transition: transform 2s cubic-bezier(0.1, 0.8, 0.3, 1);
+
+    transform-origin: center;
 
     &__loading {
         background-color: v.$color-bg-muted;
@@ -14,5 +19,42 @@
         @include mx.flex($justify: center, $align: center);
 
         @include t.text-link;
+    }
+
+    &__loaded {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        grid-template-rows: auto;
+
+        background-color: v.$bg-primary;
+        border: 2px solid v.$bg-primary;
+        position: relative;
+    }
+
+    &__item {
+        @include mx.flex($justify: center, $align: center);
+        width: fn.rem(110px);
+        height: fn.rem(110px);
+
+        @include t.text-link;
+        color: v.$bg-primary;
+
+        &--top {
+            border-radius: fn.rem(227px) 0 0 0;
+            background-color: v.$color-accent;
+        }
+        &--left {
+            border-radius: 0 0 fn.rem(227px) 0;
+            background-color: v.$color-amber;
+        }
+        &--right {
+            background-color: v.$color-brand-pop;
+            border-radius: 0 fn.rem(227px) 0 0;
+        }
+        &--bottom {
+            background-color: v.$color-sky-dark;
+            border-radius: 0 0 0 fn.rem(227px);
+        }
     }
 }

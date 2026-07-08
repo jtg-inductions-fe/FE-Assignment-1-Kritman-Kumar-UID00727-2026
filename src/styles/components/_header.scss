@@ -4,12 +4,6 @@
 @use '../base/typography' as t;
 
 .header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    background-color: v.$bg-primary;
-
     @include mx.flex($direction: column);
 
     margin-top: 0;

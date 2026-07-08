@@ -9,9 +9,6 @@
         @include mx.flex($align: center, $gap: 16px);
         transition: 0.3s transform ease-in-out;
     }
-    &__heading:hover {
-        transform: scale(1.01);
-    }
 
     &__logo {
         display: inline-block;
@@ -23,6 +20,11 @@
 
     &__description {
         @include t.text;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     @media (min-width: v.$breakpoint-tablet) {

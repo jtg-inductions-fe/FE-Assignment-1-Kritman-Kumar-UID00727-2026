@@ -7,6 +7,9 @@ let prevOpen = null;
  */
 
 export function toggleFooterLink(e) {
+    const name = e.target.dataset.name;
+    if (!name || name !== 'toggle-footer') return;
+
     const currentGroup = e.currentTarget;
     const currentList = currentGroup.querySelector('.nav-group__list');
     if (!currentList) return;

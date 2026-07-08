@@ -1,10 +1,11 @@
 @use '../abstract/mixins' as mx;
+@use '../abstract/functions' as fn;
 
 .rating {
     @include mx.flex($gap: 16px, $justify: center);
     &__item {
-        width: 32px;
-        height: 32px;
-        font-size: 28px;
+        width: fn.rem(32px);
+        height: fn.rem(32px);
+        font-size: fn.rem(28px);
     }
 }

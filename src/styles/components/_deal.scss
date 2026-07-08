@@ -1,0 +1,50 @@
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+@use '../abstract/mixins' as mx;
+@use '../abstract/functions' as fn;
+
+.deals {
+    @include mx.flex($justify: space-between, $align: center);
+
+    padding: 16px;
+    min-width: fn.rem(305px);
+    border-radius: 16px;
+    background: #ffffff
+        linear-gradient(
+            90deg,
+            rgba(244, 67, 108, 0.05) 0%,
+            rgba(124, 58, 237, 0.05) 100%
+        );
+
+    border: 1px solid rgba(244, 67, 108, 0.2);
+
+    &--disable {
+        pointer-events: none;
+        text-decoration: line-through;
+        color: v.$text-muted;
+    }
+
+    &__text {
+        display: block;
+        max-width: fn.rem(140px);
+        @include t.text-link;
+    }
+
+    &__code {
+        padding: 3px 10px;
+        border-radius: 20px;
+        box-shadow: v.$shadow-sm;
+        background-color: v.$bg-primary;
+        margin-top: fn.rem(5px);
+        color: v.$bg-backdrop;
+    }
+
+    &__validity {
+        margin-top: fn.rem(5px);
+        color: v.$color-brand-pop;
+    }
+
+    &__code-copy {
+        cursor: pointer;
+    }
+}

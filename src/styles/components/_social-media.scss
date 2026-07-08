@@ -6,14 +6,16 @@
     @include mx.flex($justify: space-between, $align: center);
 
     &__link {
+        font-size: 1.3rem;
         background-color: v.$color-brand-pop;
-        padding: 8px;
         border-radius: 50%;
+        padding: 10px;
         text-align: center;
-        color: white;
+        color: v.$bg-primary;
     }
 
     &__link:hover {
         box-shadow: v.$shadow-sm;
+        color: v.$color-accent;
     }
 }
